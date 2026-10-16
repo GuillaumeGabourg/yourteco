@@ -23,16 +23,9 @@ export function PhoneLink({ className = '' }) {
   )
 }
 
-/** Thème clair / sombre : suit le système tant que le visiteur n'a pas choisi. */
+/** Thème clair par défaut ; sombre sur choix du visiteur (mémorisé). */
 function ThemeToggle() {
-  const sys = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || sys())
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const on = () => { if (!document.documentElement.dataset.theme) setTheme(sys()) }
-    mq.addEventListener('change', on)
-    return () => mq.removeEventListener('change', on)
-  }, [])
+  const [theme, setTheme] = useState(() => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'))
   const toggle = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     document.documentElement.dataset.theme = next

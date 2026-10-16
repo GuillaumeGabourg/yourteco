@@ -11,8 +11,7 @@ export default function SeedField() {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const colors = ['56, 98, 52', '106, 163, 58', '150, 146, 30']
     const colorsDark = ['190, 222, 160', '219, 215, 58', '150, 200, 110']
-    const mqDark = window.matchMedia('(prefers-color-scheme: dark)')
-    const isDark = () => { const t = document.documentElement.dataset.theme; return t ? t === 'dark' : mqDark.matches }
+    const isDark = () => document.documentElement.dataset.theme === 'dark'
     let w = 0, h = 0, dpr = 1, seeds = [], raf = 0, last = 0
     const mouse = { x: -999, y: -999, vx: 0, vy: 0, t: 0 }
 

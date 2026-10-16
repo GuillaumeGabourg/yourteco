@@ -10,6 +10,7 @@ import { Plate } from '../components/Plate.jsx'
 import { QuoteButton, PhoneLink } from '../components/Chrome.jsx'
 import { SunRays, FallingLeaves, Hills, TreeRings, Dapple, GrowingStem, LeafShape } from '../components/Nature.jsx'
 import YurtAssembly from '../components/YurtAssembly.jsx'
+import ReviewCarousel from '../components/ReviewCarousel.jsx'
 import QuoteForm from '../components/QuoteForm.jsx'
 import Icon from '../components/Icon.jsx'
 import { usePageMeta } from '../lib/meta.js'
@@ -250,22 +251,29 @@ function Reviews() {
             </a>
           </div>
         </header>
-        <ul className="reviews-list">
-          {REVIEWS.map((r, i) => (
-            <Reveal as="li" key={r.id} className="review" delay={(i % 3) * 0.1}>
-              <span className="review-leaf" aria-hidden="true"><LeafShape color="var(--leaf)" /></span>
-              <blockquote>
-                <p>« {r.text} »</p>
-              </blockquote>
-              <p className="review-by">
-                <strong>{r.author}</strong>
-                <span>{r.project}</span>
-                <span className="muted">{SOURCE_LABEL[r.source]} · {r.date}</span>
-              </p>
-              {r.reply && <p className="review-reply"><span>Réponse de Yourteco</span> {r.reply}</p>}
-            </Reveal>
-          ))}
-        </ul>
+        <Reveal>
+          <ReviewCarousel
+            items={REVIEWS}
+            label="Échantillon d'avis clients"
+            renderItem={(r) => (
+              <article className="review">
+                <svg className="review-mark" viewBox="0 0 40 30" aria-hidden="true">
+                  <path d="M2 30V18C2 8 7 2 16 0l2 4c-5 2-8 6-8 11h7v15zm21 0V18c0-10 5-16 14-18l2 4c-5 2-8 6-8 11h7v15z" />
+                </svg>
+                <blockquote><p>{r.text}</p></blockquote>
+                {r.reply && <p className="review-reply"><span>Réponse de Yourteco</span> {r.reply}</p>}
+                <footer className="review-by">
+                  <span className="rv-avatar" aria-hidden="true">{r.author.replace(/[^\p{L}\s]/gu, ' ').split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('')}</span>
+                  <span className="rv-who">
+                    <strong>{r.author}</strong>
+                    <span>{r.project}</span>
+                    <span>{SOURCE_LABEL[r.source]} · {r.date}</span>
+                  </span>
+                </footer>
+              </article>
+            )}
+          />
+        </Reveal>
         <div className="reviews-legal">
           <p>
             Sélection mise à jour le {m.updatedAt}. Cette page présente une partie des avis que nous avons reçus, choisis par Yourteco ;
