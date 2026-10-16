@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
+import { asset } from '../lib/asset.js'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'motion/react'
 import { HOME } from '../content/home.js'
@@ -28,7 +29,7 @@ function Hero() {
     <section ref={ref} className="hero" aria-labelledby="hero-title">
       <div className="hero-media">
         <motion.img
-          src={h.image}
+          src={asset(h.image)}
           alt={h.alt}
           width="2000"
           height="1289"
@@ -45,7 +46,7 @@ function Hero() {
         <h1 id="hero-title" className="hero-title" aria-label={h.title}>
           <motion.img
             className="hero-logo"
-            src="/img/brand/logo-yourteco-light.png"
+            src={asset('/img/brand/logo-yourteco-light.png')}
             alt=""
             width="904"
             height="327"
@@ -333,7 +334,7 @@ function Ethics() {
                 />
               ) : (
                 <button className="video-btn" onClick={() => setPlay(true)} aria-label="Lire la vidéo de visite des ateliers (YouTube)">
-                  <img src={e.video.poster} alt="" loading="lazy" />
+                  <img src={asset(e.video.poster)} alt="" loading="lazy" />
                   <span className="video-play"><Icon name="play" size={28} /></span>
                 </button>
               )}

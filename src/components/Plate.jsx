@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import { useRef } from 'react'
 import Icon from './Icon.jsx'
+import { asset } from '../lib/asset.js'
 
 /** Pastille (soleil du logo) posée sur une photo. */
 export function Tag({ children, className = '' }) {
@@ -30,7 +31,7 @@ export function Plate({ src, alt, caption, meta, ratio = '3 / 2', tag, parallax 
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <motion.img
-          src={src}
+          src={asset(src)}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"

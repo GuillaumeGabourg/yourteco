@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/
 import Icon from './Icon.jsx'
 import { CONTACT, NAV, SOCIAL, FOOTER_LINKS } from '../content/site.js'
 import { SmartLink } from '../lib/text.jsx'
+import { asset } from '../lib/asset.js'
 
 export function QuoteButton({ children = 'Demander un devis', className = '' }) {
   return (
@@ -86,8 +87,8 @@ export function Header() {
         <div id="site-bar" className="bar">
           <div className="wrap bar-in">
             <Link to="/" className="logo" aria-label="Yourteco, accueil">
-              <img className="logo-std" src="/img/brand/logo-yourteco-hd.png" alt="Yourteco" width="904" height="327" />
-              <img className="logo-light" src="/img/brand/logo-yourteco-light.png" alt="Yourteco" width="904" height="327" />
+              <img className="logo-std" src={asset('/img/brand/logo-yourteco-hd.png')} alt="Yourteco" width="904" height="327" />
+              <img className="logo-light" src={asset('/img/brand/logo-yourteco-light.png')} alt="Yourteco" width="904" height="327" />
             </Link>
             <nav aria-label="Navigation principale" className="nav-desktop">
               {NAV.map((n) => (
