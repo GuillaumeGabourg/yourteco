@@ -1,0 +1,130 @@
+{
+ "slug": "testimonials",
+ "url": "https://www.yourteco.com/testimonials/",
+ "lang": "en",
+ "title": "Customer testimonials about Yourteco",
+ "description": "Experiences with Yourteco? Genuine customer testimonials about our high-quality, sustainable wooden yurts.",
+ "h1": "Customer testimonials from Yourteco, what our camping partners say?",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Customer testimonials from Yourteco, what our camping partners say?"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/customer-reviews-yurt-manufacturer.webp",
+     "alt": "Customer reviews of the yurt manufacturer",
+     "caption": "A french yurt manufacturer named Yourteco"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Testimonials from near and far"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Discover the testimonials of camping professionals who chose Yourteco yurts to expand their offer and attract new guests. Many of them have "
+      },
+      {
+       "t": "opted for wooden yurts",
+       "href": "/",
+       "b": true
+      },
+      {
+       "t": " that perfectly combine quality, durability, and design."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Testimonial 1: Campsite “Les Étoiles du Verdon” (France)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "“The integration of Yourteco yurts was a complete success for our campsite. Our guests are increasingly looking for unique and comfortable accommodation, and the yurts meet these expectations perfectly. They are easy to maintain, weather-resistant, and add an authentic touch that sets us apart. The investment paid off quickly, and our yurts are now among the most booked accommodations!” / Antoine Dubois - Managing Director. Visit the website :"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Testimonial 2: Glamping “Wilderness Retreat” (Scotland)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "“As a glamping site focused on nature experiences, the quality and sustainability of our accommodation are essential. The Yourteco yurts exceeded our expectations. Their solid construction and excellent insulation provide optimal comfort for our guests, even in the cool Scottish climate. The export and installation support was flawless. An investment that has greatly strengthened our premium image.” / Fiona Campbell - Owner"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Testimonial 3: Adventure Park “Green Valley” (Germany)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "“We were looking for an original accommodation solution for our visitors after a day full of activities. The Yourteco yurts turned out to be ideal. They offer a warm, inviting atmosphere and a sense of adventure highly appreciated by families and groups. Their modularity and easy customisation allowed us to create spaces perfectly suited to our concept. We recommend Yourteco for their professionalism and the high quality of their products.” / Klaus Müller - Sales Manager"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Testimonial 4: Eco-Resort “Oasis Zen” (Portugal)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "“Our philosophy is based on ecotourism and well-being. The Yourteco yurts, with their natural materials and low environmental impact, fit perfectly into this approach. Our guests love the unique experience — a true return to nature combined with modern comfort. The Yourteco team was extremely responsive and provided excellent support throughout the project.” / Sofia Garcia - Founder"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/customer-testimonials-yourteco-yurts.webp",
+     "alt": "Customer testimonials about Yourteco yurts",
+     "caption": "Do you know about Yourteco’s participatory construction projects?"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yurt-yourteco.webp",
+     "alt": "Yurt Yourteco",
+     "caption": "The door is open. Welcome to the art of yurt building"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "About the company Yourteco"
+    },
+    {
+     "type": "button",
+     "label": "Discover the yurt manufacturer",
+     "href": "/"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "About glamping in UK"
+    },
+    {
+     "type": "button",
+     "label": "How does Yourteco invite you to glamping?",
+     "href": "/"
+    }
+   ]
+  }
+ ]
+}

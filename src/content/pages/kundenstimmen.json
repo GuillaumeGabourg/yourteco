@@ -1,0 +1,270 @@
+{
+ "slug": "kundenstimmen",
+ "url": "https://www.yourteco.com/kundenstimmen/",
+ "lang": "de",
+ "title": "Kundenstimmen über Yourteco",
+ "description": "Erfahrungen mit Yourteco? Echte kundenstimmen zu unseren hochwertigen, nachhaltigen holzyurten.",
+ "h1": "Kundenstimmen von Yourteco – was unsere campingpartner denken",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Kundenstimmen von Yourteco – was unsere campingpartner denken"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/kundenbewertungen-jurtenhersteller.webp",
+     "alt": "Kundenbewertungen zum Jurtenhersteller Yourteco",
+     "caption": "Ein französischer jurtenhersteller namens Yourteco"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Erfahrungsberichte von nah und fern"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Entdecken sie die erfahrungsberichte von campingprofis, die sich für Yourteco-Jurten entschieden haben, um ihr angebot zu erweitern und neue Gäste zu gewinnen. Viele von ihnen haben sich für den "
+      },
+      {
+       "t": "kauf von holzjurten ",
+       "href": "/",
+       "b": true
+      },
+      {
+       "t": "entschieden, die qualität, langlebigkeit und design perfekt vereinen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Erfahrungsbericht 1: Campingplatz „Les Étoiles du Verdon“ (Frankreich)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "„Die Integration der Yourteco-Jurten war ein voller Erfolg für unseren Campingplatz. Unsere Gäste suchen zunehmend nach außergewöhnlichen und komfortablen Unterkünften, und die Jurten erfüllen diese Erwartungen perfekt. Sie sind "
+      },
+      {
+       "t": "pflegeleicht",
+       "b": true
+      },
+      {
+       "t": ", "
+      },
+      {
+       "t": "wetterbeständig",
+       "b": true
+      },
+      {
+       "t": " und verleihen unserem Angebot eine "
+      },
+      {
+       "t": "authentische Note",
+       "b": true
+      },
+      {
+       "t": ", die uns von anderen abhebt. Die Investition hat sich schnell amortisiert, und unsere Jurten gehören heute zu den meistgebuchten Unterkünften!“ / Antoine Dubois, Geschäftsführer"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Erfahrungsbericht 2: Glamping „Wilderness Retreat“ (Schottland)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "„Als Glamping-Anlage mit Fokus auf Naturerlebnis sind "
+      },
+      {
+       "t": "Qualität",
+       "b": true
+      },
+      {
+       "t": " und "
+      },
+      {
+       "t": "Nachhaltigkeit",
+       "b": true
+      },
+      {
+       "t": " unserer Unterkünfte entscheidend. Die Yourteco-Jurten haben unsere Erwartungen übertroffen. Ihre "
+      },
+      {
+       "t": "robuste Bauweise",
+       "b": true
+      },
+      {
+       "t": " und die "
+      },
+      {
+       "t": "hervorragende Isolierung",
+       "b": true
+      },
+      {
+       "t": "gewährleisten optimalen Komfort für unsere Gäste, selbst bei kühlem schottischem Wetter. Der Begleitservice für Export und Aufbau war "
+      },
+      {
+       "t": "einwandfrei",
+       "b": true
+      },
+      {
+       "t": ". Eine Investition, die unser Premium-Image deutlich gestärkt hat.“ / Fiona Campbell, Eigentümerin"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Erfahrungsbericht 3: Abenteuerpark „Green Valley“ (Deutschland)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "„Wir suchten nach einer originellen Unterkunftslösung für unsere Besucher nach einem erlebnisreichen Tag. Die Yourteco-Jurten erwiesen sich als ideal. Sie bieten eine "
+      },
+      {
+       "t": "warme, einladende Atmosphäre",
+       "b": true
+      },
+      {
+       "t": " und ein Gefühl des "
+      },
+      {
+       "t": "Abenteuers",
+       "b": true
+      },
+      {
+       "t": ", das von Familien und Gruppen sehr geschätzt wird. Die "
+      },
+      {
+       "t": "Modularität",
+       "b": true
+      },
+      {
+       "t": " und die "
+      },
+      {
+       "t": "einfache Anpassbarkeit",
+       "b": true
+      },
+      {
+       "t": "ermöglichten es uns, Räume zu gestalten, die perfekt zu unserem Konzept passen. Wir empfehlen Yourteco für ihre "
+      },
+      {
+       "t": "Professionalität",
+       "b": true
+      },
+      {
+       "t": " und die "
+      },
+      {
+       "t": "hohe Qualität",
+       "b": true
+      },
+      {
+       "t": " ihrer Produkte.“ / Klaus Müller, Vertriebsleiter"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Erfahrungsbericht 4: Öko-Resort „Oasis Zen“ (Portugal)"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "„Unsere Philosophie basiert auf "
+      },
+      {
+       "t": "Ökotourismus",
+       "b": true
+      },
+      {
+       "t": " und "
+      },
+      {
+       "t": "Wohlbefinden",
+       "b": true
+      },
+      {
+       "t": ". Die Yourteco-Jurten mit ihren "
+      },
+      {
+       "t": "natürlichen Materialien",
+       "b": true
+      },
+      {
+       "t": " und ihrer "
+      },
+      {
+       "t": "geringen Umweltbelastung",
+       "b": true
+      },
+      {
+       "t": " fügen sich perfekt in diesen Ansatz ein. Unsere Gäste lieben das einzigartige Erlebnis, eine echte Rückkehr zur Natur mit modernem Komfort. Das Yourteco-Team war sehr "
+      },
+      {
+       "t": "reaktionsschnell",
+       "b": true
+      },
+      {
+       "t": " und bot uns während des gesamten Projekts einen "
+      },
+      {
+       "t": "hervorragenden Support",
+       "b": true
+      },
+      {
+       "t": ".“ / Sofia Garcia, Gründerin"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/kundenstimmen-yourteco-jurten.webp",
+     "alt": "Kundenstimmen Yourteco jurten",
+     "caption": "Kennen sie die mitbauprojekte von Yourteco?"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/jurte-deutschland.webp",
+     "alt": "Jurten Deutschland Yourteco",
+     "caption": "Die tür steht offen. willkommen in der kunst des jurtenbaus"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Über das unternehmen Yourteco"
+    },
+    {
+     "type": "button",
+     "label": "Den jurtenhersteller entdecken",
+     "href": "/"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Über glamping in Deutschland"
+    },
+    {
+     "type": "button",
+     "label": "Wie lädt Yourteco zum glamping ein?",
+     "href": "/"
+    }
+   ]
+  }
+ ]
+}

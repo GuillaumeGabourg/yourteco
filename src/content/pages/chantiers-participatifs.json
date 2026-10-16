@@ -1,0 +1,693 @@
+{
+ "slug": "chantiers-participatifs",
+ "url": "https://www.yourteco.com/chantiers-participatifs/",
+ "lang": "fr",
+ "title": "Chantiers participatifs pour yourte en Dordogne",
+ "description": "Réussissez la construction de votre yourte en vous inscrivant aux chantiers participatifs de notre partenaire Yourt&Co organisés en Dordogne !",
+ "h1": "Les chantiers participatifs Yourt&Co font découvrir les étapes de la construction d'une yourte",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Les chantiers participatifs Yourt&Co font découvrir les étapes de la construction d'une yourte"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Du nouveau avec les chantiers participatifs Yourt&Co en Dordogne !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Parce que mener à bien un projet d'"
+      },
+      {
+       "t": "auto-construction de yourte",
+       "b": true
+      },
+      {
+       "t": " ou "
+      },
+      {
+       "t": "construire sa yourte",
+       "href": "/construire-sa-yourte/",
+       "b": true
+      },
+      {
+       "t": " n'est pas donné à tout le monde, parce que l'atelier de Yourteco à Daumeray (en Maine-et-Loire) est désormais totalement mobilisé dans la "
+      },
+      {
+       "t": "construction de yourte",
+       "b": true
+      },
+      {
+       "t": ", nous avons eu l'idée avec "
+      },
+      {
+       "t": "Geoffroy ",
+       "b": true
+      },
+      {
+       "t": "et"
+      },
+      {
+       "t": " Amandine",
+       "b": true
+      },
+      {
+       "t": " de délocaliser notre service d'"
+      },
+      {
+       "t": "accompagnement à l'autoconstruction",
+       "b": true
+      },
+      {
+       "t": " en Dordogne. Ainsi est née "
+      },
+      {
+       "t": "Yourt&co",
+       "b": true
+      },
+      {
+       "t": " partenaire de "
+      },
+      {
+       "t": "Yourteco.",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Si vous n'avez pas l'espace pour construire votre yourte ou que vous souhaitez être accompagné, n'hésitez pas vous pouvez leur faire confiance."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Yourteco à Daumeray dans le Maine-et-Loire depuis 2010 !",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/miniature-logo-yourteco.webp",
+     "alt": "Miniature logo Yourteco"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Nouveau ! Yourt&Co : l'atelier d'accompagnement à l'auto-construction de kit yourte en Dordogne.",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/logo-chantier-participatif-yourte.webp",
+     "alt": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Mais Yourt&Co, c'est qui ?"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Yourt&Co est un projet d'"
+      },
+      {
+       "t": "atelier participatif",
+       "b": true
+      },
+      {
+       "t": " porté par Geoffroy et Amandine, passionnés par l'univers des "
+      },
+      {
+       "t": "yourtes",
+       "b": true
+      },
+      {
+       "t": " depuis des années. Après avoir vécu plusieurs années dans différentes yourtes d'occasions qu'ils ont adapté aux besoins de leur famille et qu'ils ont restauré, ils ont eu envie de fabriquer leur propre yourte sur la base d'un des premiers kits auto-construction de chez Yourteco."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Entre montages, démontages, remontages et chantiers auprès de l'équipe Yourteco, ils ont perfectionné leur technique et c'est ce qu'ils partagent avec vous aujourd'hui avec entrain."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Amandine enseignante en naturopathie, passionnée par la yourte et surmotivée pour vous accompagner dans votre projet de yourte en auto-construction."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/mandine-yourtco.webp",
+     "alt": "Présentation Amandine"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Geoffroy , fanatique des gens, des plans, des kits yourte, il vous accueil pour les chantiers participatifs."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/12.webp",
+     "alt": "présentation Geoffroy"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Les chantiers participatifs c'est quoi ?"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Les chantiers participatifs Yourt&Co consistent à "
+      },
+      {
+       "t": "accompagner les futurs auto-constructeurs / auto-constructrices dans leur projet",
+       "b": true
+      },
+      {
+       "t": " de réalisation de yourte."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Ces chantiers vous permettent d'accéder à une"
+      },
+      {
+       "t": " yourte de grande qualité à un coût moindre",
+       "b": true
+      },
+      {
+       "t": " tout en étant accompagné et en ayant accès à du matériel professionnel et adapté à la fabrication de yourte."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Dans une ambiance chaleureuse et un cadre convivial, Geoffroy et Amandine seront vos référents et vos guides au fil des différentes étapes de construction et de montage."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Pour cela, en "
+      },
+      {
+       "t": "partenariat avec Yourteco de Daumeray et sur la base de leurs ",
+       "b": true
+      },
+      {
+       "t": "kits d'auto-construction",
+       "href": "/construire-sa-yourte/",
+       "b": true
+      },
+      {
+       "t": " , l'atelier Yourt&Co a ouvert ses portes en Dordogne",
+       "b": true
+      },
+      {
+       "t": " à quelques kilomètres de Sarlat, sur la petite commune de Vézac."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Qu'en dites vous ?"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Programme des chantiers participatifs Yourt&Co"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "La prestation Yourt&Co comprend l'"
+      },
+      {
+       "t": "accompagnement de votre projet",
+       "b": true
+      },
+      {
+       "t": ", l'accès à l'atelier, aux machines et outils ainsi que tous les consommables nécessaires à leur fonctionnement de manière à réaliser facilement et efficacement votre yourte."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous bénéficierez également de l'aide de Geoffroy et /ou d'Amandine durant la réalisation des différentes étapes de construction et montage."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Le "
+      },
+      {
+       "t": "kit d'autoconstruction",
+       "b": true
+      },
+      {
+       "t": " ainsi que "
+      },
+      {
+       "t": "les plans",
+       "b": true
+      },
+      {
+       "t": " sont fournis par Yourteco et livrés directement à l'atelier Yourt&Co. De ce fait, tout étant sur place à votre arrivée, vous gagnerez un temps considérable."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Plan utilisé lors des chantiers participatifs par Yourt&co."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/plans-chantier-participatif-yourte.webp",
+     "alt": "Plan d'assemblage des treillis pour l'auto-construction yourte."
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Exemple de plan pour l'accompagnement à l'auto-construction du tonoo de la yourte ."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/guide-auto-construction-yourte.webp",
+     "alt": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Grâce à cette collaboration, au suivi, aux conseils et à leur expérience, vous obtiendrez un résultat d'une grande qualité aux finitions soignées pour une yourte durable."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "My photos"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "t": "All"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/11.webp",
+     "alt": "chantier participatif le ponçage dans la bonne humeur",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/11.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Atelier participatif ponçage des pièces de bois de la yourte"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/10.webp",
+     "alt": "chantier participatif le tonoo est terminé",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/10.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Le tonoo est terminé, assemblage, ponçage, peinture."
+    },
+    {
+     "type": "image",
+     "src": "/img/site/9.webp",
+     "alt": "etape menuiserie chantier participatif",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/9.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Création des modules de menuiserie en autoconstruction"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/7.webp",
+     "alt": "Réalisation des menuiserie en chantier participatif",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/7.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "A l'atelier vous aurez accès à tous les outils utiles"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/5.webp",
+     "alt": "ponçage tonoo en chantier participatif YourtAndCo",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/5.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Autoconstruction du tonoo pour une yourte de 8m"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/4.webp",
+     "alt": "Réalisation du treillis, boulonner ensemble",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/4.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Assemblage des murs de la yourte (treillis) d'après les plans de votre kit"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/3.webp",
+     "alt": "Chantiers participatifs",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/3.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Accompagnement à l'application des plans pour un plancher"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/2.webp",
+     "alt": "Chantier participatif",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/2.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "En famille pour un chantier vraiment participatif"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/1.webp",
+     "alt": "Chantiers participatifs",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/02/1.jpg"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Quelques semaines de travail pour une yourte de grande qualité"
+    },
+    {
+     "type": "button",
+     "label": "Voir d'autres photos de chantiers participatifs",
+     "href": "/photo-des-chantiers-participatifs/"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "raw"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Conditions d'accueil de nos chantiers participatifs"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "L'accueil se fait sur réservation après acceptation du devis",
+       "b": true
+      },
+      {
+       "t": " relatif au projet et validation auprès de Yourteco et en fonction des disponibilités de l'atelier."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Les auto-constructeurs s'engagent à venir à l'atelier durant toute la durée du chantier à raison de 5 jours semaine, 7 heures par jour. Bien évidemment, tout ceci est modulable si des besoins particuliers le justifiaient."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Il faut compter environ 6 semaines à un couple pour réaliser entièrement une yourte de 50 m2 ( hors toile, cousue par Yourteco) en suivant les plans d'auto-construction du kit."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Lieu et hébergement des chantiers participatifs"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "L'atelier est situé à "
+      },
+      {
+       "t": "Vézac",
+       "b": true
+      },
+      {
+       "t": ", à quelques centaines de mètres de la rivière La Dordogne et du village de La Roque Gageac."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous pouvez y trouver de nombreux campings ou gîtes pour votre hébergement."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Il est en projet de pouvoir vous héberger sur place, n'hésitez pas à entrer en contact avec Geoffroy et Amandine pour trouver une solution adaptée à vos besoins."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Contacter Yourt&Co"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Atelier Yourt&Co"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "563 route Pablo Picasso"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "24220 Vézac"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "06 76 94 38 66"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "yourtandco@gmail.com"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Consultez le site Internet de "
+      },
+      {
+       "t": "Yourt&Co",
+       "href": "https://yourtandco.com",
+       "b": true
+      },
+      {
+       "t": " !"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "/raw"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Témoignage vidéo sur les chantiers participatifs proposés par Yourteco"
+    },
+    {
+     "type": "video",
+     "youtube": "kCvXrl1Cadk"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Ségolène et Maxime ont choisi d’auto-construire leur yourte avec l’accompagnement de Yourteco via un "
+      },
+      {
+       "t": "chantier participatif",
+       "b": true
+      },
+      {
+       "t": ". Cette formule permet de réaliser des économies tout en bénéficiant d’un encadrement professionnel, de matériaux de qualité et d’un véritable savoir-faire. En plus du résultat, les participants gagnent en autonomie et en fierté en construisant eux-mêmes leur habitat."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "button",
+     "label": "En savoir plus sur l'autoconstruction de yourte",
+     "href": "/construire-sa-yourte/comment-construire-soi-meme-sa-yourte/"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Appelez-nous !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Et trouvez toutes les réponses à vos questions"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Demande d'informations"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/logo-yourteco-small-75.webp",
+     "alt": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

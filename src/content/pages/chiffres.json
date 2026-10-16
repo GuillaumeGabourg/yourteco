@@ -1,0 +1,384 @@
+{
+ "slug": "chiffres",
+ "url": "https://www.yourteco.com/chiffres/",
+ "lang": "fr",
+ "title": "Services et tarifs du fabricant et constructeur Yourteco",
+ "description": "Yourteco, c'est l’assurance du meilleur rapport qualité / prix dans le domaine de la yourte contemporaine et de ses accessoires.",
+ "h1": "Services Yourteco et leurs tarifications",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Services Yourteco et leurs tarifications"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "image",
+     "src": "/img/site/yourte-alpine.webp",
+     "alt": "Yourte contemporaine alpine",
+     "caption": "Une yourte Yourteco montée dans les Alpes"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Faire confiance à Yourteco pour tous vos projets de "
+      },
+      {
+       "t": "yourtes en bois de qualité",
+       "href": "/des-yourtes-de-qualites/",
+       "b": true
+      },
+      {
+       "t": ", c'est l'assurance du "
+      },
+      {
+       "t": "meilleur rapport qualité / prix",
+       "b": true
+      },
+      {
+       "t": " dans le domaine de la yourte et de ses accessoires. Nous vous garantissons une "
+      },
+      {
+       "t": "fabrication locale",
+       "b": true
+      },
+      {
+       "t": " ainsi que l'"
+      },
+      {
+       "t": "utilisation des matériaux les plus fiables",
+       "b": true
+      },
+      {
+       "t": " par des "
+      },
+      {
+       "t": "salariés compétents",
+       "b": true
+      },
+      {
+       "t": " et résidant, eux-mêmes, en yourtes. Cette page vous présente l'ensemble des "
+      },
+      {
+       "t": "services Yourteco",
+       "b": true
+      },
+      {
+       "t": " tout en vous proposant des liens menant vers leurs tarifications réciproques... Vous êtes très nombreux à entrer en relation avec la société Yourteco pour la fourniture de services ou le conseil. Toute notre équipe tient à vous "
+      },
+      {
+       "t": "remercier pour la confiance",
+       "b": true
+      },
+      {
+       "t": " que vous nous accorder. N'hésitez pas à entrer en relation avec nos services pour toute question attenante à nos tarifs ou prestations."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte-habitation.webp",
+     "alt": "Yourte habitation",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de nos yourtes contemporaines en bois"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Nos yourtes sont fabriquées sur mesure. Vous n'aurez donc qu'un aperçu du tarif de quelques modèles proposés par Yourteco. Pour plus de précisions, demandez un devis car le prix de nos yourtes contemporaines varient selon la gamme, qu’il s’agisse d’une "
+      },
+      {
+       "t": "yourte de loisirs",
+       "b": true
+      },
+      {
+       "t": " ou d’une "
+      },
+      {
+       "t": "yourte d’habitation",
+       "b": true
+      },
+      {
+       "t": " mais également selon le nombre d’ouvertures, l’épaisseur d’isolation et bien d’autres critères."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/kit-autoconstruction-yourte-contemporaine-par-yourteco.webp",
+     "alt": "Kit autoconstruction yourte contemporaine par Yourteco",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de nos \"kits yourte\" autoconstruction"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous souhaitez participer à la fabrication de votre yourte tout en réalisant des économies ? Le "
+      },
+      {
+       "t": "kit yourte",
+       "b": true
+      },
+      {
+       "t": " est fait pour vous ! Le kit yourte, c’est une touche d’autoconstruction, la garantie du résultat et une belle économie. Cliquez ici pour découvrir les tarifs selon les modèles. Nous fabriquons également des éléments de kit à la carte."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/transport_1.webp",
+     "alt": "Livraison de yourtes",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs livraison de yourtes"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Deux cas de figure ! Ou Yourteco livre votre yourte ou vous préférez faire appel à un transporteur ! Voici ce qu'il faut savoir..."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/toile-de-yourte-par-fabricant-yourteco.webp",
+     "alt": "Toile de yourte par fabricant Yourteco",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de nos toiles de yourtes contemporaines"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous souhaitez changer la "
+      },
+      {
+       "t": "toile de votre yourte",
+       "b": true
+      },
+      {
+       "t": " ? Faire fabriquer une bâche sur mesure ? Réparer votre toile ? Faites confiance à l'expertise Yourteco (plus de 10 années d'expérience en France et à l'étranger) ! Bénéficiez des meilleurs tarifs pour votre toile acrylique ! C’est ici que cela se passe."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/clean-textil.webp",
+     "alt": "CLEANTextil nettoyant yourte",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de nos produits d'entretien pour toile de yourte"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Bien choisir sa toile de yourte contemporaine suivant les conseils d'un expert, c'est bien. Entretenir sa toile, bien l'imperméabiliser, c'est encore mieux ! Question de confort, question de longévité ! Ici encore, Yourteco vous apporte une réelle expertise sur les "
+      },
+      {
+       "t": "produits d'entretien de yourte",
+       "b": true
+      },
+      {
+       "t": "."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/skydome-yourte-contemporaine-plexiglas.webp",
+     "alt": "Skydôme yourte contempoiraine en Plexiglas",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de nos skydômes"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous souhaitez commander un "
+      },
+      {
+       "t": "skydôme",
+       "b": true
+      },
+      {
+       "t": " pour le toit de votre yourte ? Découvrez les tarifs de nos coupoles en Plexiglass ou polycarbonate !"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/isolation_2_g.webp",
+     "alt": "Photo d'un rouleau d'isolant en chanvre pour les yourtes.",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de nos isolants pour yourtes contemporaines"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous cherchez un "
+      },
+      {
+       "t": "isolant pour yourte",
+       "b": true
+      },
+      {
+       "t": " efficace et costaud pour votre habitat léger ? Nous livrons dans toute la France ! Découvrez nos tarifs !"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/interieur-salon-yourte-contemporaine-loisir-yourteco.webp",
+     "alt": "Intérieur salon yourte contemporaine loisir par Yourteco",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Tarifs de location de yourtes contemporaines"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous cherchez un habitat léger facile à monter et à démonter pour un événement particulier ? Une soirée entre amis ? En famille ? Consultez notre grille tarifaire sur la location d'une yourte contemporaine !"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "NOUVEAUTE / EXCLUSIVITE YOURTECO"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/zome-scaled.webp",
+     "alt": "zome-serre",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Découvrez le zome-serre de Yourteco !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Cela faisait un petit moment que l'idée nous trottait en tête. Et quand le personnel de Yourteco a un projet en tête, il va jusqu'au bout. \"Comment associer le concept de yourte avec celui d'une serre pour faire pousser de bons légumes chez soi ?\" Eh bien voilà ! Le \"zome-serre\" est né. Sincèrement, nous ne savons pas encore s'il sera commercialisé. Evidemment, si le concept vous intéresse..."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/station-solaire-yourte-contemproraine.webp",
+     "alt": "kit solaire pour yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Devenez 100% autonome en électricité !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Vous souhaitez obtenir une station solaire pour votre yourte contemporaine ou habitat léger ? Devenez 100% autonome en consommation électrique avec les "
+      },
+      {
+       "t": "stations solaire",
+       "b": true
+      },
+      {
+       "t": " de notre partenaire "
+      },
+      {
+       "t": "Alternatiways",
+       "b": true
+      },
+      {
+       "t": " !"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/tiny-yourte-schema-3d-600x445-1.webp",
+     "alt": "Tiny-Yourte schéma 3D",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Découvrez la Tiny-Yourte !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Présentée en partenariat avec les ateliers Yourt&Co, la Tiny-Yourte est la dernière création du fabricant Yourteco."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "A propos de l'engagement de la société Yourteco"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/infographie.webp",
+     "alt": "yourte économie responsable",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "La société Yourteco reverse des fonds à la SCI la Yourteray pour l'affirmation d'un projet d’éco-lieu avec bassin écologique : création d'un jardin forêt avec plus de 800 arbres, réalisation d'un dôme serre et d'un éco-paturage.",
+       "b": true
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

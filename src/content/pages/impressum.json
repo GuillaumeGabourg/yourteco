@@ -1,0 +1,139 @@
+{
+ "slug": "impressum",
+ "url": "https://www.yourteco.com/impressum/",
+ "lang": "de",
+ "title": "Impressum der website des französischen herstellers Yourteco",
+ "description": "Bitte lesen sie dieses Impressum, bevor sie die website des herstellers moderner jurten Yourteco besuchen.",
+ "h1": "Impressum",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Impressum"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Eigentum"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Diese website ist eigentum der E.U.R.L. Yourteco – Siret: 792-544-256 00011. USt-IdNr.: FR14792544256. Handelsregister-Nummer: Angers B 792 544 256.\nHerausgeber und verantwortlicher für die veröffentlichung: Nicolas Chailloux in seiner eigenschaft als geschäftsführer."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kontakt:"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Yourteco – „Le Petit Paradis“\n49 640 Daumeray (FRANCE)"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Telefon: +33 02 41 24 49 87"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Konzeption und umsetzung"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Originaldesign: Claudia Martinez (Grafikerin / Webdesignerin)\nService-Optimierung: Reynald Dal Barco"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Rechtliche hinweise"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Der eigentümer behält sich das recht vor, die inhalte dieser website ohne vorherige ankündigung zu ändern.\nAlle Informationen werden nur zu informationszwecken bereitgestellt und können den eigentümer in keiner weise haftbar machen. Ebenso ist der eigentümer nicht verantwortlich für Inhalte externer websites, auf die hier verwiesen wird."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Für Beschwerden wenden sie sich bitte an den oben genannten verantwortlichen für die veröffentlichung."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Urheberrecht und geistiges eigentum"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Gemäß den französischen und internationalen gesetzen zum urheberrecht und geistigen eigentum sind alle rechte vorbehalten. Jede vollständige oder teilweise wiedergabe oder vervielfältigung der website und ihrer bestandteile ist ohne ausdrückliche vorherige genehmigung des verantwortlichen für die veröffentlichung untersagt."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Datenschutz und datenverarbeitung"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Die über das formular der website erhobenen personenbezogenen daten sind vertraulich. Sie werden ausschließlich im rahmen der angegebenen zwecke verwendet.\nGemäß dem französischen Datenschutzgesetz Nr. 78-17 vom 6. Januar 1978 haben die betroffenen personen das recht auf auskunft, berichtigung, widerspruch und löschung ihrer daten durch einfache anfrage."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Hosting"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "OVH: SAS mit einem Kapital von 50.000.000 € – RCS Lille Métropole 424 761 419 00045 – APE-Code 2620Z – USt-IdNr.: FR 22 424 761 419 –\nHauptsitz: 2 rue Kellermann – 59100 Roubaix – Frankreich."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Anwendbares recht"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Diese rechtlichen hinweise unterliegen dem französischen recht.\nIm streitfall und nach dem scheitern einer gütlichen einigung sind ausschließlich französische gerichte zuständig."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,717 @@
+{
+ "slug": "accueil",
+ "url": "https://www.yourteco.com/",
+ "lang": "fr",
+ "title": "Yourteco : Fabricant de yourtes contemporaines en bois - Made in France",
+ "description": "Yourteco : Fabricant français de yourtes contemporaines en bois et écologiques. Conformes RE2020 pour l'habitation. Demandez votre devis gratuit en ligne !",
+ "h1": "Yourteco conçoit, fabrique et installe votre yourte contemporaine",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "image",
+     "src": "/img/site/parispanojour.webp",
+     "alt": "Yourte contemporaine par Yourteco",
+     "caption": "Fabrication et installation de huit yourtes contemporaines ERP à Paris par Yourteco."
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Yourteco conçoit, fabrique et installe votre yourte contemporaine"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/fabricant-yourtes-contemporaines-maine-et-loire.webp",
+     "alt": "Fabricant de yourtes contemporaines en Maine-et-Loire",
+     "caption": "Cuisine dans une yourte contemporaine installée par Yourteco"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/double-yourte-contemporaine-scaled.webp",
+     "alt": "Yourtes d'habitation RE fabriquées par le constructeur Yourteco2020",
+     "caption": "Deux yourtes contemporaine RE 2020 fabriquées et installées par Yourteco"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Un Fabricant de yourtes contemporaines en bois haut de gamme",
+       "b": true
+      },
+      {
+       "t": "."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Bienvenue chez "
+      },
+      {
+       "t": "Yourteco",
+       "b": true
+      },
+      {
+       "t": ", entreprise éthique spécialisée dans la conception, la fabrication et l'installation de "
+      },
+      {
+       "t": "yourtes contemporaines.",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Aujourd'hui forte de près de "
+      },
+      {
+       "t": "20 ans d'expérience,",
+       "b": true
+      },
+      {
+       "t": " notre équipe de 12 passionnées met son savoir-faire au service de vos projets d'"
+      },
+      {
+       "t": "habitat léger.",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Que vous recherchiez une "
+      },
+      {
+       "t": "yourte d'habitation, de loisir, un établissement ERP (recevant du public), un kit d'autoconstruction ou un chantier participatif",
+       "b": true
+      },
+      {
+       "t": ", nous saurons vous conseiller et concevoir les structures parfaitement adaptées à vos besoins."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Pourquoi choisir une "
+      },
+      {
+       "t": "yourte Yourteco",
+       "b": true
+      },
+      {
+       "t": " ?"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Conception"
+      },
+      {
+       "t": " haut de gamme",
+       "b": true
+      },
+      {
+       "t": " : Des "
+      },
+      {
+       "t": "yourtes en bois",
+       "b": true
+      },
+      {
+       "t": " inspirées des yourtes traditionelles mongoles, combinant des menuiseries haut de gammes en bois ou Alu , une veritable isolation, une structure robuste et des finitions impeccables."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Sécurité & Isolation",
+       "b": true
+      },
+      {
+       "t": " : Des structures de yourtes calculées selon les normes rigoureuses du bâtiment ou des chapiteaux, garantissant une "
+      },
+      {
+       "t": "veritable isolation thermique",
+       "b": true
+      },
+      {
+       "t": " , une grande fiabilité et une robustesse à toute épreuve.\n\nExpertise globale : Un savoir-faire technique pointu et un "
+      },
+      {
+       "t": "accompagnement administratif",
+       "b": true
+      },
+      {
+       "t": " éprouvé."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Un engagement pour la transition écologique\n\nEngagé auprès des collectivités , "
+      },
+      {
+       "t": "Yourteco",
+       "b": true
+      },
+      {
+       "t": " œuvre activement pour l'intégration de l'"
+      },
+      {
+       "t": "habitat léger",
+       "b": true
+      },
+      {
+       "t": " sur l'ensemble des territoires. Nous sommes convaincus que nos "
+      },
+      {
+       "t": "yourtes en bois",
+       "b": true
+      },
+      {
+       "t": " constitue une solution d’aménagement prioritaire pour répondre aux enjeux environnementaux et sociétaux de demain."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Spécificités de nos yourtes d'habitation et de loisirs"
+    },
+    {
+     "type": "heading",
+     "level": 4,
+     "text": "Des yourtes aux normes d'aujourd'hui, pour l’habitat de demain"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Passez du rêve à la réalité avec un habitat léger sans compromis sur la sécurité et le confort. À la croisée des normes rigoureuses du bâtiment et de l'éco-conception, Yourteco bâtit des yourtes d'exception taillées pour l'avenir."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Une structure de haute résistance calculée pour durer",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Bois du Nord de forte section (Choix US) :",
+       "b": true
+      },
+      {
+       "t": " Utilisation du grade le plus résistant pour une charpente robuste, purifiée et travaillée avec précision dans nos ateliers (assemblages traditionnels à tenon et mortaise)."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Calculs de structure systématiques :",
+       "b": true
+      },
+      {
+       "t": " Toutes nos yourtes bénéficient de calculs de structure dédiés pour garantir une sécurité totale, même face aux conditions météorologiques les plus dures (vent, neige)."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Une étanchéité d'exception et des matériaux innovants",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Membranes de toiture garanties 40 ans :",
+       "b": true
+      },
+      {
+       "t": " Yourteco est le premier fabricant à équiper ses yourtes de membranes ultra-résistantes à la longévité inégalée."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Toit panoramique Skydôme :",
+       "b": true
+      },
+      {
+       "t": " Un dôme ouvrant haut de gamme (du simple au triple paroi) assurant une étanchéité parfaite, une luminosité abondante et la promesse de nuits sous les étoiles."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Un confort thermique et acoustique toute saison",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Isolation d'épaisseur bâtiment (jusqu'à 30 cm) :",
+       "b": true
+      },
+      {
+       "t": " Une véritable protection thermique pour un confort acoustique supérieur et une très faible consommation énergétique été comme hiver."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Maîtrise de l'étanchéité à l'air :",
+       "b": true
+      },
+      {
+       "t": " Une conception éco-responsable certifiée pour maintenir un climat intérieur sain et économe."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Expertise RE2020, Urbanisme & Accompagnement",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Spécialiste Permis de Construire, Permis d'Aménager & STECAL :",
+       "b": true
+      },
+      {
+       "t": " Experts de la réglementation et des règles d'urbanisme, nous vous accompagnons pas à pas dans vos démarches administratives pour concrétiser votre projet en toute sérénité."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Conformité RE2020 & Respect des sols",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Des habitats performants posés sans imperméabilisation des sols, garantissant la réversibilité complète de votre terrain."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Savoir-faire garanti :",
+       "b": true
+      },
+      {
+       "t": " L'ensemble de nos structures bénéficie de nos garanties constructeur allant jusqu'à 15 ans."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourteco-fabricant-yourtes-contemporaines-francaises.webp",
+     "alt": "Yourteco fabricant de yourtes contemporaines françaises",
+     "caption": "Yourte contemporaine d'habitation fabriquée par Yourteco"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/double-yourte-contemporaine-par-yourteco.webp",
+     "alt": "Double yourte contemporaine fabriquée par Yourteco",
+     "caption": "Exemple de double yourte fabriquée par Yourteco"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Un fabricant de yourtes contemporaines éco-responsable reconnu pour sa fiabilité"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Une fabrication alliant qualité et durabilité"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/fabrication-yourtes-contemporaines-par-yourteco.webp",
+     "alt": "Fabrication de yourtes contemporaines par Yourteco",
+     "caption": "",
+     "href": "/fabrication-de-yourte-contemporaine/"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Découvrez les éléments qui caractérisent votre fabricant de yourtes contemporaines ! Pour une fabrication toujours plus responsable et écologique, Yourteco ne cesse d'innover. Notre but ? Concevoir des habitats résistantes et durables !"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Différentes locations de yourtes"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte-contemporaine-arc-en-ciel-par-yourteco-landscape.webp",
+     "alt": "yourte-contemporaine-arc-en-ciel-par-yourteco-landscape",
+     "caption": "",
+     "href": "/location-de-yourtes/"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Louer une yourte pour un événement particulier tel un anniversaire, un mariage ou une activité d'entreprise ? Découvrir le camping en yourte ? Yourteco propose différents modèles afin d'allier confort et modularité. Découvrez encore ci-dessous notre partenaire YourtEvent !"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Un fabricant qui s'engage à l'affirmation d'un mode de vie"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Notre \"Kit Yourte\" pour l'autoconstruction"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/kit-autoconstruction-yourte-contemporaine-par-yourteco.webp",
+     "alt": "Kit autoconstruction yourte contemporaine par Yourteco",
+     "caption": "",
+     "href": "/construire-sa-yourte/"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Face à l'engouement pour un habitat léger et dans la perspective d'accompagner celles et ceux qui souhaiteraient construire eux-mêmes leur yourte, Yourteco vous présente son \""
+      },
+      {
+       "t": "Kit Yourte",
+       "href": "/kit-yourte/",
+       "b": true
+      },
+      {
+       "t": "\". Une solution économique, écologique et globale. On vous forme en plus !"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Réalisation de toiles de yourte sur mesure"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte-contemporaine-par-yourteco.webp",
+     "alt": "Yourte contemporaine par Yourteco",
+     "caption": "",
+     "href": "/les-toiles-de-yourtes/"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Comment choisir la toile de sa yourte ? Quels sont les services Yourteco sur la fabrication ou la réparation de votre / vos toiles ? Quels conseils pour un entretien durable et écologique de votre yourte contemporaine ? Toutes vos questions ont leur réponse ici."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "De l'association à l'entreprise"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Une éthique préservée"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "De l' Engagement Associatif à l'Excellence Entreprise"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Une Éthique Fondatrice Préservée"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Issue d'une aventure associative débutée en 2007, Yourteco réinvente "
+      },
+      {
+       "t": "l'habitat léger",
+       "b": true
+      },
+      {
+       "t": " selon une vision éthique, portée par la recherche du bien-être et l'exigence d'un "
+      },
+      {
+       "t": "bâti de qualité",
+       "b": true
+      },
+      {
+       "t": ". Notre engagement s'articule autour de cinq piliers :"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Rigueur artisanale : Des méthodes de fabication adaptées aux exigences modernes.\n\nMatériaux d'exception : Des composants "
+      },
+      {
+       "t": "écoresponsables",
+       "b": true
+      },
+      {
+       "t": " sélectionnés pour leur durabilité.\n\nGestion maîtrisée : Un respect strict des délais et une transparence totale.\n\nContrôle qualité : Un audit systématique de chaque structure post-réalisation.\n\nIngénierie collaborative : Un travail conjoint avec architectes, urbanistes et ingénieurs bois.\n\nL'artisanat et le "
+      },
+      {
+       "t": "made in France",
+       "b": true
+      },
+      {
+       "t": " au service de l'innovation"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "L'expertise de Yourteco s'appuie sur le savoir-faire transmis par nos menuisiers et charpentiers. En alliant charpente traditionnelle et éco-conception, nous façonnons des habitats légers durables et sûrs."
+      }
+     ]
+    },
+    {
+     "type": "video",
+     "youtube": "54tPZHlMY-Y"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/intro-youtube-yourteco.webp",
+     "alt": "youtube yourteco",
+     "caption": "",
+     "href": "https://www.youtube.com/watch?v=54tPZHlMY-Y"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Visite des ateliers Yourteco en vidéo et en musique autour de nos modèles de fabrication de yourtes contemporaines"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Actualités Yourteco"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Ouverture de la Boutique Yourteco !"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/accrroche-boutique-yourteco.webp",
+     "alt": "Boutique Yourteco",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Cela faisait un moment que le projet traînait dans les cartons. Le voilà maintenant réalisé ! Yourteco vous présente sa \"Boutique spécialisée dans l'habitat léger\". Dans ce nouvel espace en ligne, vous trouverez tout ce qu'il faut pour votre projet de construction, de rénovation ou d'entretien de votre yourte contemporaine. Profitez des matériaux quotidiennement utilisés par Yourteco !"
+      }
+     ]
+    },
+    {
+     "type": "button",
+     "label": "Découvrir ici la Boutique en ligne Yourteco",
+     "href": "https://www.yourteco-boutique.com"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Louez une yourte avec YourtEvent !"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/location-de-yourte-scaled.webp",
+     "alt": "intérieur d'une yourte à louer par Yourtevent",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "La société Yourteco est ravie de vous présenter son nouveau partenaire. Comme son nom l'indique, YourtEvent est spécialisée dans la location de yourtes contemporaines pour vos événements. Envie de proposer un espace original pour un mariage ou tout autre soirée familiale ou entre amis ? Un colloque entreprise ? Un festival ? Découvrez les offres à la location YourtEvent !"
+      }
+     ]
+    },
+    {
+     "type": "button",
+     "label": "Découvrir ici les locations YourtEvent",
+     "href": "https://www.yourtevent.com"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Votre fabricant de yourtes contemporaines vous garantit"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "t": "Le conseil et l'adaptation à votre projet"
+       }
+      ],
+      [
+       {
+        "t": "Des outils de conception et de production pour une parfaite réalisation de votre yourte"
+       }
+      ],
+      [
+       {
+        "t": "Le développement d'une nouvelle approche de l'habitat et de l'entreprenariat responsable et éthiqueLes essences de bois utilisées proviennent toutes de plantations de forêts contrôlées et aménagées en vue d'une gestion durable."
+       }
+      ],
+      [
+       {
+        "t": "L'optimisation et la conservation de l'énergie en vue de diminuer l'impact environnemental"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "t": "Ne jamais perdre de vue notre humanitéLe droit au logement constitue un enjeu humain."
+       }
+      ],
+      [
+       {
+        "t": "Agir pour un nouveau droit d'occupation des solsEn adéquation avec des modes d'implantation à faible empreinte écologique, autonomes en énergie et respectueux des milieux et des écosystèmes."
+       }
+      ],
+      [
+       {
+        "t": "La préservation et la mise en valeur des paysagesAinsi que la diminution de la consommation en énergie, en eau et autres ressources naturelles."
+       }
+      ],
+      [
+       {
+        "t": "Une vision dans laquelle le client n'est pas qu'un acteur économique"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "image",
+     "src": "/img/site/prix-yourte-contemporaine.webp",
+     "alt": "Prix d'une yourte contemporaine",
+     "caption": "Yourteco : la qualité sans compromis, au prix le plus juste !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "A propos ? Quel est le prix d'une "
+      },
+      {
+       "t": "yourte \"made in France\"",
+       "href": "/fabricant-de-yourtes-francaises/",
+       "b": true
+      },
+      {
+       "t": " labellisée Yourteco ? La réponse dépend bien étendu de vos envies. Mais pas que ! Pour vous aider à clarifier votre projet, nous vous invitons à suivre le lien ci-dessous."
+      }
+     ]
+    },
+    {
+     "type": "button",
+     "label": "En savoir plus sur le prix des yourtes Yourteco !",
+     "href": "/modele/"
+    }
+   ]
+  }
+ ]
+}

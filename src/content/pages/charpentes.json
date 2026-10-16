@@ -1,0 +1,181 @@
+{
+ "slug": "charpentes",
+ "url": "https://www.yourteco.com/charpentes/",
+ "lang": "fr",
+ "title": "Charpente de yourte contemporaine : quel bois utiliser ?",
+ "description": "Le fabricant Yourteco vous propose une série de conseils dédiés au choix des essences pour structurer la charpente de votre yourte contemporaine.",
+ "h1": "Charpente de yourte en bois",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Charpente de yourte en bois"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Quelle structure en bois et essences pour la charpente d'une yourte ?"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/treillis-perches-yourte-3.webp",
+     "alt": "Treillis perches yourte",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "La structure ou la charpente de la yourte est composée de deux éléments principaux : les "
+      },
+      {
+       "t": "treillis",
+       "b": true
+      },
+      {
+       "t": ", qui forment les "
+      },
+      {
+       "t": "murs",
+       "b": true
+      },
+      {
+       "t": " de la yourte et les "
+      },
+      {
+       "t": "perches",
+       "b": true
+      },
+      {
+       "t": " qui forment le "
+      },
+      {
+       "t": "toit",
+       "b": true
+      },
+      {
+       "t": "."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "De manière générale, Yourteco construit les structures de ses "
+      },
+      {
+       "t": "yourtes en bois de qualité",
+       "href": "/des-yourtes-de-qualites/",
+       "b": true
+      },
+      {
+       "t": " avec le "
+      },
+      {
+       "t": "pin Douglas",
+       "b": true
+      },
+      {
+       "t": ". Mais ces dernières peuvent également être réalisées en "
+      },
+      {
+       "t": "chêne",
+       "b": true
+      },
+      {
+       "t": ", "
+      },
+      {
+       "t": "châtaignier",
+       "b": true
+      },
+      {
+       "t": " ou "
+      },
+      {
+       "t": "mélèze",
+       "b": true
+      },
+      {
+       "t": ". Dans ce cas, il faut prévoir un délai de fabrication plus long."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Les treillis"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "\"Les critères pour le choix d’une essence de bois sont la la qualité, la durabilité, l’esthétisme et le coût.\" Les treillis sont réalisés à partir de lattes de bois percées et assemblées par boulonnage. Ne prenant que très peu de place lorsqu’ils sont pliés, ils se déploient tel un accordéon lors du montage pour former les murs de la yourte."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/treillis-perches-interieur-2.webp",
+     "alt": "treillis-perches-interieur",
+     "caption": ""
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Les perches"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Leur nombre varie en fonction du diamètre de la yourte. Les perches sont attachées d’un côté sur les treillis et viennent s’encastrer de l’autre côté dans le toono pour constituer le toit de la yourte."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Appelez-nous !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Et trouvez toutes les réponses à vos questions"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Demande d'informations"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/logo-yourteco-small-75.webp",
+     "alt": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

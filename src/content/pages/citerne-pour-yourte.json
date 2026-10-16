@@ -1,0 +1,66 @@
+{
+ "slug": "citerne-pour-yourte",
+ "url": "https://www.yourteco.com/citerne-pour-yourte/",
+ "lang": "fr",
+ "title": "Citerne pour yourte contemporaine",
+ "description": "Récupérez de l'eau de pluie pour une utilisation courante grâce à une citerne pour yourte ! Contactez-nous !",
+ "h1": "Citerne pour yourte contemporaine",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Récupérez l’eau de pluie de votre yourte contemporaine avec une citerne ! Voici une très bonne idée concernant la "
+      },
+      {
+       "t": "fabrication d’une yourte",
+       "href": "/fabrication-de-yourte-contemporaine/",
+       "b": true
+      },
+      {
+       "t": " ! Nous avons réalisé une citerne souple Yourteco de 4 m3."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/citerne_yourte-20120106-00152-2.webp",
+     "alt": "Citerne pour yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Exemple de citerne pour yourte"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/citerne_yourte-2.webp",
+     "alt": "Citerne yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Autre exemple de citerne pour yourte"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Le concept de récupérer l’eau de pluie ou de la stocker est très intéressant pour les habitants de yourte. L’utilisation de l’eau de pluie afin d’arroser son potager, laver la vaisselle, prend tout son sens en site isolé. Optez pour une citerne souple afin de récupérer l’eau de pluie grâce à une gouttière ! Stocker de l’eau évite d’avoir recours au réseau ou à des cuves rigides souterraines. En effet, une fois pliée, la citerne tient dans un carton."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

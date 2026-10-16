@@ -1,0 +1,186 @@
+{
+ "slug": "nos-skydome",
+ "url": "https://www.yourteco.com/nos-skydome/",
+ "lang": "fr",
+ "title": "Toono : définition et caractéristiques",
+ "description": "Découvrez le toono ! Le toono permet un véritable confort de vie dans une yourte grâce à sa capacité d'isolation et sa fonction lumineuse.",
+ "h1": "Caractéristiques du toono et utilités",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Caractéristiques du toono et utilités"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Caractéristiques du toono Yourteco"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Clef de voute des "
+      },
+      {
+       "t": "yourtes en bois de qualité",
+       "href": "/des-yourtes-de-qualites/",
+       "b": true
+      },
+      {
+       "t": " fabriquées par Yourteco, le "
+      },
+      {
+       "t": "toono",
+       "b": true
+      },
+      {
+       "t": " est aussi sa "
+      },
+      {
+       "t": "principale source de lumière",
+       "b": true
+      },
+      {
+       "t": ", formant une ouverture vers le ciel. Cette couronne centrale est réalisée en contre-collé, ce qui permet une "
+      },
+      {
+       "t": "résistance accrue",
+       "b": true
+      },
+      {
+       "t": " et empêche l'apparition de fentes."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Nos toonos permettent d'"
+      },
+      {
+       "t": "aérer la yourte",
+       "b": true
+      },
+      {
+       "t": " depuis l'intérieur grâce à un système de vis sans fin relié à une manivelle. Une ouverture idéale pour évacuer la chaleur quand il fait beau ou lors des jours de pluie."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": ". Bien que la yourte soit une structure auto-portée, nous posons généralement deux poteaux qui renforcent la construction."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/toono-avec-skydome.webp",
+     "alt": "coupole skydome",
+     "caption": ""
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "image",
+     "src": "/img/site/logo-yourteco-small-75.webp",
+     "alt": "Logo-Yourteco-small-75",
+     "caption": ""
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Un dôme en plexiglass"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/skydome_yourte-3.webp",
+     "alt": "Coupole ronde plexiglas",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "La luminosité qui passe par le toono est amplifiée par un dôme zénithal en PVC cristal."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "En plus d'être esthétique, ce skydôme présente des avantages thermiques pour la yourte. En été, il permet de libérer la chaleur tandis que par temps froid, il se montre efficace en terme d’isolation grâce à sa double ou triple épaisseur. Il empêche également tout phénomène de condensation."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "L'installation du skydôme évite l'usage de cordes autour de la yourte ce qui préserve la toile. D'une étanchéité parfaite, le dôme résiste aux conditions extérieures (grêle, neige,...) et garantit une longue durée de vie. Pour ces raisons, Yourteco recommande vivement l'installation du skydôme - garanti 10 ans - dont le coût est rapidement rentabilisé par ses nombreux atouts."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Aussi transparent que du verre, le skydôme vous promet de doux rêves sous le ciel étoilé..."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Appelez-nous !"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Et trouvez toutes les réponses à vos questions"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Demande d'informations"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/logo-yourteco-small-75.webp",
+     "alt": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

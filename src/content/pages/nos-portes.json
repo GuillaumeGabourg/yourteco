@@ -1,0 +1,168 @@
+{
+ "slug": "nos-portes",
+ "url": "https://www.yourteco.com/nos-portes/",
+ "lang": "fr",
+ "title": "Portes de yourte sur mesure par Yourteco",
+ "description": "Toutes les informations sur nos portes en bois faites sur mesure ainsi que sur les ouvertures de yourte. Faites votre choix !",
+ "h1": "Portes de yourtes contemporaines sur mesure",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "raw"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Une fabrication sur mesure"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Esthétiques et robustes, nos portes sont "
+      },
+      {
+       "t": "réalisées sur mesure",
+       "b": true
+      },
+      {
+       "t": " pour s’adapter au mieux à vos "
+      },
+      {
+       "t": "yourtes en bois de qualité",
+       "href": "/des-yourtes-de-qualites/",
+       "b": true
+      },
+      {
+       "t": ". Les huisseries accueillent les "
+      },
+      {
+       "t": "treillis",
+       "href": "/charpente.php/"
+      },
+      {
+       "t": " par encastrement. Les "
+      },
+      {
+       "t": "vitres",
+       "b": true
+      },
+      {
+       "t": " – de nos portes et portes-fenêtres – sont toujours en "
+      },
+      {
+       "t": "double vitrage",
+       "b": true
+      },
+      {
+       "t": " afin d’éviter les pertes thermiques et toute condensation. Nous proposons principalement "
+      },
+      {
+       "t": "deux types de portes",
+       "b": true
+      },
+      {
+       "t": ". Le nombre et la position des ouvertures dans la yourte relève du choix du client."
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/porte-erp-sortie-secours.webp",
+     "alt": "porte-ERP-sortie-secours"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/porte-yourte-hublot.webp",
+     "alt": "porte-yourte-hublot"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/porte-vitree-chene.webp",
+     "alt": "porte-vitree-chene"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/portes_5.webp",
+     "alt": "portes_5"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/portes_4.webp",
+     "alt": "portes_4"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/portes_3.webp",
+     "alt": "portes_3"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/portes_2.webp",
+     "alt": "portes_2"
+    },
+    {
+     "type": "image",
+     "src": "/img/site/portes_1.webp",
+     "alt": "portes_1"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Des portes en bois douglasAvec ou sans vitre, le panneau de la porte est réalisé "
+      },
+      {
+       "t": "en douglas ",
+       "b": true
+      },
+      {
+       "t": "et "
+      },
+      {
+       "t": "contreplaqué marine",
+       "b": true
+      },
+      {
+       "t": ". Cette porte est généralement une porte d’entrée "
+      },
+      {
+       "t": "avec serrure",
+       "b": true
+      },
+      {
+       "t": ". Un œil de bœuf rond ou ovale peut être ajouté en option.Portes vitrées à double battantsCes portes-fenêtres sont intéressantes de part la "
+      },
+      {
+       "t": "luminosité",
+       "b": true
+      },
+      {
+       "t": " qu’elles apportent dans la yourte mais aussi par la "
+      },
+      {
+       "t": "visibilité",
+       "b": true
+      },
+      {
+       "t": " qu’elles offrent sur l’extérieur. Il est possible d’accoler plusieurs portes afin de réaliser de "
+      },
+      {
+       "t": "grandes baies vitrées",
+       "b": true
+      },
+      {
+       "t": "./raw"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Choisir l'univers visuel de Yourteco",
+  "question": "Le tirage propose « Le parc à bois ». Garde-le, prends une alternative, ou relance.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Le parc à bois",
+      "kicker": "LE TIRAGE",
+      "lineage": "piles de bois de la scierie, marques de classement, peinture en bout de poutre, étiquettes kraft de livraison",
+      "thesis": "Le site comme une pile de bois prête à partir : chaque section est un lot marqué, numéroté et livré — la preuve qu'on parle à un fabricant, pas à un revendeur.",
+      "palette": ["#E9DFCB", "#1E1B17", "#2F5D3A", "#C8452B", "#F4EFE6"],
+      "materials": ["épicéa du Nord clair", "pochoir noir", "peinture de bout de poutre (vert forêt, rouge marquage)", "kraft d'étiquette"],
+      "viewport": "Photo plein cadre des 8 yourtes de Paris ; le titre « Yourteco conçoit, fabrique et installe votre yourte contemporaine » posé en grand pochoir sur un bandeau de bois ; une étiquette kraft « LOT 01 — Daumeray (49) » agrafée au coin ; bouton rouge marquage « Demander un devis » + téléphone visible.",
+      "risk": "Peut virer au décor « rustique » si le pochoir est timide ou si le bois devient une texture plaquée partout.",
+      "raised": [
+        { "from": "Planche d'annuel de design", "raise": "Chaque photo est traitée comme une planche : cadre net, ligne de légende (lieu, modèle, année) séparée par un filet fin." },
+        { "from": "Automate à manivelle", "raise": "Un seul fil conducteur anime tout : le défilement monte la yourte étape par étape (plancher → treillis → perches → couronne → toile)." },
+        { "from": "Télétexte", "raise": "Chaque section a un numéro de lot (LOT 01, LOT 02…) qui sert aussi de repère de navigation." },
+        { "from": "Carrière de nuages", "raise": "Les sections s'empilent comme des pièces de bois débitées, avec un vrai vide entre elles." },
+        { "from": "Kraftwerk", "raise": "Une seule couleur d'action (rouge marquage) réservée aux boutons devis/appel." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "L'épure de charpente",
+      "kicker": "LE CHOIX D'IMPECCABLE",
+      "lineage": "épure tracée au sol par les charpentiers (compagnonnage), cordeau bleu, crayon de charpentier",
+      "thesis": "La yourte dessinée à l'échelle 1 comme sur le sol de l'atelier : géométrie du treillis et des perches en traits bleus, preuve du savoir-faire de calcul.",
+      "palette": ["#EDE6D6", "#22303C", "#2D5DA8", "#B23A2A"],
+      "materials": ["plancher d'atelier", "trait de cordeau bleu", "crayon de charpentier"],
+      "viewport": "Une épure circulaire de yourte qui se trace au chargement autour du titre et du bouton devis.",
+      "risk": "Plus attendu : c'est la direction « artisan-plan » vers laquelle beaucoup de sites d'architecture convergent.",
+      "board": ""
+    },
+    {
+      "id": "challenger-design-annual",
+      "label": "Planche d'annuel de design",
+      "verdict": "competitive",
+      "lineage": "planches photo d'un annuel imprimé",
+      "thesis": "Les réalisations présentées comme des planches d'imprimerie, très éditoriales.",
+      "palette": ["#F5F4F6", "#16181A", "#DCDDF3"],
+      "materials": ["papier non couché", "croix de repérage", "filets fins"],
+      "viewport": "Une grande planche photo d'une yourte avec croix de repérage et tampon.",
+      "case": "Met très bien les photos en valeur ; perd sur l'identification : un porteur de projet yourte ne se reconnaît pas dans un annuel de graphisme.",
+      "risk": "Froid, trop « agence » pour un artisan.",
+      "hero": "https://impeccable.style/worlds/cards/design-annual-s-plate-section-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-annual-s-plate-section.webp"
+    },
+    {
+      "id": "challenger-automata",
+      "label": "Automate à manivelle",
+      "verdict": "declined",
+      "lineage": "automates en papier",
+      "palette": ["#FFFFFF", "#C8A97E", "#B0122B"],
+      "materials": ["papier découpé", "carton kraft"],
+      "case": "Ludique mais contredit le sérieux « normes du bâtiment ».",
+      "kept": "Un seul fil conducteur qui anime tout le parcours (montage de la yourte au défilement).",
+      "hero": "https://impeccable.style/worlds/cards/kinetic-sculpture-automata-crank-paper-menagerie-hero.webp"
+    },
+    {
+      "id": "challenger-teletext",
+      "label": "Télétexte",
+      "verdict": "declined",
+      "lineage": "télétexte télévisé",
+      "palette": ["#000000", "#FFFF00", "#00FFFF"],
+      "materials": ["mosaïque de blocs"],
+      "case": "Aucun lien avec l'habitat léger.",
+      "kept": "Sections adressées par un numéro (lots numérotés).",
+      "hero": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service-hero.webp"
+    },
+    {
+      "id": "challenger-cloud-quarry",
+      "label": "Carrière de nuages",
+      "verdict": "declined",
+      "lineage": "monde onirique",
+      "palette": ["#FFFFFF", "#7FB2E5", "#8A8F96"],
+      "materials": ["blocs de nuage"],
+      "case": "Trop onirique pour un achat réglementé.",
+      "kept": "Sections empilées comme des blocs débités avec de vrais vides.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-cloud-quarry-hero.webp"
+    },
+    {
+      "id": "challenger-kraftwerk",
+      "label": "Kraftwerk",
+      "verdict": "declined",
+      "lineage": "identité de groupe électro",
+      "palette": ["#000000", "#E1261C", "#F5C400"],
+      "materials": ["néon", "grille"],
+      "case": "Froid et machinique, l'inverse du bois.",
+      "kept": "Une seule couleur d'accent réservée à l'action.",
+      "hero": "https://impeccable.style/worlds/cards/kraftwerk-man-machine-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "canon": true,
+  "canonCard": {
+    "label": "Le standard du secteur",
+    "thesis": "Ce que livrent les fabricants d'habitat léger, exécuté avec soin.",
+    "palette": ["#FFFFFF", "#2B2B2B", "#6B8F4E"],
+    "materials": ["grille propre", "grandes photos"],
+    "viewport": "Grande photo, titre centré, bouton devis, rangée de cartes services.",
+    "risk": "Impossible à distinguer des concurrents."
+  },
+  "steer": true
+}

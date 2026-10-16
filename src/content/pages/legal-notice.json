@@ -1,0 +1,155 @@
+{
+ "slug": "legal-notice",
+ "url": "https://www.yourteco.com/legal-notice/",
+ "lang": "en",
+ "title": "Legal notice of the website of the french manufacturer Yourteco",
+ "description": "Please read this legal notice before visiting the website of the modern yurt manufacturer Yourteco.",
+ "h1": "Legal notice",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Legal notice"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ownership"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "This website is the property of E.U.R.L. Yourteco – Siret: 792-544-256 00011. VAT No.: FR14792544256. Trade Register No.: Angers B 792 544 256.\nPublisher and person responsible for publication: Nicolas Chailloux, in his capacity as Managing Director."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Contact"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Yourteco – “Le Petit Paradis”\n49 640 Daumeray (FRANCE)"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Telephone: +33 2 41 24 49 87"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Design and development"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Original design: Claudia Martinez (Graphic Designer / Web Designer)\nService optimisation: Reynald Dal Barco"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Legal information"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "The owner reserves the right to modify the contents of this website without prior notice."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "All information is provided for information purposes only and does not in any way make the owner liable. Likewise, the owner is not responsible for the content of external websites referred to here."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "For any complaints, please contact the person responsible for publication mentioned above."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Copyright and intellectual property"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "In accordance with French and international copyright and intellectual property laws, all rights are reserved. Any full or partial reproduction or duplication of the website or its components is strictly prohibited without the express prior consent of the publisher."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Data protection and processing"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Personal data collected via the website’s contact form are confidential and used solely for the stated purposes.\nIn accordance with French Law No. 78-17 of January 6, 1978 on data protection, individuals have the right to access, rectify, object to, and delete their data upon simple request."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Hosting"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "OVH: SAS with a share capital of €50,000,000 – RCS Lille Métropole 424 761 419 00045 – APE code 2620Z – VAT No.: FR 22 424 761 419 –\nHead office: 2 rue Kellermann – 59100 Roubaix – France."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Applicable law"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "These legal notices are governed by French law."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "In the event of a dispute and failure to reach an amicable settlement, only the French courts shall have jurisdiction."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

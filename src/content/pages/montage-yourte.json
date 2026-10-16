@@ -1,0 +1,214 @@
+{
+ "slug": "montage-yourte",
+ "url": "https://www.yourteco.com/montage-yourte/",
+ "lang": "fr",
+ "title": "Montage d'un plancher d'une yourte contemporaine",
+ "description": "Petit reportage en photos d'un chantier Yourteco autour de la construction d'une yourte dans le Maine-et-Loire.",
+ "h1": "Montage en photos d’un plancher de yourte dans le Maine-et-Loire",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Petit reportage en photos signé Yourteco sur le montage d’un "
+      },
+      {
+       "t": "plancher de yourte",
+       "href": "/nos-plancher-de-yourtes/",
+       "b": true
+      },
+      {
+       "t": " de 50 m² dans le Maine-et-Loire."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Caractéristiques de la construction"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "t": "Diamètre 8 m"
+       }
+      ],
+      [
+       {
+        "t": "Treillis de yourte rehaussés 1.95 m."
+       }
+      ],
+      [
+       {
+        "t": "Pente 32°."
+       }
+      ],
+      [
+       {
+        "t": "Isolation de la yourte : chanvre + frein vapeur."
+       }
+      ],
+      [
+       {
+        "t": "Toile de la yourte : acrylique."
+       }
+      ]
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Les étapes du montage"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "En photos ! Et dans le désordre ! Pas le montage de la yourte, mais les photos. Petit jeu à propos : saurez-vous retrouver l’ordre exact ? Il n’y a rien à gagner (à part notre estime – ce qui n’est pas rien)."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": ": )"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/perches_yourtes-1.webp",
+     "alt": "Installation perches yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Installation des perches de la yourte"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/plancher_yourte1_copie-1.webp",
+     "alt": "Plancher yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Visualisation du plancher de la yourte"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/toono_yourte.webp",
+     "alt": "Montage toono yourte contemporaine",
+     "caption": "",
+     "href": "https://www.yourteco.com/wp-content/uploads/2016/05/toono_yourte.jpg"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Montage du toono de la yourte"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/treillis_yourte-1.webp",
+     "alt": "Photographie des treillis d'une yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Les treillis de la yourte"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte__portes_-1.webp",
+     "alt": "Portes yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Au tour des portes d’être installées"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte_maine_et_loire_copie-1.webp",
+     "alt": "Yourte contemporaine en Maine-et-Loire",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Cette yourte a été installée dans le Maine-et-Loire"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte_plancher_3-1.webp",
+     "alt": "Montage plancher yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Le montage du plancher avance"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte_plancher_4-1.webp",
+     "alt": "Plancher monté d'une yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Le plancher est terminé"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte_plancher2-1.webp",
+     "alt": "Installation plancher yourte contemporaine",
+     "caption": ""
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Travaux d’installation du plancher de la yourte"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
