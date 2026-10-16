@@ -37,3 +37,8 @@ Voir `src/content/corrections.js` (fabication → fabrication, traditionelles �
 
 - `interieur-zome-serre.jpg` (page Zome-serre) et `Yourte_Maine_et_loire_copie-1.jpg` (page Montage) renvoient une erreur 404 sur yourteco.com : retirées de la maquette, à fournir par Yourteco.
 - 117 images de l'original font moins de 500 px de large (logos, badges, schémas) : affichées à leur taille réelle, sans agrandissement flou. Demander les originaux en haute définition.
+
+## Témoignages EN/DE à vérifier
+
+- Pages `testimonials` et `kundenstimmen` : 4 témoignages attribués à des campings nommés (« Les Étoiles du Verdon », « Wilderness Retreat », « Green Valley », « Oasis Zen ») sans date ni auteur. Ils n'existent pas sur la page française. Si ce sont des exemples rédigés, ils ne doivent pas être présentés comme de vrais avis (art. L121-4 du Code de la consommation) : faire confirmer leur authenticité ou les retirer.
+- Page Avis (FR) : textes des clients reproduits tels quels, jamais corrigés.

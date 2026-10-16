@@ -9,6 +9,47 @@ import Icon from '../components/Icon.jsx'
 import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
 import DIMS from '../content/imageDims.json'
+import ReviewWall from '../components/ReviewWall.jsx'
+
+/* ---------- témoignages : « Avis de X - date » + citation  |  « Testimonial 1: X » + citation ---------- */
+const plain = (b) => (b?.segs ? b.segs.map((x) => x.t).join('').trim() : '')
+const isQuote = (b) => b?.type === 'text' && /^["“«„]/.test(plain(b))
+const AUTHOR_LINE = /^(?:Avis (?:de |d'|d’))?(.{2,60}?)\s+[-–]\s+(.{3,40})$/
+const AUTHOR_HEAD = /^(?:Testimonial|Erfahrungsbericht|Témoignage)\s*\d+\s*:\s*(.+)$/i
+const unquote = (t) => t.replace(/^["“«„]\s*/, '').replace(/\s*["”»“]\s*\.?\s*$/, '').trim()
+
+function readReview(blocks, i) {
+  const a = blocks[i], q = blocks[i + 1]
+  if (!isQuote(q)) return null
+  if (a.type === 'text') {
+    const m = plain(a).match(AUTHOR_LINE)
+    if (m) return { author: m[1].trim(), date: m[2].trim(), text: unquote(plain(q)) }
+  }
+  if (a.type === 'heading') {
+    const m = a.text.match(AUTHOR_HEAD)
+    if (m) return { author: m[1].trim(), date: '', text: unquote(plain(q)) }
+  }
+  return null
+}
+
+/** Remplace chaque suite de témoignages (et les photos glissées entre eux) par un bloc « reviews ». */
+function extractReviews(blocks) {
+  const out = []
+  for (let i = 0; i < blocks.length; i++) {
+    const r = readReview(blocks, i)
+    if (!r) { out.push(blocks[i]); continue }
+    let last = out[out.length - 1]
+    if (last?.type !== 'reviews') { last = { type: 'reviews', items: [] }; out.push(last) }
+    last.items.push(r)
+    i++
+    // photos placées entre deux témoignages (ou juste après le dernier) : intégrées au mur
+    while (blocks[i + 1]?.type === 'image' && (readReview(blocks, i + 2) || !blocks[i + 2] || blocks[i + 2].type === 'image' || i + 2 >= blocks.length)) {
+      last.items.push(blocks[++i])
+    }
+  }
+  return out
+}
+
 
 /** Image d'origine trop petite pour être agrandie (logos, badges, petits schémas). */
 const isSmall = (src) => (DIMS[src]?.[0] || 9999) < 480
@@ -83,7 +124,7 @@ function toChapters(blocks) {
   // chapitres de texte seul qui se suivent : posés côte à côte (colonnes)
   const res = []
   for (const c of flat) {
-    const textOnly = !c.points && c.body.length > 0 && !c.media.length
+    const textOnly = !c.points && c.body.length > 0 && !c.media.length && !c.body.some((b) => b.type === 'reviews')
     const last = res[res.length - 1]
     if (textOnly && last?.group) last.group.push(c)
     else if (textOnly) res.push({ group: [c] })
@@ -158,7 +199,9 @@ function Media({ items, lang, wide }) {
       {imgs.map((im, i) => {
         const small = isSmall(im.src)
         const [w, h] = DIMS[im.src] || []
-        const ratio = small ? `${w} / ${h}` : n === 1 ? '4 / 3' : n === 3 && i === 0 ? '16 / 9' : '1 / 1'
+        // image seule : format réel (jamais rognée), borné entre portrait 4/5 et paysage 2/1
+        const natural = w && h ? Math.min(2, Math.max(0.8, w / h)) : 4 / 3
+        const ratio = small ? `${w} / ${h}` : n === 1 ? String(natural) : n === 3 && i === 0 ? '16 / 9' : '1 / 1'
         const plate = (
           <Plate
             src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={ratio}
@@ -178,6 +221,18 @@ function Media({ items, lang, wide }) {
 }
 
 function Chapter({ c, lang, side }) {
+  const wallAt = c.body ? c.body.findIndex((b) => b.type === 'reviews') : -1
+  if (wallAt >= 0) {
+    const before = c.body.slice(0, wallAt), wall = c.body[wallAt], after = c.body.slice(wallAt + 1)
+    const intro = { heading: c.heading, body: before, media: c.media }
+    return (
+      <div className="cp-chapter cp-reviews">
+        {(intro.heading || before.length || c.media.length) ? <Chapter c={intro} lang={lang} side={0} /> : null}
+        <ReviewWall items={wall.items} lang={lang} />
+        {after.length > 0 && <Chapter c={{ heading: null, body: after, media: [] }} lang={lang} side={0} />}
+      </div>
+    )
+  }
   if (c.points) {
     return (
       <div className="cp-points">
@@ -259,7 +314,7 @@ export default function ContentPage({ slug }) {
   // bannière : première image assez grande (jamais un petit logo agrandi)
   const firstImg = blocks.find((b) => b.type === 'image' && (DIMS[b.src]?.[0] || 0) >= 900)
   let skippedH1 = false
-  const sections = page.sections.map((s) => toChapters(s.blocks.filter((b) => {
+  const sections = page.sections.map((s) => toChapters(extractReviews(s.blocks).filter((b) => {
     if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
     if (b === firstImg) return false
     return true
