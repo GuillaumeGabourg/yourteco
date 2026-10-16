@@ -2,7 +2,7 @@
 html {
   scroll-padding-top: var(--bar-h);
   -webkit-text-size-adjust: 100%;
-  background: var(--spruce);
+  background: var(--bg);
 }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -12,10 +12,9 @@ body {
   margin: 0;
   font-family: var(--f-body);
   font-size: var(--t-body);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink);
-  background: var(--spruce);
-  font-variation-settings: 'wdth' 100;
+  background: var(--bg);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -25,24 +24,25 @@ img { height: auto; }
 button, input, select, textarea { font: inherit; color: inherit; }
 h1, h2, h3, h4 {
   font-family: var(--f-display);
-  font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.01em;
+  font-weight: 560;
+  font-variation-settings: 'SOFT' 60, 'WONK' 0;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin: 0;
   text-wrap: balance;
 }
 p { margin: 0 0 1em; text-wrap: pretty; }
-a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
-a:hover { text-decoration-thickness: 2px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); }
+a:hover { text-decoration-color: currentColor; }
 
-::selection { background: var(--forest); color: var(--forest-ink); }
-:focus-visible { outline: 2px solid var(--mark); outline-offset: 3px; border-radius: 1px; }
-input, textarea { caret-color: var(--mark); }
+::selection { background: var(--sun); color: var(--green-900); }
+:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; border-radius: 6px; }
+input, textarea { caret-color: var(--leaf); }
 
-html { scrollbar-color: var(--forest) var(--spruce-2); }
+html { scrollbar-color: var(--green-600) var(--bg-2); }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
-::-webkit-scrollbar-track { background: var(--spruce-2); }
-::-webkit-scrollbar-thumb { background: var(--forest); border: 2px solid var(--spruce-2); }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--green-600); border: 3px solid var(--bg-2); border-radius: 99px; }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -50,7 +50,7 @@ html { scrollbar-color: var(--forest) var(--spruce-2); }
 }
 .skip {
   position: absolute; left: 12px; top: -60px; z-index: 100;
-  background: var(--ink); color: var(--spruce-3); padding: 10px 16px; text-decoration: none;
+  background: var(--green-900); color: var(--on-dark); padding: 10px 16px; text-decoration: none; border-radius: 8px;
 }
 .skip:focus { top: 12px; }
 

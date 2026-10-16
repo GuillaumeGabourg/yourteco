@@ -9,14 +9,6 @@
   {
    "blocks": [
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "raw"
-      }
-     ]
-    },
-    {
      "type": "heading",
      "level": 1,
      "text": "Une fabrication sur mesure"
@@ -158,7 +150,7 @@
        "b": true
       },
       {
-       "t": "./raw"
+       "t": "."
       }
      ]
     }

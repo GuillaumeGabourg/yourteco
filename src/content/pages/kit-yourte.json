@@ -302,18 +302,94 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMKIT YL1DIAMETRE6M50SURFACE33M2HAUTEURS MURS2M22NOMBRE OUVERTURES2TARIFS18966 TTCCONTENU"
-      },
-      {
-       "t": "Contenu-kit-yourte-1",
-       "href": "https://www.yourteco.com/wp-content/uploads/2019/11/Contenu-kit-yourte-1.pdf"
-      },
-      {
-       "t": " #tablepress-13 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "KIT YL1"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "6M50"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "33M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEURS MURS"
+        }
+       ],
+       [
+        {
+         "t": "2M22"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "NOMBRE OUVERTURES"
+        }
+       ],
+       [
+        {
+         "t": "2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIFS"
+        }
+       ],
+       [
+        {
+         "t": "18966 TTC"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "CONTENU"
+        }
+       ],
+       [
+        {
+         "t": "Contenu-kit-yourte-1",
+         "href": "https://www.yourteco.com/wp-content/uploads/2019/11/Contenu-kit-yourte-1.pdf"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -348,18 +424,94 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMKIT YL 2DIAMETRE8 MSURFACE50 M2HAUTEURS MURS2M30NOMBRES OUVERTURES3TARIF25 455 euros TTC CONTENU DU KIT"
-      },
-      {
-       "t": "contenu-kit-yourte-2",
-       "href": "https://www.yourteco.com/wp-content/uploads/2019/11/contenu-kit-yourte-2.pdf"
-      },
-      {
-       "t": " #tablepress-15 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "KIT YL 2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "8 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "50 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEURS MURS"
+        }
+       ],
+       [
+        {
+         "t": "2M30"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "NOMBRES OUVERTURES"
+        }
+       ],
+       [
+        {
+         "t": "3"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIF"
+        }
+       ],
+       [
+        {
+         "t": "25 455 euros TTC"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "CONTENU DU KIT"
+        }
+       ],
+       [
+        {
+         "t": "contenu-kit-yourte-2",
+         "href": "https://www.yourteco.com/wp-content/uploads/2019/11/contenu-kit-yourte-2.pdf"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -394,18 +546,94 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMKIT HAB 1DIAMETRE8.5 MSURFACE50 M2HAUTEURS MURS2M30PC COMPATIBLE PERMIS DE CONSTRUIRETARIF39 503 euros TTCCONTENU"
-      },
-      {
-       "t": "Contenu-kit-yourte-3",
-       "href": "https://www.yourteco.com/wp-content/uploads/2019/11/Contenu-kit-yourte-3.pdf"
-      },
-      {
-       "t": " #tablepress-16 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "KIT HAB 1"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "8.5 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "50 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEURS MURS"
+        }
+       ],
+       [
+        {
+         "t": "2M30"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "PC"
+        }
+       ],
+       [
+        {
+         "t": "COMPATIBLE PERMIS DE CONSTRUIRE"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIF"
+        }
+       ],
+       [
+        {
+         "t": "39 503 euros TTC"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "CONTENU"
+        }
+       ],
+       [
+        {
+         "t": "Contenu-kit-yourte-3",
+         "href": "https://www.yourteco.com/wp-content/uploads/2019/11/Contenu-kit-yourte-3.pdf"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -440,18 +668,106 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMY HAB 2DIAMETRE9M50SURFACE68 M2HAUTEURS MURS2M30NOMBRE OUVERTURES5PCCOMPATIBLE PERMIS DE CONSTRUIRETARIF 44 380 euros TTCCONTENU"
-      },
-      {
-       "t": "Contenu-kit-yourte-4",
-       "href": "https://www.yourteco.com/wp-content/uploads/2019/11/Contenu-kit-yourte-4.pdf"
-      },
-      {
-       "t": " #tablepress-17 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "Y HAB 2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "9M50"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "68 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEURS MURS"
+        }
+       ],
+       [
+        {
+         "t": "2M30"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "NOMBRE OUVERTURES"
+        }
+       ],
+       [
+        {
+         "t": "5"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "PC"
+        }
+       ],
+       [
+        {
+         "t": "COMPATIBLE PERMIS DE CONSTRUIRE"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIF"
+        }
+       ],
+       [
+        {
+         "t": "44 380 euros TTC"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "CONTENU"
+        }
+       ],
+       [
+        {
+         "t": "Contenu-kit-yourte-4",
+         "href": "https://www.yourteco.com/wp-content/uploads/2019/11/Contenu-kit-yourte-4.pdf"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -545,22 +861,9 @@
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "Demande d'informations"
-    },
-    {
      "type": "image",
      "src": "/img/site/logo-yourteco-small-75.webp",
      "alt": ""
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
-     ]
     }
    ]
   }

@@ -1,44 +1,57 @@
-/* Le parc à bois — tokens */
+/* Clairière — palette tirée du logo Yourteco (#386234, #6AA33A, #DBD73A) */
 :root {
-  /* matière */
-  --spruce: #E9DCC3;        /* épicéa blond, fond principal */
-  --spruce-2: #DFCFB0;      /* épicéa, face sciée plus dense */
-  --spruce-3: #F3EADA;      /* aubier, surfaces claires */
-  --kraft: #C9A46B;         /* étiquettes */
-  --kraft-ink: #5A4220;
-  --forest: #1F3A2B;        /* peinture de bout de poutre, grands champs */
-  --forest-2: #2A4A37;
-  --forest-ink: #E3EBDF;    /* texte sur vert */
-  --forest-soft: #A9C0AE;   /* texte secondaire sur vert */
-  --ink: #1E1B17;           /* encre pochoir */
-  --ink-2: #4A4339;         /* texte secondaire sur épicéa */
-  --ink-3: #6E6455;
-  --rule: #B9A684;          /* filet sur épicéa */
-  --rule-forest: #3F5E4A;
-  --mark: #C8452B;          /* rouge marquage : réservé aux actions */
-  --mark-hover: #A93820;
-  --mark-ink: #FFF7F0;
+  /* fonds */
+  --bg: #F7F6EE;            /* lin clair */
+  --bg-2: #EDEFE0;          /* sauge très pâle */
+  --bg-3: #FCFCF7;          /* surfaces (cartes, formulaires) */
+  --line: #D6DBC4;          /* filets sur fond clair */
+
+  /* verts du logo */
+  --green-950: #142811;
+  --green-900: #1B3517;
+  --green-800: #24451F;
+  --green-700: #2C5826;     /* logo, vert profond */
+  --green-600: #386234;     /* logo, vert principal */
+  --leaf: #6AA33A;          /* logo, vert feuille */
+  --leaf-soft: #A8CB7C;
+  --sun: #DBD73A;           /* logo, soleil */
+  --sun-soft: #EFEDA6;
+  --sun-hover: #CBC72A;
+
+  /* textes */
+  --ink: #18241A;
+  --ink-2: #435140;
+  --ink-3: #66725F;
+  --on-dark: #EEF3E6;
+  --on-dark-2: #BACBB0;
+  --line-dark: #3A5A33;
 
   /* typo */
-  --f-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
-  --f-stencil: 'Big Shoulders Stencil Display', 'Big Shoulders Display', sans-serif;
+  --f-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
   --f-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
 
-  --t-hero: clamp(2.6rem, 5vw, 5.4rem);
-  --t-h2: clamp(2.1rem, 4.2vw, 3.9rem);
-  --t-h3: clamp(1.45rem, 2.1vw, 1.95rem);
-  --t-lead: clamp(1.15rem, 1.4vw, 1.35rem);
+  --t-hero: clamp(2.4rem, 5vw, 4.75rem);
+  --t-h2: clamp(1.95rem, 3.3vw, 3.05rem);
+  --t-h3: clamp(1.3rem, 1.65vw, 1.6rem);
+  --t-lead: clamp(1.1rem, 1.3vw, 1.27rem);
   --t-body: 1.0625rem;
   --t-small: 0.875rem;
 
+  /* formes */
+  --r-lg: 22px;
+  --r-md: 14px;
+  --r-sm: 10px;
+  --shadow: 0 18px 40px -24px rgba(20, 40, 17, .45);
+  --shadow-lg: 0 30px 70px -36px rgba(20, 40, 17, .55);
+
   /* rythme */
-  --gutter: clamp(16px, 4vw, 56px);
-  --gap-section: clamp(88px, 12vw, 176px);
-  --measure: 66ch;
-  --wrap: 1320px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --gap-section: clamp(80px, 10vw, 150px);
+  --measure: 68ch;
+  --wrap: 1240px;
 
   /* barre de navigation (mesurée en JS, valeur par défaut) */
-  --bar-h: 68px;
+  --bar-h: 72px;
 
   --ease-out: cubic-bezier(.16, 1, .3, 1);
 }

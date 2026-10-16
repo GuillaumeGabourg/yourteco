@@ -388,22 +388,9 @@
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "Demande d'informations"
-    },
-    {
      "type": "image",
      "src": "/img/site/logo-yourteco-small-75.webp",
      "alt": ""
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
-     ]
     }
    ]
   }

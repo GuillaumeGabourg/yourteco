@@ -96,14 +96,6 @@
      "href": "https://www.yourteco.com/wp-content/uploads/2022/08/Prise-de-cotes-toiles-sur-mesures-V2.jpg"
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Prise de cotes - Toiles sur mesuresA \n *mB \n *mC \n *mD \n *mE \n *mF \n *mG \n *mH \n *mI \n *mCirconférence de la yourte \n *mÉpaisseur isolant \n *mNombre de murs \n *mLongueur Mur #1 \n *mLongueur Mur #2 \n *mLongueur Mur #3 \n *mLongueur Mur #4 \n *mLongueur Mur #5 \n *mPour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
-     ]
-    },
-    {
      "type": "list",
      "ordered": false,
      "items": [
@@ -141,14 +133,6 @@
         "t": "3Vérifiez vos choix de couleurs et les cotes de votre yourte et remplissez le formulaire de demande de devis 😉"
        }
       ]
-     ]
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Demande de devis YourteCouleur choisie pour le toit \n * BeigeBlanc CasséVert ForêtBruyèreBleu MarineGris ClairTweedMarronArdoiseBordeauxChocolatPistache Couleur choisie pour les murs \n * BeigeBlanc CasséVert ForêtBruyèreBleu MarineGris ClairTweedMarronArdoiseBordeauxChocolatPistache A \n *mB \n *mC \n *mD \n *mE \n *mF \n *mG \n *mH \n *mI \n *mCirconférence de la yourte \n *mÉpaisseur isolant \n *mNombre de murs \n *mLongueur Mur #1 \n *mLongueur Mur #2 \n *mLongueur Mur #3 \n *mLongueur Mur #4 \n *mLongueur Mur #5 \n *mPour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Votre nom et prénom \n *Téléphone \n *Email \n *Valider Email \n *Pour éviter toute erreur et nous permettre de vous répondre, merci de confirmer votre email.Adresse de livraison \n *Code postal \n *Ville \n *Votre message \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Demander un devis\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
      ]
     }
    ]
@@ -407,22 +391,9 @@
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "Demande d'informations"
-    },
-    {
      "type": "image",
      "src": "/img/site/logo-yourteco-small-75.webp",
      "alt": ""
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
-     ]
     }
    ]
   }

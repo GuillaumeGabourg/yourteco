@@ -188,11 +188,81 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMFLEX YOURTEDIAMETRE3.6 MSURFACE10 M2HAUTEUR MURS1.60 MTOILETOIT TPVC I FEU\n\nMURS ACRYLIQUE 900 SCHMERBERSTARIFS3 900 euros TTC #tablepress-9 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "FLEX YOURTE"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "3.6 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "10 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEUR MURS"
+        }
+       ],
+       [
+        {
+         "t": "1.60 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TOILE"
+        }
+       ],
+       [
+        {
+         "t": "TOIT TPVC I FEU\n\nMURS ACRYLIQUE 900 SCHMERBERS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIFS"
+        }
+       ],
+       [
+        {
+         "t": "3 900 euros TTC"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -228,11 +298,105 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMYOURTE CAMPINGDIAMETRE5 MSURFACE19.63 M2HAUTEUR MURS2.13 MSKYDOMESIMPLE PAROISTOILETOIT TPVC I\n\nMURS ACRYLIQUE 900 schmerbersPLANCHERMASSIF TROIS PLISTARIFS17 379 euros TTC #tablepress-4 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "YOURTE CAMPING"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "5 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "19.63 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEUR MURS"
+        }
+       ],
+       [
+        {
+         "t": "2.13 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SKYDOME"
+        }
+       ],
+       [
+        {
+         "t": "SIMPLE PAROIS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TOILE"
+        }
+       ],
+       [
+        {
+         "t": "TOIT TPVC I\n\nMURS ACRYLIQUE 900 schmerbers"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "PLANCHER"
+        }
+       ],
+       [
+        {
+         "t": "MASSIF TROIS PLIS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIFS"
+        }
+       ],
+       [
+        {
+         "t": "17 379 euros TTC"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -260,11 +424,105 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMYOURTE ZENDIAMETRE6.5 MSURFACE33 M2HAUTEUR MURS2.22 MSKYDOMEDOUBLE PAROISTOILEMURS + TOIT ACRYLIQUE 900 schmerbersPLANCHER45X145 ISOLETARIFS25 145 euros TTC #tablepress-5 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "YOURTE ZEN"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "6.5 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "33 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEUR MURS"
+        }
+       ],
+       [
+        {
+         "t": "2.22 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SKYDOME"
+        }
+       ],
+       [
+        {
+         "t": "DOUBLE PAROIS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TOILE"
+        }
+       ],
+       [
+        {
+         "t": "MURS + TOIT ACRYLIQUE 900 schmerbers"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "PLANCHER"
+        }
+       ],
+       [
+        {
+         "t": "45X145 ISOLE"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIFS"
+        }
+       ],
+       [
+        {
+         "t": "25 145 euros TTC"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -292,11 +550,105 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMYOURTE ERPDIAMETRE8 MSURFACE50 M2HAUTEUR MURS2.30 MSKYDOMEDOUBLE PAROISTOILETOIT TPVC I FEU\n\nMURS FIREMASTERPLANCHER45X145 ISOLETARIFS38 802 euros TTC #tablepress-7 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "YOURTE ERP"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "8 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "50 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEUR MURS"
+        }
+       ],
+       [
+        {
+         "t": "2.30 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SKYDOME"
+        }
+       ],
+       [
+        {
+         "t": "DOUBLE PAROIS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TOILE"
+        }
+       ],
+       [
+        {
+         "t": "TOIT TPVC I FEU\n\nMURS FIREMASTER"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "PLANCHER"
+        }
+       ],
+       [
+        {
+         "t": "45X145 ISOLE"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIFS"
+        }
+       ],
+       [
+        {
+         "t": "38 802 euros TTC"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -337,11 +689,105 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "NOMYOURTE HABITATIONDIAMETRE9.50 MSURFACE70.88 M2HAUTEUR MURS2.40 MSKYDOMETRIPLE PAROISTOILETOIT TPVC I FEU\n\nMURS ACRYLIQUE 900 SCHMERBERSPLANCHER45X200 ISOLETARIFS72 935 euros TTC #tablepress-8 from cache"
-      }
+     "type": "table",
+     "head": false,
+     "rows": [
+      [
+       [
+        {
+         "t": "NOM"
+        }
+       ],
+       [
+        {
+         "t": "YOURTE HABITATION"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "DIAMETRE"
+        }
+       ],
+       [
+        {
+         "t": "9.50 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SURFACE"
+        }
+       ],
+       [
+        {
+         "t": "70.88 M2"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "HAUTEUR MURS"
+        }
+       ],
+       [
+        {
+         "t": "2.40 M"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "SKYDOME"
+        }
+       ],
+       [
+        {
+         "t": "TRIPLE PAROIS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TOILE"
+        }
+       ],
+       [
+        {
+         "t": "TOIT TPVC I FEU\n\nMURS ACRYLIQUE 900 SCHMERBERS"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "PLANCHER"
+        }
+       ],
+       [
+        {
+         "t": "45X200 ISOLE"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "TARIFS"
+        }
+       ],
+       [
+        {
+         "t": "72 935 euros TTC"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -426,22 +872,9 @@
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "Demande d'informations"
-    },
-    {
      "type": "image",
      "src": "/img/site/logo-yourteco-small-75.webp",
      "alt": ""
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
-     ]
     }
    ]
   }

@@ -6,6 +6,7 @@ import { Reveal, WordsReveal } from '../components/Motion.jsx'
 import { Plate } from '../components/Plate.jsx'
 import { QuoteButton, PhoneLink } from '../components/Chrome.jsx'
 import Icon from '../components/Icon.jsx'
+import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
 
 const files = import.meta.glob('../content/pages/*.json')
@@ -36,24 +37,45 @@ function Video({ id, label }) {
   )
 }
 
-/** Regroupe les images consécutives en planches / galeries. */
-function groupBlocks(blocks) {
-  const out = []
+/** Découpe une section en chapitres : un titre + ce qui le suit. */
+function toChapters(blocks) {
+  const chapters = []
+  let cur = null
   for (const b of blocks) {
-    const last = out[out.length - 1]
-    if (b.type === 'image' && last?.type === 'gallery') last.images.push(b)
-    else if (b.type === 'image') out.push({ type: 'gallery', images: [b] })
-    else out.push(b)
+    if (b.type === 'heading' || !cur) {
+      cur = { heading: b.type === 'heading' ? b : null, body: [], media: [] }
+      chapters.push(cur)
+      if (b.type === 'heading') continue
+    }
+    if (b.type === 'image' || b.type === 'video') cur.media.push(b)
+    else cur.body.push(b)
   }
-  return out
+  // une image placée juste avant un titre illustre souvent le chapitre suivant
+  for (let i = 0; i < chapters.length - 1; i++) {
+    const c = chapters[i], n = chapters[i + 1]
+    if (c.media.length > 1 && !n.media.length && c.body.length) n.media.push(c.media.pop())
+  }
+  // titres seuls à la suite : regroupés en une liste de points
+  const out = []
+  for (const c of chapters) {
+    const lone = c.heading && !c.body.length && !c.media.length
+    const last = out[out.length - 1]
+    if (lone && last?.points) last.points.push(c.heading)
+    else if (lone) out.push({ points: [c.heading] })
+    else out.push(c)
+  }
+  return out.map((c) => (c.points?.length === 1 ? { heading: c.points[0], body: [], media: [] } : c))
 }
 
-function Block({ b, lang }) {
+function Heading({ b, className = '' }) {
+  const H = b.level <= 2 ? 'h2' : b.level === 3 ? 'h3' : 'h4'
+  return <Reveal as={H} className={'cp-h cp-' + H + ' ' + className}>{fix(b.text)}</Reveal>
+}
+
+function Body({ b }) {
   switch (b.type) {
-    case 'heading': {
-      const H = b.level <= 2 ? 'h2' : b.level === 3 ? 'h3' : 'h4'
-      return <Reveal as={H} className={'cp-h cp-' + H}>{fix(b.text)}</Reveal>
-    }
+    case 'heading':
+      return <Heading b={b} />
     case 'text':
       return <p className="cp-p"><Segs segs={b.segs} /></p>
     case 'quote':
@@ -62,32 +84,95 @@ function Block({ b, lang }) {
       const LTag = b.ordered ? 'ol' : 'ul'
       return <LTag className="cp-list">{b.items.map((it, i) => <li key={i}><Segs segs={it} /></li>)}</LTag>
     }
+    case 'table': {
+      const pairs = b.rows.every((r) => r.length === 2)
+      if (pairs) {
+        return (
+          <dl className="cp-specs">
+            {b.rows.map(([k, v], i) => (
+              <div key={i}><dt><Segs segs={k} /></dt><dd><Segs segs={v} /></dd></div>
+            ))}
+          </dl>
+        )
+      }
+      const [first, ...rest] = b.rows
+      const body = b.head ? rest : b.rows
+      return (
+        <div className="cp-table-wrap">
+          <table className="cp-table">
+            {b.head && <thead><tr>{first.map((c, i) => <th key={i} scope="col"><Segs segs={c} /></th>)}</tr></thead>}
+            <tbody>{body.map((r, i) => <tr key={i}>{r.map((c, j) => (j ? <td key={j}><Segs segs={c} /></td> : <th key={j} scope="row"><Segs segs={c} /></th>))}</tr>)}</tbody>
+          </table>
+        </div>
+      )
+    }
     case 'button':
       return (
         <p className="cp-btn">
           <SmartLink href={b.href} className="more"><span>{fix(b.label)}</span><Icon name="arrow" size={18} /></SmartLink>
         </p>
       )
-    case 'video':
-      return <Video id={b.youtube} label={L[lang].video} />
-    case 'gallery': {
-      const n = b.images.length
-      return (
-        <div className={'cp-gallery n-' + Math.min(n, 4)}>
-          {b.images.map((im, i) => {
-            const plate = <Plate src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={n === 1 ? '16 / 10' : '3 / 2'} />
-            return (
-              <Reveal key={im.src + i} delay={(i % 4) * 0.06}>
-                {im.href ? <SmartLink href={im.href} className="cp-img-link">{plate}</SmartLink> : plate}
-              </Reveal>
-            )
-          })}
-        </div>
-      )
-    }
     default:
       return null
   }
+}
+
+function Media({ items, lang, wide }) {
+  const imgs = items.filter((m) => m.type === 'image')
+  const vids = items.filter((m) => m.type === 'video')
+  const n = imgs.length
+  return (
+    <div className={'cp-media n-' + Math.min(n, 4) + (wide ? ' is-wide' : '')}>
+      {vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
+      {imgs.map((im, i) => {
+        const ratio = n === 1 ? '4 / 3' : n === 3 && i === 0 ? '16 / 9' : '1 / 1'
+        const plate = <Plate src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={ratio} parallax={n === 1 ? 3 : 0} />
+        return (
+          <Reveal key={im.src + i} delay={(i % 4) * 0.08} className="cp-media-item">
+            {im.href ? <SmartLink href={im.href} className="cp-img-link">{plate}</SmartLink> : plate}
+          </Reveal>
+        )
+      })}
+    </div>
+  )
+}
+
+function Chapter({ c, lang, side }) {
+  if (c.points) {
+    return (
+      <div className="cp-points">
+        {c.points.map((h, i) => (
+          <Reveal key={i} className="cp-point" delay={i * 0.08}>
+            <span className="cp-point-ico"><Icon name="leaf" size={22} /></span>
+            <p>{fix(h.text)}</p>
+          </Reveal>
+        ))}
+      </div>
+    )
+  }
+  if (c.media.length && c.body.length) {
+    return (
+      <div className={'cp-split' + (side ? ' is-flip' : '')}>
+        <div className="cp-text">
+          {c.heading && <Heading b={c.heading} />}
+          {c.body.map((b, i) => <Body key={i} b={b} />)}
+        </div>
+        <Media items={c.media} lang={lang} />
+      </div>
+    )
+  }
+  return (
+    <div className="cp-chapter">
+      {c.heading && !c.body.length && <Heading b={c.heading} className="is-center" />}
+      {c.body.length > 0 && (
+        <div className="cp-text cp-col">
+          {c.heading && <Heading b={c.heading} />}
+          {c.body.map((b, i) => <Body key={i} b={b} />)}
+        </div>
+      )}
+      {c.media.length > 0 && <Media items={c.media} lang={lang} wide />}
+    </div>
+  )
 }
 
 export default function ContentPage({ slug }) {
@@ -113,13 +198,11 @@ export default function ContentPage({ slug }) {
   const blocks = page.sections.flatMap((s) => s.blocks)
   const firstImg = blocks.find((b) => b.type === 'image')
   let skippedH1 = false
-  const sections = page.sections.map((s) => ({
-    blocks: groupBlocks(s.blocks.filter((b) => {
-      if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
-      if (b === firstImg) return false
-      return true
-    })),
-  })).filter((s) => s.blocks.length)
+  const sections = page.sections.map((s) => toChapters(s.blocks.filter((b) => {
+    if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
+    if (b === firstImg) return false
+    return true
+  }))).filter((s) => s.length)
 
   const crumbs = location.pathname.split('/').filter(Boolean)
   const t = L[lang]
@@ -127,7 +210,7 @@ export default function ContentPage({ slug }) {
   return (
     <article className="cp" lang={lang}>
       <header className="cp-head">
-        <div className="wrap cp-head-grid">
+        <div className="wrap cp-head-in">
           <div className="cp-head-text">
             <nav aria-label="Fil d'Ariane" className="crumbs">
               <Link to="/">{t.home}</Link>
@@ -141,24 +224,36 @@ export default function ContentPage({ slug }) {
               ))}
             </nav>
             <WordsReveal as="h1" text={title} className="cp-title" immediate stagger={0.035} />
+            {page.description && <p className="lead cp-lead">{fix(page.description)}</p>}
           </div>
           {firstImg && (
-            <Plate src={firstImg.src} alt={fix(firstImg.alt || '')} caption={firstImg.caption ? fix(firstImg.caption) : undefined} ratio="4 / 3" priority parallax={4} className="cp-head-plate" tag="Yourteco" tagTilt={3} />
+            <div className="cp-head-media">
+              <Plate src={firstImg.src} alt={fix(firstImg.alt || '')} caption={firstImg.caption ? fix(firstImg.caption) : undefined} ratio="21 / 9" priority parallax={6} className="cp-head-plate" />
+              <FallingLeaves count={5} seed={title.length + 1} className="cp-leaves" />
+            </div>
           )}
         </div>
       </header>
 
       <div className="cp-body">
-        {sections.map((s, si) => (
-          <section key={si} className={'cp-section' + (si % 2 ? ' alt' : '')}>
-            <div className="wrap cp-flow">
-              {s.blocks.map((b, bi) => <Block key={bi} b={b} lang={lang} />)}
-            </div>
-          </section>
-        ))}
+        {sections.map((chs, si) => {
+          let flip = si % 2
+          return (
+            <section key={si} className={'cp-section' + (si % 2 ? ' alt' : '')}>
+              <div className="wrap cp-flow">
+                {chs.map((c, ci) => {
+                  const isSplit = !c.points && c.media.length > 0 && c.body.length > 0
+                  if (isSplit) flip = 1 - flip
+                  return <Chapter key={ci} c={c} lang={lang} side={isSplit ? flip : 0} />
+                })}
+              </div>
+            </section>
+          )
+        })}
       </div>
 
       <aside className="cp-cta">
+        <Hills className="hills-top" to="var(--green-800)" back="var(--sun)" mid="var(--leaf)" seed={5} />
         <div className="wrap cp-cta-in">
           <div>
             <p className="cp-cta-title">{t.cta}</p>

@@ -62,11 +62,105 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Diamètre4,50m ø5,50m ø6,50m ø7m ø8m øLivraison / journée300 €350 €400 €450 €500 €Tarif kilométrique50 cts/km50 cts/km50 cts/km50 cts/km50 cts/km #tablepress-10 from cache"
-      }
+     "type": "table",
+     "head": true,
+     "rows": [
+      [
+       [
+        {
+         "t": "Diamètre"
+        }
+       ],
+       [
+        {
+         "t": "4,50m ø"
+        }
+       ],
+       [
+        {
+         "t": "5,50m ø"
+        }
+       ],
+       [
+        {
+         "t": "6,50m ø"
+        }
+       ],
+       [
+        {
+         "t": "7m ø"
+        }
+       ],
+       [
+        {
+         "t": "8m ø"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Livraison / journée"
+        }
+       ],
+       [
+        {
+         "t": "300 €"
+        }
+       ],
+       [
+        {
+         "t": "350 €"
+        }
+       ],
+       [
+        {
+         "t": "400 €"
+        }
+       ],
+       [
+        {
+         "t": "450 €"
+        }
+       ],
+       [
+        {
+         "t": "500 €"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Tarif kilométrique"
+        }
+       ],
+       [
+        {
+         "t": "50 cts/km"
+        }
+       ],
+       [
+        {
+         "t": "50 cts/km"
+        }
+       ],
+       [
+        {
+         "t": "50 cts/km"
+        }
+       ],
+       [
+        {
+         "t": "50 cts/km"
+        }
+       ],
+       [
+        {
+         "t": "50 cts/km"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -83,11 +177,73 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Diamètre4,50m ø5,50m ø6,50m ø7m ø8m øCapacité de transport19 m323 m325 m328 m335 m3 #tablepress-11 from cache"
-      }
+     "type": "table",
+     "head": true,
+     "rows": [
+      [
+       [
+        {
+         "t": "Diamètre"
+        }
+       ],
+       [
+        {
+         "t": "4,50m ø"
+        }
+       ],
+       [
+        {
+         "t": "5,50m ø"
+        }
+       ],
+       [
+        {
+         "t": "6,50m ø"
+        }
+       ],
+       [
+        {
+         "t": "7m ø"
+        }
+       ],
+       [
+        {
+         "t": "8m ø"
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Capacité de transport"
+        }
+       ],
+       [
+        {
+         "t": "19 m3"
+        }
+       ],
+       [
+        {
+         "t": "23 m3"
+        }
+       ],
+       [
+        {
+         "t": "25 m3"
+        }
+       ],
+       [
+        {
+         "t": "28 m3"
+        }
+       ],
+       [
+        {
+         "t": "35 m3"
+        }
+       ]
+      ]
      ]
     },
     {
@@ -221,22 +377,9 @@
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "Demande d'informations"
-    },
-    {
      "type": "image",
      "src": "/img/site/logo-yourteco-small-75.webp",
      "alt": ""
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Demande d'informationsNom \n *Email \n *Message \n *reCAPTCHA \n Pour être sûr de ne pas manquer nos réponses, pensez à ajouter contact@yourteco.com à votre carnet d'adresses 😉Envoyer\n Si vous êtes un humain, ne remplissez pas ce champ."
-      }
-     ]
     }
    ]
   }
