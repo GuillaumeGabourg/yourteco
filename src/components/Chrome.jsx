@@ -59,7 +59,7 @@ export function Header() {
         <div id="site-bar" className="bar">
           <div className="wrap bar-in">
             <Link to="/" className="logo" aria-label="Yourteco, accueil">
-              <img src="/img/brand/logo-yourteco.png" alt="Yourteco" width="300" height="109" />
+              <img src="/img/brand/logo-yourteco-hd.png" alt="Yourteco" width="904" height="327" />
             </Link>
             <nav aria-label="Navigation principale" className="nav-desktop">
               {NAV.map((n) => (

@@ -29,7 +29,7 @@ h1, h2, h3, h4 {
   line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 p { margin: 0 0 1em; text-wrap: pretty; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); }

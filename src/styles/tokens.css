@@ -28,7 +28,7 @@
 
   /* typo */
   --f-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
-  --f-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --f-body: 'Nunito Sans Variable', 'Nunito Sans', system-ui, sans-serif;
 
   --t-hero: clamp(2.4rem, 5vw, 4.75rem);
   --t-h2: clamp(1.95rem, 3.3vw, 3.05rem);

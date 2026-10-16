@@ -8,6 +8,10 @@ import { QuoteButton, PhoneLink } from '../components/Chrome.jsx'
 import Icon from '../components/Icon.jsx'
 import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
+import DIMS from '../content/imageDims.json'
+
+/** Image d'origine trop petite pour être agrandie (logos, badges, petits schémas). */
+const isSmall = (src) => (DIMS[src]?.[0] || 9999) < 480
 
 const files = import.meta.glob('../content/pages/*.json')
 const keyOf = (slug) => `../content/pages/${slug.replace(/\//g, '__')}.json`
@@ -152,8 +156,17 @@ function Media({ items, lang, wide }) {
     <div className={'cp-media n-' + Math.min(n, 4) + (wide ? ' is-wide' : '')}>
       {vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
       {imgs.map((im, i) => {
-        const ratio = n === 1 ? '4 / 3' : n === 3 && i === 0 ? '16 / 9' : '1 / 1'
-        const plate = <Plate src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={ratio} parallax={n === 1 ? 3 : 0} />
+        const small = isSmall(im.src)
+        const [w, h] = DIMS[im.src] || []
+        const ratio = small ? `${w} / ${h}` : n === 1 ? '4 / 3' : n === 3 && i === 0 ? '16 / 9' : '1 / 1'
+        const plate = (
+          <Plate
+            src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={ratio}
+            parallax={n === 1 && !small ? 3 : 0}
+            className={small ? 'is-small' : ''}
+            style={small ? { maxWidth: Math.round(w * 1.15) } : undefined}
+          />
+        )
         return (
           <Reveal key={im.src + i} delay={(i % 4) * 0.08} className="cp-media-item">
             {im.href ? <SmartLink href={im.href} className="cp-img-link">{plate}</SmartLink> : plate}
@@ -243,7 +256,8 @@ export default function ContentPage({ slug }) {
 
   // premier titre h1 retiré du flux (affiché en tête), première image = planche d'ouverture
   const blocks = page.sections.flatMap((s) => s.blocks)
-  const firstImg = blocks.find((b) => b.type === 'image')
+  // bannière : première image assez grande (jamais un petit logo agrandi)
+  const firstImg = blocks.find((b) => b.type === 'image' && (DIMS[b.src]?.[0] || 0) >= 900)
   let skippedH1 = false
   const sections = page.sections.map((s) => toChapters(s.blocks.filter((b) => {
     if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }

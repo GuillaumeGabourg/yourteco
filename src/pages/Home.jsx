@@ -41,7 +41,19 @@ function Hero() {
       <SunRays className="hero-rays" />
       <FallingLeaves count={10} />
       <motion.div className="wrap hero-content" style={reduce ? undefined : { opacity: fade }}>
-        <WordsReveal as="h1" id="hero-title" text={h.title} className="hero-title" immediate delay={0.4} stagger={0.06} />
+        <h1 id="hero-title" className="hero-title" aria-label={h.title}>
+          <motion.img
+            className="hero-logo"
+            src="/img/brand/logo-yourteco-light.png"
+            alt=""
+            width="904"
+            height="327"
+            initial={reduce ? false : { opacity: 0, y: 24, scale: 0.92, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+            transition={{ delay: 0.25, duration: 1.1, ease: EASE }}
+          />{' '}
+          <WordsReveal as="span" text={h.title.replace(/^Yourteco\s*/, '')} className="hero-words" immediate delay={0.55} stagger={0.06} />
+        </h1>
         <motion.div
           className="hero-actions"
           initial={reduce ? false : { opacity: 0, y: 18 }}
@@ -139,7 +151,7 @@ function Marks() {
 function Specs() {
   const s = HOME.specs
   const colRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: colRef, offset: ['start 75%', 'end 55%'] })
+  const { scrollYProgress } = useScroll({ target: colRef, offset: ['start 70%', 'end 90%'] })
   const [step, setStep] = useState(1)
   useMotionValueEvent(scrollYProgress, 'change', (v) => setStep(Math.min(4, Math.floor(v * 4) + 1)))
   return (
@@ -332,9 +344,9 @@ function Ethics() {
 function Steps() {
   const s = HOME.steps
   const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 80%', 'end 60%'] })
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 90%', 'start 45%'] })
   const [reached, setReached] = useState(0)
-  useMotionValueEvent(scrollYProgress, 'change', (v) => setReached(Math.min(4, Math.floor(v * 4.2) + 1)))
+  useMotionValueEvent(scrollYProgress, 'change', (v) => setReached(v <= 0 ? 0 : Math.min(4, Math.floor(v * 4) + 1)))
   return (
     <section className="steps section" aria-labelledby="steps-title">
       <div className="wrap">

@@ -32,3 +32,8 @@ Voir `src/content/corrections.js` (fabication → fabrication, traditionelles �
 - Note Google relevée le 16 octobre 2026 : 4,9/5 sur 88 avis.
 - Dates des avis Google approximées depuis « il y a N mois » : à vérifier lors de la première mise à jour mensuelle.
 - Reprise du texte d'avis Google en production : passer par l'API Google Places ou obtenir l'accord écrit des auteurs.
+
+## Images cassées sur le site actuel
+
+- `interieur-zome-serre.jpg` (page Zome-serre) et `Yourte_Maine_et_loire_copie-1.jpg` (page Montage) renvoient une erreur 404 sur yourteco.com : retirées de la maquette, à fournir par Yourteco.
+- 117 images de l'original font moins de 500 px de large (logos, badges, schémas) : affichées à leur taille réelle, sans agrandissement flou. Demander les originaux en haute définition.

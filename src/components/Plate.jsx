@@ -13,20 +13,20 @@ export function Tag({ children, className = '' }) {
 }
 
 /** Photo arrondie : ouverture douce à l'arrivée + léger parallaxe. */
-export function Plate({ src, alt, caption, meta, ratio = '3 / 2', tag, parallax = 0, className = '', priority = false, sizes, reveal = true }) {
+export function Plate({ src, alt, caption, meta, ratio = '3 / 2', tag, parallax = 0, className = '', priority = false, sizes, reveal = true, style }) {
   const ref = useRef(null)
   const reduce = useReducedMotion()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], [`-${parallax}%`, `${parallax}%`])
   const open = reveal && !reduce && !priority
   return (
-    <figure ref={ref} className={'plate ' + className}>
+    <figure ref={ref} className={'plate ' + className} style={style}>
       <motion.div
         className="plate-frame"
         style={{ aspectRatio: ratio }}
         initial={open ? { clipPath: 'inset(10% 8% 10% 8% round 22px)' } : false}
         whileInView={open ? { clipPath: 'inset(0% 0% 0% 0% round 22px)' } : undefined}
-        viewport={{ once: true, margin: '0px 0px -8% 0px' }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <motion.img

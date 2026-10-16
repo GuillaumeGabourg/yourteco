@@ -13,7 +13,7 @@ export function Reveal({ as = 'div', delay = 0, y = 28, children, className, ...
       className={className}
       initial={{ opacity: 0, y, filter: 'blur(6px)' }}
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '0px 0px -12% 0px' }}
+      viewport={{ once: true, amount: 0.12, margin: '0px 0px -4% 0px' }}
       transition={{ duration: 0.9, delay, ease: EASE }}
       {...rest}
     >
@@ -27,12 +27,13 @@ export function WordsReveal({ text, as = 'h2', id, className, delay = 0, stagger
   const reduce = useReducedMotion()
   const words = text.split(' ')
   if (reduce) { const Tag = as; return <Tag id={id} className={className}>{text}</Tag> }
+  const label = as === 'span' ? undefined : text
   const M = motion[as]
   const trigger = immediate
     ? { initial: 'hidden', animate: 'show' }
-    : { initial: 'hidden', whileInView: 'show', viewport: { once: true, margin: '0px 0px -10% 0px' } }
+    : { initial: 'hidden', whileInView: 'show', viewport: { once: true, margin: '0px 0px -4% 0px' } }
   return (
-    <M id={id} className={className} aria-label={text} {...trigger}
+    <M id={id} className={className} aria-label={label} aria-hidden={as === 'span' ? 'true' : undefined} {...trigger}
       variants={{ hidden: {}, show: { transition: { staggerChildren: stagger, delayChildren: delay } } }}>
       {words.map((w, i) => (
         <Fragment key={i}>
