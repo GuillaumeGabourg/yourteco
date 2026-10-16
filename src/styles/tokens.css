@@ -46,7 +46,7 @@
 
   /* rythme */
   --gutter: clamp(16px, 4vw, 48px);
-  --gap-section: clamp(80px, 10vw, 150px);
+  --gap-section: clamp(64px, 8vw, 120px);
   --measure: 68ch;
   --wrap: 1240px;
 

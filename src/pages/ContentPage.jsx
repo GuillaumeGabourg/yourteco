@@ -55,17 +55,44 @@ function toChapters(blocks) {
     const c = chapters[i], n = chapters[i + 1]
     if (c.media.length > 1 && !n.media.length && c.body.length) n.media.push(c.media.pop())
   }
+  // photos seules (sans titre ni texte) : rattachées au texte voisin qui n'a pas d'image
+  for (let i = 0; i < chapters.length; i++) {
+    const c = chapters[i]
+    if (c.heading || c.body.length || !c.media.length) continue
+    const n = chapters[i + 1], p = chapters[i - 1]
+    const target = n && n.body.length && !n.media.length ? n
+      : p && p.body.length && !p.media.length ? p
+      : p && p.body.length && p.media.length < 4 ? p // sinon : ajoutée aux photos du texte précédent
+      : null
+    if (target) { target.media.push(...c.media); c.media = []; c.dead = true }
+  }
   // titres seuls à la suite : regroupés en une liste de points
   const out = []
-  for (const c of chapters) {
+  for (const c of chapters.filter((x) => !x.dead)) {
     const lone = c.heading && !c.body.length && !c.media.length
     const last = out[out.length - 1]
     if (lone && last?.points) last.points.push(c.heading)
     else if (lone) out.push({ points: [c.heading] })
     else out.push(c)
   }
-  return out.map((c) => (c.points?.length === 1 ? { heading: c.points[0], body: [], media: [] } : c))
+  const flat = out.map((c) => (c.points?.length === 1 ? { heading: c.points[0], body: [], media: [] } : c))
+  // chapitres de texte seul qui se suivent : posés côte à côte (colonnes)
+  const res = []
+  for (const c of flat) {
+    const textOnly = !c.points && c.body.length > 0 && !c.media.length
+    const last = res[res.length - 1]
+    if (textOnly && last?.group) last.group.push(c)
+    else if (textOnly) res.push({ group: [c] })
+    else res.push(c)
+  }
+  return res.map((c) => (c.group?.length === 1 ? c.group[0] : c))
 }
+
+const blockLen = (b) =>
+  b.type === 'list' ? b.items.reduce((n, it) => n + segsText(it).length, 0)
+  : b.segs ? segsText(b.segs).length
+  : b.type === 'table' ? b.rows.length * 40 : 0
+const chapterLen = (c) => c.body.reduce((n, b) => n + blockLen(b), 0)
 
 function Heading({ b, className = '' }) {
   const H = b.level <= 2 ? 'h2' : b.level === 3 ? 'h3' : 'h4'
@@ -150,9 +177,23 @@ function Chapter({ c, lang, side }) {
       </div>
     )
   }
-  if (c.media.length && c.body.length) {
+  if (c.group) {
+    const cols = c.group.length >= 3 && c.group.every((g) => chapterLen(g) < 420) ? 3 : 2
     return (
-      <div className={'cp-split' + (side ? ' is-flip' : '')}>
+      <div className={'cp-columns cols-' + cols}>
+        {c.group.map((g, i) => (
+          <Reveal key={i} className="cp-col-item" delay={(i % cols) * 0.08}>
+            {g.heading && <Heading b={g.heading} />}
+            {g.body.map((b, j) => <Body key={j} b={b} />)}
+          </Reveal>
+        ))}
+      </div>
+    )
+  }
+  if (c.media.length && c.body.length) {
+    const long = chapterLen(c) > 1400
+    return (
+      <div className={'cp-split' + (side ? ' is-flip' : '') + (long ? ' is-long' : '')}>
         <div className="cp-text">
           {c.heading && <Heading b={c.heading} />}
           {c.body.map((b, i) => <Body key={i} b={b} />)}
@@ -161,15 +202,21 @@ function Chapter({ c, lang, side }) {
       </div>
     )
   }
-  return (
-    <div className="cp-chapter">
-      {c.heading && !c.body.length && <Heading b={c.heading} className="is-center" />}
-      {c.body.length > 0 && (
-        <div className="cp-text cp-col">
-          {c.heading && <Heading b={c.heading} />}
+  if (c.body.length) {
+    // texte seul : titre à gauche, texte à droite (2 colonnes si très long)
+    const len = chapterLen(c)
+    return (
+      <div className={'cp-aside' + (c.heading ? '' : ' no-head')}>
+        {c.heading && <div className="cp-aside-h"><Heading b={c.heading} /></div>}
+        <div className={'cp-text' + (len > (c.heading ? 1300 : 480) ? ' is-cols' : '')}>
           {c.body.map((b, i) => <Body key={i} b={b} />)}
         </div>
-      )}
+      </div>
+    )
+  }
+  return (
+    <div className="cp-chapter">
+      {c.heading && <Heading b={c.heading} className="cp-lone" />}
       {c.media.length > 0 && <Media items={c.media} lang={lang} wide />}
     </div>
   )
@@ -242,7 +289,7 @@ export default function ContentPage({ slug }) {
             <section key={si} className={'cp-section' + (si % 2 ? ' alt' : '')}>
               <div className="wrap cp-flow">
                 {chs.map((c, ci) => {
-                  const isSplit = !c.points && c.media.length > 0 && c.body.length > 0
+                  const isSplit = !c.points && !c.group && c.media.length > 0 && c.body.length > 0
                   if (isSplit) flip = 1 - flip
                   return <Chapter key={ci} c={c} lang={lang} side={isSplit ? flip : 0} />
                 })}
