@@ -397,6 +397,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "En savoir plus sur notre mode de fabrication de yourtes",
+     "href": "/fabrication-de-yourte-contemporaine/"
+    },
+    {
      "type": "heading",
      "level": 3,
      "text": "Différentes locations de yourtes"
@@ -415,6 +420,11 @@
        "t": "Louer une yourte pour un événement particulier tel un anniversaire, un mariage ou une activité d'entreprise ? Découvrir le camping en yourte ? Yourteco propose différents modèles afin d'allier confort et modularité. Découvrez encore ci-dessous notre partenaire YourtEvent !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir nos formules de location de yourtes",
+     "href": "/location-de-yourtes/"
     },
     {
      "type": "heading",
@@ -450,6 +460,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "En savoir plus pour construire sa yourte",
+     "href": "/construire-sa-yourte/"
+    },
+    {
      "type": "heading",
      "level": 3,
      "text": "Réalisation de toiles de yourte sur mesure"
@@ -468,6 +483,11 @@
        "t": "Comment choisir la toile de sa yourte ? Quels sont les services Yourteco sur la fabrication ou la réparation de votre / vos toiles ? Quels conseils pour un entretien durable et écologique de votre yourte contemporaine ? Toutes vos questions ont leur réponse ici."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "En savoir plus sur la toile de yourte",
+     "href": "/les-toiles-de-yourtes/"
     },
     {
      "type": "heading",

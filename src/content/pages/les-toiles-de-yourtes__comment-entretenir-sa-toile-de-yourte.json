@@ -158,13 +158,9 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "https://www.yourteco-boutique.com/product/nettoyant-textile/",
-       "href": "https://www.yourteco-boutique.com/product/nettoyant-textile/"
-      }
-     ]
+     "type": "button",
+     "label": "Voir le produit sur la Boutique Yourteco",
+     "href": "https://www.yourteco-boutique.com/product/nettoyant-textile/"
     },
     {
      "type": "text",
@@ -262,6 +258,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

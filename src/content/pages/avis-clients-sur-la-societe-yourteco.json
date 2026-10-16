@@ -584,6 +584,11 @@
        "t": "Yourtes en bois, kits yourte, toiles, produits d'entretien, toono, isolants, locations, livraisons, mais aussi les exclusivités Yourteco telles que la \"Tiny-Yourte\", le \"Zome-serre\" ou le moyen de devenir 100% autonome en électricité, cliquez ci-dessous pour découvrir nos services !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Services et tarifs Yourteco",
+     "href": "/chiffres/"
     }
    ]
   }

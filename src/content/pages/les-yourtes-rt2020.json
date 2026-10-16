@@ -226,13 +226,9 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "https://www.yourteco.com/fabrication-de-yourte-contemporaine/les-yourtes-et-la-reglementation-thermique-rt-2012/",
-       "href": "/fabrication-de-yourte-contemporaine/les-yourtes-et-la-reglementation-thermique-rt-2012/"
-      }
-     ]
+     "type": "button",
+     "label": "Au sujet de la Réglementation Thermique 2012 d'une yourte contemporaine",
+     "href": "/fabrication-de-yourte-contemporaine/les-yourtes-et-la-reglementation-thermique-rt-2012/"
     },
     {
      "type": "heading",
@@ -528,6 +524,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

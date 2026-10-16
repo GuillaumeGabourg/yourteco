@@ -23,7 +23,7 @@
     },
     {
      "type": "image",
-     "src": "/img/site/construire-kit-auconstruction-yourte-.webp",
+     "src": "/img/site/construire-kit-auconstruction-yourte.webp",
      "alt": ""
     },
     {
@@ -859,6 +859,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

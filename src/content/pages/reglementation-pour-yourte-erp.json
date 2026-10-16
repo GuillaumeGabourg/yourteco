@@ -561,13 +561,8 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "https://www.youtube.com/watch?v=SHyjTHu6ws0",
-       "href": "https://www.youtube.com/watch?v=SHyjTHu6ws0"
-      }
-     ]
+     "type": "video",
+     "youtube": "SHyjTHu6ws0"
     },
     {
      "type": "text",
@@ -1126,6 +1121,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

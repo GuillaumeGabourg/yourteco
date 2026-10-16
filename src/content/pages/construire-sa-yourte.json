@@ -220,6 +220,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir nos chantiers participatifs",
+     "href": "/chantiers-participatifs/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Voir les différents modèles et tarifs des kits auto-construction proposés par Yourteco"
@@ -231,6 +236,11 @@
        "t": "Yourte contemporaine d'habitation ou de loisir ? Au-delà du prix, le chantier qui vous attend n'est évidemment pas de la même importance si vous choisissez l'une ou l'autre de nos formules. Cliquez ci-dessous pour avancer dans votre projet d'autoconstruction !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Gamme et tarifs de kits auto-construction",
+     "href": "/kit-yourte/"
     }
    ]
   },
@@ -248,6 +258,11 @@
        "t": "Bois de construction, isolants, produits d'entretien, textiles et toiles, quincaillerie spécialisée, consommables, il y a tout ce qu'il faut pour construire sa yourte dans la Boutique Yourteco. Rapport qualité / prix garanti ! Consultez l'ensemble de notre catalogue en cliquant ci-dessous !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Accédez à la Boutique Yourteco !",
+     "href": "https://www.yourteco-boutique.com/shop/"
     }
    ]
   }

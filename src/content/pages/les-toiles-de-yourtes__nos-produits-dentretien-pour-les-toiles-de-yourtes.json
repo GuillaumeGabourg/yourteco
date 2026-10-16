@@ -256,6 +256,11 @@
        "t": "Vous pouvez commander directement un ensemble de produits d'entretien pour votre toile de yourte contemporaine via l'espace boutique Yourteco. Profitez de produits de qualité vendus au juste prix !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Accédez aux produits d'entretien labellisés Yourteco",
+     "href": "https://www.yourteco-boutique.com/product-category/nettoyants-impermeabilisants-yourte/"
     }
    ]
   },
@@ -273,6 +278,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

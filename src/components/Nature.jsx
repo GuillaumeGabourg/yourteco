@@ -109,17 +109,17 @@ export function Hills({ to = 'var(--bg)', back = 'var(--leaf)', mid = 'var(--gre
       return { x, y, h, lean, d: 2.6 + r() * 2.2, delay: -r() * 4 }
     })
   }, [seed])
-  const wave = (base, amp, phase) => {
-    let d = `M0 130 L0 ${base}`
+  const wave = (base, amp, phase, bottom = 120) => {
+    let d = `M0 ${bottom} L0 ${base}`
     for (let x = 0; x <= 1440; x += 40) d += ` L${x} ${(base - amp * Math.sin((x / 1440) * Math.PI * 2 + phase)).toFixed(1)}`
-    return d + ' L1440 130 Z'
+    return d + ` L1440 ${bottom} Z`
   }
   return (
     <div ref={ref} className={'hills ' + className} aria-hidden="true">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
         <motion.path d={wave(54, 22, 2.2)} fill={back} style={reduce ? undefined : { y: yBack }} opacity=".55" />
         <motion.path d={wave(70, 18, 4.1)} fill={mid} style={reduce ? undefined : { y: yMid }} opacity=".8" />
-        <path d={wave(86, 14, 0.6)} fill={to} />
+        <path d={wave(86, 14, 0.6, 175)} fill={to} />
         {grass && blades.map((b, i) => (
           <path
             key={i}

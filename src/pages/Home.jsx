@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'motion/react'
+import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'motion/react'
 import { HOME } from '../content/home.js'
 import { REVIEWS, REVIEWS_META, SOURCE_LABEL } from '../content/reviews.js'
 import { CONTACT } from '../content/site.js'
@@ -352,7 +352,6 @@ function Steps() {
       <div className="wrap">
         <header className="sec-head">
           <WordsReveal as="h2" id="steps-title" text={s.title} className="h2" />
-          {s.proposed && <p className="proposed">Bloc proposé, à valider par Yourteco</p>}
         </header>
         <div className="steps-track" ref={ref}>
           <GrowingStem progress={scrollYProgress} />
@@ -399,9 +398,22 @@ function Commitments() {
       <div className="wrap">
         {!reduce && (
           <p className="marquee-ctrl">
-            <button className="btn-icon" onClick={() => setPaused((p) => !p)} aria-pressed={paused}>
-              <Icon name={paused ? 'play' : 'pause'} size={18} />
-              <span className="sr-only">{paused ? 'Relancer le défilement' : 'Mettre en pause le défilement'}</span>
+            <button className="mq-btn" onClick={() => setPaused((p) => !p)} aria-pressed={paused}>
+              <span className="mq-dial" aria-hidden="true">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={paused ? 'play' : 'pause'}
+                    className="mq-ico"
+                    initial={{ scale: 0.4, rotate: -90, opacity: 0 }}
+                    animate={{ scale: 1, rotate: 0, opacity: 1 }}
+                    exit={{ scale: 0.4, rotate: 90, opacity: 0 }}
+                    transition={{ type: 'spring', stiffness: 420, damping: 22 }}
+                  >
+                    <Icon name={paused ? 'play' : 'pause'} size={18} />
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+              <span>{paused ? 'Relancer le défilement' : 'Mettre en pause'}</span>
             </button>
           </p>
         )}

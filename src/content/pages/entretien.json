@@ -233,6 +233,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Remontez le temps avec quelques archives presse sur Yourteco",
+     "href": "/presse-medias-radio-journal-article-de-presse/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Poétique de l’espace"
@@ -246,6 +251,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir des photos de yourtes associées à des citations littéraires",
+     "href": "/la-poetique-de-lespace/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Archives blog Yourteco"
@@ -257,6 +267,11 @@
        "t": "Depuis ses origines, le site Internet Yourteco distille ses savoir-faire, expériences et même astuces issues d'une solide expérience de terrain. Dans le blog Yourteco, se mêlent ainsi articles de fond et récits passionnés."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Lire les archives / articles du blog du fabricant et constructeur Yourteco",
+     "href": "/blog/"
     },
     {
      "type": "button",

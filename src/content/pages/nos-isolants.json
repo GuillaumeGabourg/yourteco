@@ -271,13 +271,9 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "https://fr.wikipedia.org/wiki/Perméthrine",
-       "href": "https://fr.wikipedia.org/wiki/Perméthrine"
-      }
-     ]
+     "type": "button",
+     "label": "Lire l'article sur Wikipédia",
+     "href": "https://fr.wikipedia.org/wiki/Perméthrine"
     },
     {
      "type": "text",
@@ -609,6 +605,11 @@
        "t": "Sur la Boutique en ligne de Yourteco, vous avez la possibilité de commander directement les isolants de votre yourte contemporaine. Profitez de produits que nous utilisons nous-mêmes ! Vendus, naturellement, au juste prix !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les isolants de la Boutique Yourteco !",
+     "href": "https://www.yourteco-boutique.com/product-category/isolants-yourte/"
     }
    ]
   },
@@ -626,6 +627,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

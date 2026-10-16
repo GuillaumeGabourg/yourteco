@@ -10,6 +10,9 @@ export default function SeedField() {
     const ctx = cv.getContext('2d')
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const colors = ['56, 98, 52', '106, 163, 58', '150, 146, 30']
+    const colorsDark = ['190, 222, 160', '219, 215, 58', '150, 200, 110']
+    const mqDark = window.matchMedia('(prefers-color-scheme: dark)')
+    const isDark = () => { const t = document.documentElement.dataset.theme; return t ? t === 'dark' : mqDark.matches }
     let w = 0, h = 0, dpr = 1, seeds = [], raf = 0, last = 0
     const mouse = { x: -999, y: -999, vx: 0, vy: 0, t: 0 }
 
@@ -21,7 +24,7 @@ export default function SeedField() {
         vx: 0, vy: 0,
         s, a: Math.random() * Math.PI * 2, spin: 0,
         ph: Math.random() * 100,
-        c: colors[Math.floor(Math.random() * colors.length)],
+        ci: Math.floor(Math.random() * colors.length),
         o: 0.16 + Math.random() * 0.16,
       }
     }
@@ -35,7 +38,9 @@ export default function SeedField() {
       while (seeds.length < n) seeds.push(make(true))
       seeds.length = n
     }
+    let pal = colors
     const draw = (p) => {
+      p.c = pal[p.ci]
       const len = 13 * p.s
       ctx.save()
       ctx.translate(p.x, p.y)
@@ -58,6 +63,7 @@ export default function SeedField() {
       const dt = Math.min(50, t - (last || t)) / 16.7
       last = t
       ctx.clearRect(0, 0, w, h)
+      pal = isDark() ? colorsDark : colors
       const gust = Math.hypot(mouse.vx, mouse.vy)
       for (const p of seeds) {
         // dérive : légère brise vers le haut et la droite, ondulation

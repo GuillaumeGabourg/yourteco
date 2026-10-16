@@ -600,14 +600,9 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "https://www.aubigny-au-bac.fr/.../DDTM%20-%20Avis%20sur...",
-       "href": "https://www.aubigny-au-bac.fr/media/VIE-PRATIQUE/urbanisme-plu/avis-ppa/DDTM%20-%20Avis%20sur%20le%20Stecal%20(07-09-18).pdf?fbclid=IwAR2DRFWkT38emqtUS4XwNdh1x_FtC4mChHu5JZ5dpHXsfHMBhCw_lMfIAR8",
-       "b": true
-      }
-     ]
+     "type": "button",
+     "label": "Télécharger le document (PDF)",
+     "href": "https://www.aubigny-au-bac.fr/media/VIE-PRATIQUE/urbanisme-plu/avis-ppa/DDTM%20-%20Avis%20sur%20le%20Stecal%20(07-09-18).pdf?fbclid=IwAR2DRFWkT38emqtUS4XwNdh1x_FtC4mChHu5JZ5dpHXsfHMBhCw_lMfIAR8"
     },
     {
      "type": "text",
@@ -1402,6 +1397,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

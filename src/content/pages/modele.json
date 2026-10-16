@@ -830,15 +830,6 @@
    "blocks": [
     {
      "type": "button",
-     "label": "Comment devenir 100% autonome sur l'électricité ?",
-     "href": null
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "button",
      "label": "Connaissez-vous la \"Tiny-Yourte\" de Yourteco ?",
      "href": "/la-surface-dune-tiny-yourte-est-egale-a-20-m2-ou-30-m2/"
     }
@@ -870,6 +861,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

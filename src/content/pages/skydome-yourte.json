@@ -417,6 +417,11 @@
        "t": "Afin d'accélérer votre demande, vous pouvez dorénavant commander directement en ligne votre ou vos skydômes via l'espace boutique de Yourteco. Qualité au juste prix garantie !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir nos skydômes et coupoles pour yourte",
+     "href": "https://www.yourteco-boutique.com/product-category/skydome-yourte/"
     }
    ]
   },
@@ -434,6 +439,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

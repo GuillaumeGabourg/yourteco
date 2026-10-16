@@ -315,6 +315,11 @@
        "t": "Autoconstruire sa yourte ou la faire construire ? Quelles différences ? Quels avantages ? Le propos de Yourteco devrait vous éclairer sur la question."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les avantages à autoconstruire sa yourte",
+     "href": "/construire-sa-yourte/les-avantages-de-construire-soi-meme-sa-yourte/"
     }
    ]
   },
@@ -332,6 +337,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

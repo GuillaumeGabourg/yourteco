@@ -601,6 +601,11 @@
        "t": "Mariage, salon, festival, séminaire , colloque d'entreprise, transformez votre prochain événement avec les locations de Yourtevent ."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les offres à la location de notre partenaire YourtEvent",
+     "href": "https://www.yourtevent.com"
     }
    ]
   },
@@ -641,6 +646,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir nos tarifs de location de yourte",
+     "href": "/contact/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Un type de yourte spécialement conçu"
@@ -654,6 +664,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Louer une Flex Yourte pour votre soirée",
+     "href": "/flex-yourte-evenementiel/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "A propos de l'accueil du public en yourte"
@@ -665,6 +680,11 @@
        "t": "Tout savoir sur les yourtes E.R.P. (établissement Recevant du Public) ? C'est ici !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Règlementation sur les yourtes E.R.P.",
+     "href": "/reglementation-pour-yourte-erp/"
     }
    ]
   }

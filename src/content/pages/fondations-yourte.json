@@ -562,13 +562,9 @@
      "caption": ""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Télechargez Plots Fondations en pdf",
-       "href": "https://www.yourteco.com/wp-content/uploads/2022/05/Plots-Fondations.pdf"
-      }
-     ]
+     "type": "button",
+     "label": "Télécharger le document (PDF)",
+     "href": "https://www.yourteco.com/wp-content/uploads/2022/05/Plots-Fondations.pdf"
     },
     {
      "type": "text",

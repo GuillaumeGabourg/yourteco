@@ -115,6 +115,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir les tarifs de nos modèles de yourtes en bois",
+     "href": "/modele/"
+    },
+    {
      "type": "image",
      "src": "/img/site/kit-autoconstruction-yourte-contemporaine-par-yourteco.webp",
      "alt": "Kit autoconstruction yourte contemporaine par Yourteco",
@@ -141,6 +146,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir les tarifs de nos différents \"kits yourte\"",
+     "href": "/kit-yourte/"
+    },
+    {
      "type": "image",
      "src": "/img/site/transport_1.webp",
      "alt": "Livraison de yourtes",
@@ -158,6 +168,11 @@
        "t": "Deux cas de figure ! Ou Yourteco livre votre yourte ou vous préférez faire appel à un transporteur ! Voici ce qu'il faut savoir..."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les tarifs pour la livraison de votre yourte",
+     "href": "/livraison-des-yourtes/"
     },
     {
      "type": "image",
@@ -186,6 +201,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir les tarifs de nos toiles de yourte sur mesure",
+     "href": "/les-toiles-de-yourtes/nos-toiles-de-yourtes-sur-mesure/"
+    },
+    {
      "type": "image",
      "src": "/img/site/clean-textil.webp",
      "alt": "CLEANTextil nettoyant yourte",
@@ -210,6 +230,11 @@
        "t": "."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les tarifs de nos différents produits d'entretien",
+     "href": "/les-toiles-de-yourtes/nos-produits-dentretien-pour-les-toiles-de-yourtes/"
     },
     {
      "type": "image",
@@ -238,6 +263,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir les tarifs de nos différents skydômes",
+     "href": "/skydome-yourte/"
+    },
+    {
      "type": "image",
      "src": "/img/site/isolation_2_g.webp",
      "alt": "Photo d'un rouleau d'isolant en chanvre pour les yourtes.",
@@ -264,6 +294,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir les tarifs de nos différents isolants pour yourte",
+     "href": "/nos-isolants/"
+    },
+    {
      "type": "image",
      "src": "/img/site/interieur-salon-yourte-contemporaine-loisir-yourteco.webp",
      "alt": "Intérieur salon yourte contemporaine loisir par Yourteco",
@@ -281,6 +316,11 @@
        "t": "Vous cherchez un habitat léger facile à monter et à démonter pour un événement particulier ? Une soirée entre amis ? En famille ? Consultez notre grille tarifaire sur la location d'une yourte contemporaine !"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les tarifs de location d'une yourte",
+     "href": "/location-de-yourtes/"
     },
     {
      "type": "heading",
@@ -305,6 +345,11 @@
        "t": "Cela faisait un petit moment que l'idée nous trottait en tête. Et quand le personnel de Yourteco a un projet en tête, il va jusqu'au bout. \"Comment associer le concept de yourte avec celui d'une serre pour faire pousser de bons légumes chez soi ?\" Eh bien voilà ! Le \"zome-serre\" est né. Sincèrement, nous ne savons pas encore s'il sera commercialisé. Evidemment, si le concept vous intéresse..."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir la documentation sur le \"zome-serre\"",
+     "href": "/le-zome-serre/"
     },
     {
      "type": "image",
@@ -340,6 +385,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir la station solaire Alternatiways",
+     "href": "https://www.alternatiways.com/cataloguesolaire"
+    },
+    {
      "type": "image",
      "src": "/img/site/tiny-yourte-schema-3d-600x445-1.webp",
      "alt": "Tiny-Yourte schéma 3D",
@@ -357,6 +407,11 @@
        "t": "Présentée en partenariat avec les ateliers Yourt&Co, la Tiny-Yourte est la dernière création du fabricant Yourteco."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Voir les caractéristiques de la Tiny-Yourte",
+     "href": "/la-surface-dune-tiny-yourte-est-egale-a-20-m2-ou-30-m2/"
     },
     {
      "type": "heading",

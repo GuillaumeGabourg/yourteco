@@ -260,13 +260,9 @@
      ]
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "yourteco-fabricant-made-in-france",
-       "href": "https://www.yourteco.com/wp-content/uploads/2023/08/yourteco-fabricant-made-in-france.pdf"
-      }
-     ]
+     "type": "button",
+     "label": "Télécharger le document (PDF)",
+     "href": "https://www.yourteco.com/wp-content/uploads/2023/08/yourteco-fabricant-made-in-france.pdf"
     },
     {
      "type": "text",
@@ -300,17 +296,13 @@
      "text": "Faites comme Yourteco ! Référencez-vous en tant que professionnel \"Made in France\""
     },
     {
-     "type": "text",
-     "segs": [
-      {
-       "t": "https://www.franceindustrie.org/formulaire-kit-communication/",
-       "href": "https://www.franceindustrie.org/formulaire-kit-communication/"
-      }
-     ]
+     "type": "button",
+     "label": "Accéder au formulaire France Industrie",
+     "href": "https://www.franceindustrie.org/formulaire-kit-communication/"
     },
     {
      "type": "image",
-     "src": "/img/site/yourtes-francaise-.webp",
+     "src": "/img/site/yourtes-francaise.webp",
      "alt": "Yourte française",
      "caption": "Comment reconnaitre un fabricant de yourtes françaises ?"
     },
@@ -332,6 +324,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Voir les services et tarifs Yourteco",
+     "href": "/chiffres/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Rencontre avec le gérant"
@@ -343,6 +340,11 @@
        "t": "Nicolas Chailloux, gérant et fondateur de Yourteco, évoque l'histoire de sa société et le secteur de la yourte française."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Lire l'entretien de Nicolas Chailloux",
+     "href": "/entretien/"
     }
    ]
   }

@@ -10,6 +10,26 @@ import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
 import DIMS from '../content/imageDims.json'
 import ReviewWall from '../components/ReviewWall.jsx'
+import RelatedCards from '../components/RelatedCards.jsx'
+
+/* « Sujets connexes » : les accroches avec lien qui suivent ce titre deviennent des cartes */
+const RELATED = /^(Sujets connexes|Articles connexes|Related (topics|articles)|Verwandte Themen)/i
+function extractRelated(blocks) {
+  const out = []
+  let inRel = false
+  for (const b of blocks) {
+    if (b.type === 'heading') { inRel = RELATED.test(b.text); out.push(b); continue }
+    const linked = b.type === 'text' && b.segs.some((x) => x.href)
+    if (inRel && linked) {
+      const last = out[out.length - 1]
+      if (last?.type === 'related') last.items.push(b)
+      else out.push({ type: 'related', items: [b] })
+      continue
+    }
+    out.push(b)
+  }
+  return out
+}
 
 /* ---------- témoignages : « Avis de X - date » + citation  |  « Testimonial 1: X » + citation ---------- */
 const plain = (b) => (b?.segs ? b.segs.map((x) => x.t).join('').trim() : '')
@@ -124,7 +144,7 @@ function toChapters(blocks) {
   // chapitres de texte seul qui se suivent : posés côte à côte (colonnes)
   const res = []
   for (const c of flat) {
-    const textOnly = !c.points && c.body.length > 0 && !c.media.length && !c.body.some((b) => b.type === 'reviews')
+    const textOnly = !c.points && c.body.length > 0 && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
     const last = res[res.length - 1]
     if (textOnly && last?.group) last.group.push(c)
     else if (textOnly) res.push({ group: [c] })
@@ -221,6 +241,18 @@ function Media({ items, lang, wide }) {
 }
 
 function Chapter({ c, lang, side }) {
+  const relAt = c.body ? c.body.findIndex((b) => b.type === 'related') : -1
+  if (relAt >= 0) {
+    const before = c.body.slice(0, relAt), after = c.body.slice(relAt + 1)
+    return (
+      <div className="cp-chapter cp-related">
+        {c.heading && <Heading b={c.heading} />}
+        {before.map((b, i) => <Body key={i} b={b} />)}
+        <RelatedCards items={c.body[relAt].items} lang={lang} />
+        {after.length > 0 && <Chapter c={{ heading: null, body: after, media: c.media }} lang={lang} side={0} />}
+      </div>
+    )
+  }
   const wallAt = c.body ? c.body.findIndex((b) => b.type === 'reviews') : -1
   if (wallAt >= 0) {
     const before = c.body.slice(0, wallAt), wall = c.body[wallAt], after = c.body.slice(wallAt + 1)
@@ -276,7 +308,7 @@ function Chapter({ c, lang, side }) {
     return (
       <div className={'cp-aside' + (c.heading ? '' : ' no-head')}>
         {c.heading && <div className="cp-aside-h"><Heading b={c.heading} /></div>}
-        <div className={'cp-text' + (len > (c.heading ? 1300 : 480) ? ' is-cols' : '')}>
+        <div className={'cp-text' + (len < 520 ? ' is-short' : '')}>
           {c.body.map((b, i) => <Body key={i} b={b} />)}
         </div>
       </div>
@@ -314,7 +346,7 @@ export default function ContentPage({ slug }) {
   // bannière : première image assez grande (jamais un petit logo agrandi)
   const firstImg = blocks.find((b) => b.type === 'image' && (DIMS[b.src]?.[0] || 0) >= 900)
   let skippedH1 = false
-  const sections = page.sections.map((s) => toChapters(extractReviews(s.blocks).filter((b) => {
+  const sections = page.sections.map((s) => toChapters(extractRelated(extractReviews(s.blocks)).filter((b) => {
     if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
     if (b === firstImg) return false
     return true

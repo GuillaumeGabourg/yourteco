@@ -23,6 +23,40 @@ export function PhoneLink({ className = '' }) {
   )
 }
 
+/** Thème clair / sombre : suit le système tant que le visiteur n'a pas choisi. */
+function ThemeToggle() {
+  const sys = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || sys())
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    const on = () => { if (!document.documentElement.dataset.theme) setTheme(sys()) }
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  const toggle = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    document.documentElement.dataset.theme = next
+    try { localStorage.setItem('ytc-theme', next) } catch { /* stockage indisponible : choix limité à la visite */ }
+    setTheme(next)
+  }
+  const dark = theme === 'dark'
+  return (
+    <button type="button" className="theme-btn" onClick={toggle} aria-label={dark ? 'Passer au thème clair' : 'Passer au thème sombre'} title={dark ? 'Thème clair' : 'Thème sombre'}>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={theme}
+          initial={{ y: 18, rotate: -60, opacity: 0 }}
+          animate={{ y: 0, rotate: 0, opacity: 1 }}
+          exit={{ y: -18, rotate: 60, opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 380, damping: 24 }}
+        >
+          <Icon name={dark ? 'sun' : 'moon'} size={20} />
+        </motion.span>
+      </AnimatePresence>
+    </button>
+  )
+}
+
 export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -59,7 +93,8 @@ export function Header() {
         <div id="site-bar" className="bar">
           <div className="wrap bar-in">
             <Link to="/" className="logo" aria-label="Yourteco, accueil">
-              <img src="/img/brand/logo-yourteco-hd.png" alt="Yourteco" width="904" height="327" />
+              <img className="logo-std" src="/img/brand/logo-yourteco-hd.png" alt="Yourteco" width="904" height="327" />
+              <img className="logo-light" src="/img/brand/logo-yourteco-light.png" alt="Yourteco" width="904" height="327" />
             </Link>
             <nav aria-label="Navigation principale" className="nav-desktop">
               {NAV.map((n) => (
@@ -67,6 +102,7 @@ export function Header() {
               ))}
             </nav>
             <div className="bar-actions">
+              <ThemeToggle />
               <PhoneLink className="bar-phone" />
               <QuoteButton className="bar-quote">Devis</QuoteButton>
               <button

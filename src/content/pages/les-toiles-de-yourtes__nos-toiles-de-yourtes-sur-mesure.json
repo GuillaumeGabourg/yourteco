@@ -96,6 +96,11 @@
      "href": "https://www.yourteco.com/wp-content/uploads/2022/08/Prise-de-cotes-toiles-sur-mesures-V2.jpg"
     },
     {
+     "type": "button",
+     "label": "Télécharger le schéma au format PDF",
+     "href": "https://www.yourteco.com/wp-content/uploads/2019/07/Prise-de-cotes-toiles-sur-mesures.pdf"
+    },
+    {
      "type": "list",
      "ordered": false,
      "items": [
@@ -119,6 +124,11 @@
      "type": "heading",
      "level": 2,
      "text": "Murs"
+    },
+    {
+     "type": "button",
+     "label": "Télécharger le nuancier avec les textures au format PDF",
+     "href": "https://www.yourteco.com/wp-content/uploads/2020/06/YOURTECO-COLORIS-MURS-ET-TOITS-_1.pdf"
     }
    ]
   },
@@ -389,6 +399,11 @@
        "t": "Et trouvez toutes les réponses à vos questions"
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "02 41 24 49 87",
+     "href": "tel:+33241244987"
     },
     {
      "type": "image",

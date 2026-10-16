@@ -467,6 +467,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Nos yourtes en bois",
+     "href": "/des-yourtes-de-qualites/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Nos yourtes de loisirs"
@@ -480,6 +485,11 @@
      ]
     },
     {
+     "type": "button",
+     "label": "Nos yourtes de loisirs",
+     "href": "/fabrication-de-yourte-contemporaine/nos-yourtes-loisirs/"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Nos yourtes d'habitation"
@@ -491,6 +501,11 @@
        "t": "De véritables constructions en bois inspirées de la yourte originelle ! Découvrez dans le détail, les caractéristiques de nos yourtes contemporaines d'habitation."
       }
      ]
+    },
+    {
+     "type": "button",
+     "label": "Nos yourtes d'habitation",
+     "href": "/fabrication-de-yourte-contemporaine/nos-yourtes-dhabitation/"
     }
    ]
   }
