@@ -16,7 +16,7 @@ export function QuoteButton({ children = 'Demander un devis', className = '' }) 
 
 export function PhoneLink({ className = '' }) {
   return (
-    <a href={CONTACT.phoneHref} className={'phone ' + className}>
+    <a href={CONTACT.phoneHref} className={'phone ' + className} aria-label={'Appeler le ' + CONTACT.phone}>
       <Icon name="phone" size={18} />
       <span>{CONTACT.phone}</span>
     </a>
@@ -73,7 +73,7 @@ export function Header() {
 
   return (
     <>
-      <div className="utility">
+      <aside className="utility" aria-label="Boutique et autres langues">
         <div className="wrap utility-in">
           <a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer">Voir la boutique Yourteco <Icon name="out" size={14} /></a>
           <nav aria-label="Autres langues" className="langs">
@@ -81,7 +81,7 @@ export function Header() {
             <Link to="/buying-a-yurt/" lang="en">Buying a Yurt</Link>
           </nav>
         </div>
-      </div>
+      </aside>
       <header className={'site-header' + (scrolled ? ' is-scrolled' : '')}>
         <div id="site-bar" className="bar">
           <div className="wrap bar-in">

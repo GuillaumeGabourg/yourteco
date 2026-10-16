@@ -27,7 +27,8 @@ export function Segs({ segs }) {
     const parts = fix(s.t).split('\n')
     let node = parts.flatMap((p, j) => (j ? [<br key={'b' + j} />, p] : [p]))
     if (s.b) node = <strong>{node}</strong>
-    if (s.href) node = <SmartLink href={s.href}>{node}</SmartLink>
+    // lien sans texte (espace seul dans la source) : rendu comme simple espace, pas de lien vide
+    if (s.href && s.t.trim()) node = <SmartLink href={s.href}>{node}</SmartLink>
     return <span key={i}>{node}</span>
   })
 }

@@ -161,7 +161,7 @@ const chapterLen = (c) => c.body.reduce((n, b) => n + blockLen(b), 0)
 
 function Heading({ b, className = '' }) {
   const H = b.level <= 2 ? 'h2' : b.level === 3 ? 'h3' : 'h4'
-  return <Reveal as={H} className={'cp-h cp-' + H + ' ' + className}>{fix(b.text)}</Reveal>
+  return <Reveal as={H} className={'cp-h cp-' + H + ' ' + className}><span className="ul">{fix(b.text)}</span></Reveal>
 }
 
 function Body({ b }) {
@@ -190,7 +190,7 @@ function Body({ b }) {
       const [first, ...rest] = b.rows
       const body = b.head ? rest : b.rows
       return (
-        <div className="cp-table-wrap">
+        <div className="cp-table-wrap" tabIndex={0}>
           <table className="cp-table">
             {b.head && <thead><tr>{first.map((c, i) => <th key={i} scope="col"><Segs segs={c} /></th>)}</tr></thead>}
             <tbody>{body.map((r, i) => <tr key={i}>{r.map((c, j) => (j ? <td key={j}><Segs segs={c} /></td> : <th key={j} scope="row"><Segs segs={c} /></th>))}</tr>)}</tbody>
@@ -346,10 +346,16 @@ export default function ContentPage({ slug }) {
   // bannière : première image assez grande (jamais un petit logo agrandi)
   const firstImg = blocks.find((b) => b.type === 'image' && (DIMS[b.src]?.[0] || 0) >= 900)
   let skippedH1 = false
+  let prevLvl = 1
   const sections = page.sections.map((s) => toChapters(extractRelated(extractReviews(s.blocks)).filter((b) => {
     if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
     if (b === firstImg) return false
     return true
+  }).map((b) => {
+    if (b.type !== 'heading') return b
+    const level = Math.min(Math.max(b.level, 2), prevLvl + 1)
+    prevLvl = level
+    return level === b.level ? b : { ...b, level }
   }))).filter((s) => s.length)
 
   const crumbs = location.pathname.split('/').filter(Boolean)
@@ -400,7 +406,7 @@ export default function ContentPage({ slug }) {
         })}
       </div>
 
-      <aside className="cp-cta">
+      <section className="cp-cta" aria-label={t.cta}>
         <Hills className="hills-top" to="var(--green-800)" back="var(--sun)" mid="var(--leaf)" seed={5} />
         <div className="wrap cp-cta-in">
           <div>
@@ -412,7 +418,7 @@ export default function ContentPage({ slug }) {
             <PhoneLink className="phone-lg" />
           </div>
         </div>
-      </aside>
+      </section>
     </article>
   )
 }

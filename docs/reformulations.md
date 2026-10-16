@@ -35,5 +35,4 @@ Les accroches se terminaient par « Ce qu'il faut savoir... », « Réponse... �
 ## Libellés de boutons ajoutés par la maquette
 
 - Mur d'avis : « Lire la suite » / « Réduire ».
-- Bandeau des engagements : « Mettre en pause » / « Relancer le défilement ».
 - Thème : « Passer au thème sombre » / « Passer au thème clair ».

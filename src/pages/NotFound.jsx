@@ -8,7 +8,7 @@ export default function NotFound() {
     <section className="nf">
       <div className="wrap nf-in">
         <p className="nf-mark" aria-hidden="true">404</p>
-        <h1 className="h2">Cette pièce n'est pas dans le stock.</h1>
+        <h1 className="h2"><span className="ul">Cette pièce n'est pas dans le stock.</span></h1>
         <p className="lead">La page demandée n'existe pas ou a été déplacée.</p>
         <div className="nf-actions">
           <Link to="/" className="btn btn-line"><span>Retour à l'accueil</span></Link>

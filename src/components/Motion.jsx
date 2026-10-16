@@ -22,11 +22,14 @@ export function Reveal({ as = 'div', delay = 0, y = 28, children, className, ...
   )
 }
 
+/* trait de survol des titres : posé sur le texte, pas sur le bloc */
+const Wrap = ({ ul, children }) => (ul ? <span className="ul">{children}</span> : children)
+
 /** Titre révélé mot par mot (masque). Le texte reste lisible par les lecteurs d'écran. */
 export function WordsReveal({ text, as = 'h2', id, className, delay = 0, stagger = 0.055, immediate = false }) {
   const reduce = useReducedMotion()
   const words = text.split(' ')
-  if (reduce) { const Tag = as; return <Tag id={id} className={className}>{text}</Tag> }
+  if (reduce) { const Tag = as; return <Tag id={id} className={className}>{as === 'span' ? text : <span className="ul">{text}</span>}</Tag> }
   const label = as === 'span' ? undefined : text
   const M = motion[as]
   const trigger = immediate
@@ -35,7 +38,7 @@ export function WordsReveal({ text, as = 'h2', id, className, delay = 0, stagger
   return (
     <M id={id} className={className} aria-label={label} aria-hidden={as === 'span' ? 'true' : undefined} {...trigger}
       variants={{ hidden: {}, show: { transition: { staggerChildren: stagger, delayChildren: delay } } }}>
-      {words.map((w, i) => (
+      <Wrap ul={as !== 'span'}>{words.map((w, i) => (
         <Fragment key={i}>
           {i > 0 && ' '}
           <span className="wr-mask" aria-hidden="true">
@@ -47,7 +50,7 @@ export function WordsReveal({ text, as = 'h2', id, className, delay = 0, stagger
             </motion.span>
           </span>
         </Fragment>
-      ))}
+      ))}</Wrap>
     </M>
   )
 }

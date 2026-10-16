@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'motion/react'
+import { motion, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'motion/react'
 import { HOME } from '../content/home.js'
 import { REVIEWS, REVIEWS_META, SOURCE_LABEL } from '../content/reviews.js'
 import { CONTACT } from '../content/site.js'
@@ -103,12 +103,12 @@ function Intro() {
         </div>
 
         <div className="why">
-          <Reveal as="h3" className="why-title h3">{fix(d.whyTitle)}</Reveal>
+          <Reveal as="h3" className="why-title h3"><span className="ul">{fix(d.whyTitle)}</span></Reveal>
           <ul className="why-list">
             {d.why.map(([t, x], i) => (
               <Reveal as="li" key={t} className="why-item" delay={i * 0.1}>
                 <span className="why-icon"><Icon name={icons[i]} size={26} /></span>
-                <h4>{fix(t)}</h4>
+                <h4><span className="ul">{fix(t)}</span></h4>
                 <p>{fix(x)}</p>
               </Reveal>
             ))}
@@ -119,7 +119,7 @@ function Intro() {
           <SunRays className="eco-rays" rays={11} />
           <div className="eco-in">
             <span className="eco-icon"><Icon name="sprout" size={30} /></span>
-            <h3 className="h3">{fix(d.ecoTitle)}</h3>
+            <h3 className="h3"><span className="ul">{fix(d.ecoTitle)}</span></h3>
             <p>{fix(d.eco)}</p>
           </div>
         </Reveal>
@@ -177,7 +177,7 @@ function Specs() {
           <div className="specs-col" ref={colRef}>
             {s.groups.map((g, gi) => (
               <article key={g.title} className={'spec-group' + (step === gi + 1 ? ' is-on' : '')}>
-                <h3 className="h3">{fix(g.title)}</h3>
+                <h3 className="h3"><span className="ul">{fix(g.title)}</span></h3>
                 <dl>
                   {g.items.map(([t, x]) => (
                     <div key={t} className="spec-item">
@@ -216,7 +216,7 @@ function Offers() {
                   <Plate src={o.image} alt="" ratio="4 / 3" tag={o.tag} />
                 </Link>
                 <div className="offer-body">
-                  <h3 className="h3"><Link to={o.href}>{fix(o.title)}</Link></h3>
+                  <h3 className="h3"><Link to={o.href}><span className="ul">{fix(o.title)}</span></Link></h3>
                   <p>{fix(o.text)}</p>
                   <Link to={o.href} className="more">
                     <span>{fix(o.cta)}</span>
@@ -305,21 +305,21 @@ function Ethics() {
       <Dapple />
       <div className="wrap">
         <header className="sec-head">
-          <h2 id="ethics-title" className="h2">{fix(e.title)}<span className="h2-sub">{fix(e.subtitle)}</span></h2>
+          <h2 id="ethics-title" className="h2"><span className="ul">{fix(e.title)}</span><span className="h2-sub">{fix(e.subtitle)}</span></h2>
           <Reveal as="p" className="lead">{fix(e.lead)}</Reveal>
         </header>
         <ul className="pillars">
           {e.pillars.map(([t, x], i) => (
             <Reveal as="li" key={t} className="pillar" delay={i * 0.08}>
               <span className="pillar-icon"><Icon name={icons[i]} size={26} /></span>
-              <h3>{fix(t)}</h3>
+              <h3><span className="ul">{fix(t)}</span></h3>
               <p>{fix(x)}</p>
             </Reveal>
           ))}
         </ul>
         <div className="craft">
           <Reveal className="craft-text">
-            <h3 className="h3">{fix(e.craftTitle)}</h3>
+            <h3 className="h3"><span className="ul">{fix(e.craftTitle)}</span></h3>
             <p>{fix(e.craft)}</p>
           </Reveal>
           <Reveal as="figure" className="video plate" delay={0.1}>
@@ -371,7 +371,7 @@ function Steps() {
                   <span className="bud-leaf bud-r"><LeafShape color="var(--green-600)" /></span>
                   <span className="bud-n">{i + 1}</span>
                 </span>
-                <h3>{t}</h3>
+                <h3><span className="ul">{t}</span></h3>
                 <p>{x}</p>
               </li>
             ))}
@@ -386,8 +386,6 @@ function Steps() {
 /* ---------- Engagements (bande défilante) ---------- */
 function Commitments() {
   const c = HOME.commitments
-  const reduce = useReducedMotion()
-  const [paused, setPaused] = useState(false)
   const row = c.items.map(([t]) => fix(t))
   return (
     <section className="commit section" aria-labelledby="commit-title">
@@ -396,7 +394,7 @@ function Commitments() {
           <WordsReveal as="h2" id="commit-title" text={fix(c.title)} className="h2" />
         </header>
       </div>
-      <div className={'marquee' + (paused ? ' is-paused' : '')} aria-hidden="true">
+      <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
           {[...row, ...row].map((t, i) => (
             <span key={i} className="marquee-item"><span className="marquee-leaf"><LeafShape color={i % 2 ? 'var(--leaf)' : 'var(--sun)'} /></span>{t}</span>
@@ -404,27 +402,6 @@ function Commitments() {
         </div>
       </div>
       <div className="wrap">
-        {!reduce && (
-          <p className="marquee-ctrl">
-            <button className="mq-btn" onClick={() => setPaused((p) => !p)} aria-pressed={paused}>
-              <span className="mq-dial" aria-hidden="true">
-                <AnimatePresence mode="wait" initial={false}>
-                  <motion.span
-                    key={paused ? 'play' : 'pause'}
-                    className="mq-ico"
-                    initial={{ scale: 0.4, rotate: -90, opacity: 0 }}
-                    animate={{ scale: 1, rotate: 0, opacity: 1 }}
-                    exit={{ scale: 0.4, rotate: 90, opacity: 0 }}
-                    transition={{ type: 'spring', stiffness: 420, damping: 22 }}
-                  >
-                    <Icon name={paused ? 'play' : 'pause'} size={18} />
-                  </motion.span>
-                </AnimatePresence>
-              </span>
-              <span>{paused ? 'Relancer le défilement' : 'Mettre en pause'}</span>
-            </button>
-          </p>
-        )}
         <ul className="commit-list">
           {c.items.map(([t, x], i) => (
             <Reveal as="li" key={t} delay={(i % 2) * 0.08}>
@@ -452,7 +429,7 @@ function News() {
             <Reveal as="article" key={it.title} className="news-item" delay={i * 0.12}>
               <Plate src={it.image} alt="" ratio="16 / 10" />
               <div className="news-body">
-                <h3 className="h3">{fix(it.title)}</h3>
+                <h3 className="h3"><span className="ul">{fix(it.title)}</span></h3>
                 <p>{fix(it.text)}</p>
                 <SmartLink href={it.href} className="more"><span>{fix(it.cta)}</span><Icon name="out" size={16} /></SmartLink>
               </div>
@@ -473,7 +450,7 @@ function Quote() {
       <Dapple />
       <div className="wrap quote-grid">
         <div className="quote-side">
-          <h2 id="quote-title" className="h2">{fix(p.title)}</h2>
+          <h2 id="quote-title" className="h2"><span className="ul">{fix(p.title)}</span></h2>
           <p>{fix(p.text)}</p>
           <Link to={p.href} className="more more-light"><span>{fix(p.cta)}</span><Icon name="arrow" size={18} /></Link>
           <div className="quote-contact">
