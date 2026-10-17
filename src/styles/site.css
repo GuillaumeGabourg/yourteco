@@ -377,6 +377,9 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .offers { background: color-mix(in srgb, var(--bg-2) 78%, transparent); }
 .offer-group + .offer-group { margin-top: clamp(96px, 11vw, 160px); }
 .offer-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+/* photos de formats différents : zone image commune aux deux cartes, la plus petite centrée (jamais rognée), titres à la même hauteur */
+.offer-pair > .offer { grid-row: span 2; grid-template-rows: subgrid; }
+.offer-pair > .offer > .offer-img { align-self: center; }
 .offer { display: grid; gap: 0; background: var(--bg-3); border-radius: calc(var(--r-lg) + 4px); padding: 10px 10px 0; box-shadow: var(--shadow); transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out); }
 .offer:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .offer-img { display: block; }

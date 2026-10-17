@@ -7,7 +7,14 @@
     "dev": "vite --port 4173 --strictPort",
     "build": "vite build",
     "preview": "vite preview --port 4174",
-    "deploy": "node scripts-deploy.mjs"
+    "deploy": "node scripts-deploy.mjs",
+    "audit": "node outils/audit/audit.cjs && node outils/audit/axe.cjs && node outils/audit/anchors.cjs && node outils/audit/crop.cjs && node outils/audit/align.cjs",
+    "audit:pages": "node outils/audit/audit.cjs",
+    "audit:axe": "node outils/audit/axe.cjs",
+    "audit:ancres": "node outils/audit/anchors.cjs",
+    "audit:images": "node outils/audit/crop.cjs",
+    "audit:alignement": "node outils/audit/align.cjs",
+    "audit:perf": "node outils/audit/perf.cjs"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",
@@ -20,6 +27,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "5.0.2",
+    "axe-core": "4.10.2",
+    "playwright-core": "1.48.2",
     "vite": "7.1.4"
   }
 }
