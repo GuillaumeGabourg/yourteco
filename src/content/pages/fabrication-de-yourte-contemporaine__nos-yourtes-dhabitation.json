@@ -283,12 +283,6 @@
      "text": "Garantie décennale"
     },
     {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
-    },
-    {
      "type": "text",
      "segs": [
       {
@@ -310,12 +304,6 @@
      "text": "Ossature"
     },
     {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
-    },
-    {
      "type": "text",
      "segs": [
       {
@@ -334,12 +322,6 @@
      "type": "heading",
      "level": 3,
      "text": "Isolation"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
     },
     {
      "type": "heading",
@@ -370,12 +352,6 @@
      "type": "heading",
      "level": 3,
      "text": "Plancher"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
     },
     {
      "type": "image",
@@ -435,12 +411,6 @@
      "type": "heading",
      "level": 3,
      "text": "Menuiseries"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
     },
     {
      "type": "image",
@@ -513,12 +483,6 @@
     },
     {
      "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
-    },
-    {
-     "type": "image",
      "src": "/img/site/perches-yourte-contemporaine.webp",
      "alt": "Perches de yourte contemporaine",
      "caption": "Schéma de perches d'une yourte"
@@ -577,12 +541,6 @@
      "type": "heading",
      "level": 3,
      "text": "Enveloppe"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
     },
     {
      "type": "image",
@@ -692,12 +650,6 @@
      "type": "heading",
      "level": 3,
      "text": "Les Skydômes"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
     },
     {
      "type": "image",
@@ -846,11 +798,6 @@
      "type": "button",
      "label": "02 41 24 49 87",
      "href": "tel:+33241244987"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": ""
     }
    ]
   }

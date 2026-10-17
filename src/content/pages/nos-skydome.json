@@ -93,16 +93,6 @@
   {
    "blocks": [
     {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": "Logo-Yourteco-small-75",
-     "caption": ""
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
      "type": "heading",
      "level": 2,
      "text": "Un dôme en plexiglass"
@@ -166,11 +156,6 @@
      "type": "button",
      "label": "02 41 24 49 87",
      "href": "tel:+33241244987"
-    },
-    {
-     "type": "image",
-     "src": "/img/site/logo-yourteco-small-75.webp",
-     "alt": ""
     }
    ]
   }

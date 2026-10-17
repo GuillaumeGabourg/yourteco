@@ -21,6 +21,7 @@ Plan détaillé d'origine (v6) : `C:\Users\desig\.claude\plans\https-www-yourtec
 | Avis | Carrousel sur l'accueil (7 avis datés, lien vers tous les témoignages et vers Google), mur d'avis sur la page Avis |
 | Langues | Menu déroulant à drapeaux dans la barre. Pages EN et DE avec menu, menu mobile, bandeau et pied de page traduits |
 | Publication | GitHub Pages sous `/yourteco/` |
+| Logos décoratifs | Les 42 petits logos Yourteco posés sous les titres sur l'ancien site (`logo-yourteco-small-75`) sont supprimés des 32 pages. Ce n'était qu'un ornement, pas un contenu. À ne pas réintroduire. |
 
 ## À faire
 
