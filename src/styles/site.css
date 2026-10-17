@@ -88,10 +88,6 @@
 .plate-meta { font-weight: 650; color: var(--tx-accent); white-space: nowrap; }
 
 /* ---------- barre utilitaire + en-tête ---------- */
-.utility { background: var(--green-900); color: var(--on-dark-2); font-size: .84rem; }
-.utility-in { display: flex; justify-content: space-between; align-items: center; min-height: 36px; gap: 16px; }
-.utility a { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
-.utility a:hover { color: var(--sun); }
 /* choix de la langue : menu déroulant à drapeaux dans la barre */
 .lang-menu { position: relative; }
 .lang-btn { display: inline-flex; align-items: center; gap: 7px; height: 44px; padding: 0 12px 0 10px; border: 1.5px solid var(--line); border-radius: 999px; background: transparent; color: var(--tx-strong); font: inherit; font-weight: 750; font-size: .84rem; letter-spacing: .04em; cursor: pointer; transition: background-color .25s, border-color .25s; }
@@ -188,15 +184,11 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .mega-feature-t { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px; font-family: var(--f-display); font-weight: 520; font-size: 1.1rem; line-height: 1.2; }
 .mega-quote { justify-self: start; }
 .mega-scrim { position: fixed; inset: 0; z-index: 40; background: rgba(14, 25, 16, .32); }
-.utility-right { display: flex; align-items: center; gap: 22px; }
-.utility-phone { color: #fff; font-weight: 650; }
-/* le numéro est dans le bandeau du haut : dans la barre, le téléphone devient une pastille */
+/* sous 1560 px, le téléphone de la barre devient une pastille */
 @media (max-width: 1560px) {
   .bar-phone span { display: none; }
   .bar-phone { width: 44px; height: 44px; justify-content: center; border: 1.5px solid var(--line); border-radius: 50%; }
 }
-.u-short { display: none; }
-@media (max-width: 760px) { .utility .utility-phone, .u-long { display: none; } .u-short { display: inline; } }
 
 @media (max-width: 1340px) {
   .nav-desktop { display: none; }
@@ -211,7 +203,6 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
   .bar-actions { gap: 8px; }
   .bar-quote { padding: 0 14px; }
   .bar-quote svg { display: none; }
-  .utility-in > a { font-size: .78rem; }
   
 }
 
@@ -241,7 +232,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .dapple-spot { position: absolute; left: 0; top: 0; width: 1040px; height: 1040px; border-radius: 50%; background: radial-gradient(closest-side, rgba(219, 215, 58, .16), rgba(106, 163, 58, .07) 40%, transparent 70%); will-change: transform; }
 
 /* ---------- héros ---------- */
-.hero { position: relative; min-height: min(calc(100svh - var(--bar-h) - 36px), 940px); display: grid; place-items: center; overflow: clip; background: var(--green-900); color: #fff; }
+.hero { position: relative; min-height: min(calc(100svh - var(--bar-h)), 940px); display: grid; place-items: center; overflow: clip; background: var(--green-900); color: #fff; }
 .hero-media { position: absolute; inset: 0; overflow: clip; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
 .hero-media::after {
@@ -740,7 +731,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 
 /* ---------- fond vivant (graines) ---------- */
 .seed-field { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-main, .site-footer, .utility { position: relative; z-index: 1; }
+main, .site-footer { position: relative; z-index: 1; }
 
 /* ---------- survol des textes ---------- */
 /* titres : un trait vert pousse sous le titre */
