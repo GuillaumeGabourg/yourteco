@@ -1,6 +1,7 @@
 export const CONTACT = {
   phone: '02 41 24 49 87',
   phoneHref: 'tel:+33241244987',
+  phoneIntl: '+33 2 41 24 49 87',
   email: 'contact@yourteco.com',
   address: ['« Le petit paradis »', '49640 Daumeray', 'France'],
   mapHref: 'https://www.google.fr/maps/place/Yourteco/@47.659287,-0.3519487,17z',

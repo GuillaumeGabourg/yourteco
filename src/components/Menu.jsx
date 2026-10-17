@@ -3,8 +3,9 @@ import { createPortal } from 'react-dom'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import Icon from './Icon.jsx'
-import { QuoteButton, PhoneLink } from './Chrome.jsx'
+import { QuoteButton, PhoneLink, ThemeToggle } from './Chrome.jsx'
 import { MENU } from '../content/menu.js'
+import { UI, pagesOf } from '../content/ui.js'
 import { SmartLink } from '../lib/text.jsx'
 import { asset } from '../lib/asset.js'
 import VARIANTS from '../content/imageVariants.json'
@@ -121,14 +122,31 @@ export function MegaNav({ activeKey }) {
   )
 }
 
-/** Menu mobile plein écran : rubriques en accordéon (celle de la page ouverte d'office), devis et téléphone toujours en bas. */
-export function MobileMenu({ activeKey }) {
+/** Pages anglaises ou allemandes : seules ces 5 pages existent dans la langue, elles forment le menu. */
+export function LangNav({ lang }) {
+  const pages = pagesOf(lang).slice(0, 4) // la page légale est au pied de page
+  return (
+    <nav aria-label={UI[lang].nav} className="nav-desktop nav-lang">
+      {pages.map((l) => <NavLink key={l.href} to={l.href} className="nav-link">{l.label}</NavLink>)}
+    </nav>
+  )
+}
+
+/** Menu mobile plein écran : rubriques en accordéon (celle de la page ouverte d'office), devis et téléphone toujours en bas.
+ *  Pages anglaises ou allemandes : la liste des pages de la langue. */
+export function MobileMenu({ activeKey, lang = 'fr' }) {
   const [exp, setExp] = useState(activeKey)
   const { pathname } = useLocation()
-  return (
+  const foot = (
+    <div className="menu-mobile-foot">
+      <QuoteButton />
+      <PhoneLink />
+    </div>
+  )
+  const shell = (children) => (
     <motion.nav
       id="menu-mobile"
-      aria-label="Menu"
+      aria-label={lang === 'fr' ? 'Menu' : UI[lang].nav}
       className="menu-mobile"
       data-lenis-prevent=""
       initial={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -136,6 +154,22 @@ export function MobileMenu({ activeKey }) {
       exit={{ clipPath: 'inset(0 0 100% 0)' }}
       transition={{ duration: 0.5, ease: EASE }}
     >
+      {children}
+      <div className="mm-theme-row">
+        <span>{UI[lang].themeLabel}</span>
+        <ThemeToggle className="mm-theme" />
+      </div>
+      {foot}
+    </motion.nav>
+  )
+  if (lang !== 'fr') {
+    return shell(
+      <ul className="mm-list">
+        {pagesOf(lang).map((l) => <li key={l.href}><NavLink to={l.href} className="mm-link">{l.label}</NavLink></li>)}
+      </ul>
+    )
+  }
+  return shell(
       <ul className="mm-list">
         <li><NavLink to="/" end className="mm-link">Accueil</NavLink></li>
         {MENU.map((r) => {
@@ -177,10 +211,5 @@ export function MobileMenu({ activeKey }) {
         })}
         <li><Link to="/plan-du-site/" className="mm-link mm-small">Plan du site</Link></li>
       </ul>
-      <div className="menu-mobile-foot">
-        <QuoteButton />
-        <PhoneLink />
-      </div>
-    </motion.nav>
   )
 }

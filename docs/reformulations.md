@@ -62,3 +62,20 @@ Libellés qui diffèrent nettement du titre de la page :
 | plan-de-yourte | Treillis d'une yourte contemporaine | Treillis |
 | la-poetique-de-lespace | Photos de yourtes contemporaines | Galerie photos |
 | chiffres | Services et tarifs du fabricant | Services et tarifs |
+
+## Interface en anglais et en allemand (nouveau, à valider)
+
+Sur les pages anglaises et allemandes, le menu liste les 5 pages de la langue ; bandeau, boutons et pied de page sont traduits (fichier `src/content/ui.js`).
+
+| Français | English | Deutsch |
+|---|---|---|
+| Demander un devis / Devis | Request a quote / Quote | Angebot anfordern / Angebot |
+| Voir la boutique Yourteco / Boutique | Visit the Yourteco shop / Shop | Zum Yourteco-Shop / Shop |
+| Yourteco, votre fabricant de yourtes | Yourteco, your yurt manufacturer | Yourteco, Ihr Jurtenhersteller |
+| Yourteco est un fabricant de yourtes contemporaines français localisé dans le Maine-et-Loire. Nous construisons dans toute la France et à l'étranger. | Yourteco is a French manufacturer of contemporary yurts based in Maine-et-Loire. We build throughout France and abroad. | Yourteco ist ein französischer Hersteller moderner Jurten mit Sitz im Département Maine-et-Loire. Wir bauen in ganz Frankreich und im Ausland. |
+| Nous trouver / Autres liens | Find us / Our pages | So finden Sie uns / Unsere Seiten |
+| Vos transactions bancaires sur la Boutique Yourteco sont protégées par le référent Stripe. | Your payments on the Yourteco Shop are secured by Stripe. | Ihre Zahlungen im Yourteco-Shop sind durch Stripe geschützt. |
+| Thème clair ou sombre | Light or dark theme | Helles oder dunkles Design |
+
+Numéro de téléphone au format international (+33 2 41 24 49 87) sur les pages anglaises et allemandes.
+À trancher : le bouton « Quote / Angebot » mène au formulaire de devis de l'accueil, qui est en français.

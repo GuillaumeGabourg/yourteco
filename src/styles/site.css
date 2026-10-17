@@ -92,14 +92,23 @@
 .utility-in { display: flex; justify-content: space-between; align-items: center; min-height: 36px; gap: 16px; }
 .utility a { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 .utility a:hover { color: var(--sun); }
-/* choix de la langue : drapeaux bien visibles dans le bandeau du haut */
-.langs { display: flex; align-items: center; gap: 4px; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, .07); }
-.utility a.lang { gap: 6px; min-height: 28px; padding: 2px 10px 2px 5px; border-radius: 999px; color: var(--on-dark-2); font-weight: 700; font-size: .78rem; letter-spacing: .04em; transition: background-color .25s, color .25s; }
-.utility a.lang:hover { background: rgba(255, 255, 255, .12); color: #fff; }
-.utility a.lang.is-current { background: var(--sun); color: var(--green-900); }
-.lang-flag { display: block; width: 22px; height: 15px; border-radius: 3px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, .35); flex: none; }
+/* choix de la langue : menu déroulant à drapeaux dans la barre */
+.lang-menu { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; gap: 7px; height: 44px; padding: 0 12px 0 10px; border: 1.5px solid var(--line); border-radius: 999px; background: transparent; color: var(--tx-strong); font: inherit; font-weight: 750; font-size: .84rem; letter-spacing: .04em; cursor: pointer; transition: background-color .25s, border-color .25s; }
+.lang-btn:hover, .lang-btn.is-open { background: var(--bg-2); border-color: var(--leaf-soft); }
+.lang-chev { opacity: .7; transition: rotate .3s var(--ease-out); }
+.lang-btn.is-open .lang-chev { rotate: 180deg; }
+.lang-flag { display: block; width: 24px; height: 16px; border-radius: 3px; overflow: hidden; box-shadow: 0 0 0 1px rgba(20, 40, 17, .18); flex: none; }
 .lang-flag svg { display: block; width: 100%; height: 100%; }
-.lang.is-current .lang-flag { box-shadow: 0 0 0 1px rgba(10, 22, 10, .3); }
+.lang-list { position: absolute; right: 0; top: calc(100% + 8px); z-index: 50; min-width: 190px; margin: 0; padding: 6px; list-style: none; border-radius: var(--r-md); background: var(--bg-3); border: 1px solid var(--line); box-shadow: var(--shadow-lg); transform-origin: top right; }
+.lang-list li { margin: 0; }
+.lang-opt { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 8px 12px; border-radius: 10px; color: var(--ink); text-decoration: none; font-weight: 600; }
+.lang-opt:hover, .lang-opt:focus-visible { background: var(--bg-2); color: var(--tx-heading); }
+.lang-opt.is-current { color: var(--tx-heading); font-weight: 750; }
+.lang-check { margin-left: auto; color: var(--tx-accent); }
+.nav-lang .nav-link { font-size: .93rem; }
+.mm-theme-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; color: var(--on-dark-2); font-size: .95rem; }
+.menu-mobile-foot .theme-btn { color: #fff; border-color: var(--line-dark); }
 
 .site-header { position: sticky; top: 0; z-index: 50; }
 .bar { background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); transition: box-shadow .3s var(--ease-out); }
@@ -120,7 +129,7 @@
 /* menu mobile plein écran : rubriques en accordéon, devis et téléphone fixés en bas */
 .menu-mobile {
   position: absolute; left: 0; right: 0; top: 100%;
-  display: flex; flex-direction: column; height: calc(100svh - var(--bar-h));
+  display: flex; flex-direction: column; height: calc(100svh - var(--menu-top, var(--bar-h)));
   background: var(--green-800); color: var(--on-dark); padding: 0 var(--gutter);
 }
 .menu-mobile ul { list-style: none; margin: 0; padding: 0; }
@@ -189,7 +198,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .u-short { display: none; }
 @media (max-width: 760px) { .utility .utility-phone, .u-long { display: none; } .u-short { display: inline; } }
 
-@media (max-width: 1220px) {
+@media (max-width: 1340px) {
   .nav-desktop { display: none; }
   .burger { display: inline-grid; }
   .bar-actions { margin-left: auto; }
@@ -203,7 +212,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
   .bar-quote { padding: 0 14px; }
   .bar-quote svg { display: none; }
   .utility-in > a { font-size: .78rem; }
-  .utility a.lang { padding: 2px 8px 2px 4px; }
+  
 }
 
 /* ---------- nature : éléments communs ---------- */
@@ -906,4 +915,23 @@ main, .site-footer, .utility { position: relative; z-index: 1; }
   .logo img { height: 32px; }
   .bar-phone, .theme-toggle, .burger { width: 40px; height: 40px; }
   .bar-quote { padding-inline: 12px; }
+}
+/* mobile : le choix du thème passe dans le menu, le sélecteur de langue reste dans la barre (drapeau seul) */
+@media (max-width: 640px) {
+  .bar-theme { display: none; }
+  .lang-btn { height: 40px; padding: 0 8px; gap: 5px; }
+  .lang-btn .lang-code { display: none; }
+}
+@media (max-width: 1500px) { .lang-btn .lang-code { display: none; } .lang-btn { padding: 0 10px; } }
+@media (max-width: 380px) {
+  .lang-btn .lang-chev { display: none; }
+  .lang-btn { width: 40px; padding: 0; justify-content: center; }
+  .bar-quote { padding-inline: 12px; }
+  .bar-quote svg { display: none; }
+  .logo img { height: 28px; }
+}
+@media (max-width: 340px) {
+  .bar-actions { gap: 4px; }
+  .bar-phone, .burger, .lang-btn { width: 36px; height: 36px; }
+  .bar-quote { --h: 36px; padding-inline: 8px; }
 }
