@@ -20,6 +20,7 @@ Plan détaillé d'origine (v6) : `C:\Users\desig\.claude\plans\https-www-yourtec
 | Menu | 6 rubriques couvrant les 55 pages françaises, menu mobile en accordéon, fil d'Ariane jusqu'à la page courante, plan du site |
 | Avis | Carrousel sur l'accueil (7 avis datés, lien vers tous les témoignages et vers Google), mur d'avis sur la page Avis |
 | Langues | Menu déroulant à drapeaux dans la barre. Pages EN et DE avec menu, menu mobile, bandeau et pied de page traduits |
+| Bandeau du haut | Supprimé sur toutes les pages. Lien boutique dans le menu (rubrique Yourteco en FR, entrée « Boutique » en EN et DE). Téléphone : celui de la barre et du pied de page |
 | Publication | GitHub Pages sous `/yourteco/` |
 
 ## À faire
