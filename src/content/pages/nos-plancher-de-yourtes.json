@@ -241,37 +241,11 @@
        "t": " prend soin de se fournir en bois de construction auprès de forêts gérées de manière responsable et durable. Des certificats reconnus à l'échelle française et internationale garantissent la provenance des bois et le suivi de la gestion forestière dont ils sont issus. Les bois que nous utilisons assurent ainsi le respect de préceptes dans un cadre légal, économique, social et environnemental. Parmi eux : la conservation des forêts, le respect de la biodiversité ainsi que la transparence..."
       }
      ]
-    }
-   ]
-  },
-  {
-   "blocks": [
+    },
     {
      "type": "button",
      "label": "Voir le montage d'un plancher en photo",
      "href": "/montage-yourte/"
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Appelez-nous !"
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Et trouvez toutes les réponses à vos questions"
-      }
-     ]
-    },
-    {
-     "type": "button",
-     "label": "02 41 24 49 87",
-     "href": "tel:+33241244987"
     }
    ]
   }

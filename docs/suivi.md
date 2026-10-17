@@ -22,6 +22,7 @@ Plan détaillé d'origine (v6) : `C:\Users\desig\.claude\plans\https-www-yourtec
 | Langues | Menu déroulant à drapeaux dans la barre. Pages EN et DE avec menu, menu mobile, bandeau et pied de page traduits |
 | Publication | GitHub Pages sous `/yourteco/` |
 | Logos décoratifs | Les 42 petits logos Yourteco posés sous les titres sur l'ancien site (`logo-yourteco-small-75`) sont supprimés des 32 pages. Ce n'était qu'un ornement, pas un contenu. À ne pas réintroduire. |
+| Finitions pages | Bloc « Appelez-nous ! » retiré des 30 pages (le bandeau du bas suffit), bandeau devis et téléphone agrandi, pied de page compacté, « My photos / All » retiré de Chantiers participatifs (photo recentrée via `alone` dans le JSON), 7 liens seuls fondus sous le dernier paragraphe. Alignement : 7 points (6 connus + 2 traits de titre sur `comment-construire-soi-meme-sa-yourte` et `location-de-yourtes`, à contrôler). |
 
 ## À faire
 

@@ -109,6 +109,8 @@ function toChapters(blocks) {
   const chapters = []
   let cur = null
   for (const b of blocks) {
+    // image marquée « seule » : son propre chapitre, centrée, jamais rattachée au texte voisin
+    if (b.type === 'image' && b.alone) { chapters.push({ heading: null, body: [], media: [b], solo: true }); cur = null; continue }
     if (b.type === 'heading' || !cur) {
       cur = { heading: b.type === 'heading' ? b : null, body: [], media: [] }
       chapters.push(cur)
@@ -125,7 +127,7 @@ function toChapters(blocks) {
   // photos seules (sans titre ni texte) : rattachées au texte voisin qui n'a pas d'image
   for (let i = 0; i < chapters.length; i++) {
     const c = chapters[i]
-    if (c.heading || c.body.length || !c.media.length) continue
+    if (c.solo || c.heading || c.body.length || !c.media.length) continue
     const n = chapters[i + 1], p = chapters[i - 1]
     const target = n && n.body.length && !n.media.length ? n
       : p && p.body.length && !p.media.length ? p
@@ -457,8 +459,8 @@ export default function ContentPage({ slug }) {
             <p>{t.ctaText}</p>
           </div>
           <div className="cp-cta-actions">
-            <QuoteButton className="btn-lg" />
-            <PhoneLink className="phone-lg" />
+            <QuoteButton className="btn-xl" />
+            <PhoneLink className="phone-xl" />
           </div>
         </div>
       </section>

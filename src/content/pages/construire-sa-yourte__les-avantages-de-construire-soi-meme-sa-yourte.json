@@ -146,37 +146,11 @@
        "t": ", fait de plein de gens formidables."
       }
      ]
-    }
-   ]
-  },
-  {
-   "blocks": [
+    },
     {
      "type": "button",
      "label": "En savoir plus sur nos chantiers participatifs",
      "href": "/chantiers-participatifs/"
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Appelez-nous !"
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Et trouvez toutes les réponses à vos questions"
-      }
-     ]
-    },
-    {
-     "type": "button",
-     "label": "02 41 24 49 87",
-     "href": "tel:+33241244987"
     }
    ]
   }

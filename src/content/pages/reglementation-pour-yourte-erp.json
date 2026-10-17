@@ -1095,37 +1095,11 @@
        "t": "Janvier 2024 ! Courchevel ! Un très beau chantier mené de front et sous la neige par Yourteco pour l'installation d'une yourte ERP de plus de 100 mètres carrés. Admirez le résultat !"
       }
      ]
-    }
-   ]
-  },
-  {
-   "blocks": [
+    },
     {
      "type": "button",
      "label": "Louez ici une yourte pour un événement tel qu'un mariage",
      "href": "https://www.yourtevent.com/yourte-de-100-m2-pour-location-evenementielle/"
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Appelez-nous !"
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Et trouvez toutes les réponses à vos questions"
-      }
-     ]
-    },
-    {
-     "type": "button",
-     "label": "02 41 24 49 87",
-     "href": "tel:+33241244987"
     }
    ]
   }

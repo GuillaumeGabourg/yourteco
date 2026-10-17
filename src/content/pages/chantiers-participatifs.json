@@ -341,24 +341,9 @@
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "My photos"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      [
-       {
-        "t": "All"
-       }
-      ]
-     ]
-    },
-    {
      "type": "image",
      "src": "/img/site/11.webp",
+     "alone": true,
      "alt": "chantier participatif le ponçage dans la bonne humeur",
      "caption": "",
      "href": "https://www.yourteco.com/wp-content/uploads/2022/02/11.jpg"
@@ -626,37 +611,11 @@
        "t": ". Cette formule permet de réaliser des économies tout en bénéficiant d’un encadrement professionnel, de matériaux de qualité et d’un véritable savoir-faire. En plus du résultat, les participants gagnent en autonomie et en fierté en construisant eux-mêmes leur habitat."
       }
      ]
-    }
-   ]
-  },
-  {
-   "blocks": [
+    },
     {
      "type": "button",
      "label": "En savoir plus sur l'autoconstruction de yourte",
      "href": "/construire-sa-yourte/comment-construire-soi-meme-sa-yourte/"
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Appelez-nous !"
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Et trouvez toutes les réponses à vos questions"
-      }
-     ]
-    },
-    {
-     "type": "button",
-     "label": "02 41 24 49 87",
-     "href": "tel:+33241244987"
     }
    ]
   }

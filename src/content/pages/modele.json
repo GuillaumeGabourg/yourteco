@@ -823,11 +823,7 @@
        "t": "La qualité au juste prix ! Plus qu'une philosophie pour l'artisan de la yourte contemporaine Yourteco. Présentation en quelques \"slides animées\" d'un collectif niché au coeur du Maine-et-Loire."
       }
      ]
-    }
-   ]
-  },
-  {
-   "blocks": [
+    },
     {
      "type": "button",
      "label": "Connaissez-vous la \"Tiny-Yourte\" de Yourteco ?",
@@ -844,28 +840,6 @@
        "t": "Visualisez quelques réalisations de Yourteco (extérieurs et intérieurs) en consultant le menu général de ce site Internet !"
       }
      ]
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Appelez-nous !"
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Et trouvez toutes les réponses à vos questions"
-      }
-     ]
-    },
-    {
-     "type": "button",
-     "label": "02 41 24 49 87",
-     "href": "tel:+33241244987"
     }
    ]
   }
