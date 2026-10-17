@@ -13,7 +13,7 @@ export default function SitePlan() {
       <header className="cp-head">
         <div className="wrap cp-head-in">
           <div className="cp-head-text">
-            <nav aria-label="Fil d'Ariane" className="crumbs"><Link to="/">Accueil</Link></nav>
+            <nav aria-label="Fil d'Ariane" className="crumbs"><Link to="/">Accueil</Link><span aria-hidden="true">/</span><span className="crumb-here" aria-current="page">Plan du site</span></nav>
             <WordsReveal as="h1" text="Plan du site" className="cp-title" immediate stagger={0.035} />
             <p className="lead cp-lead">Les {count} pages du site Yourteco, classées par rubrique, et nos pages en anglais et en allemand.</p>
           </div>

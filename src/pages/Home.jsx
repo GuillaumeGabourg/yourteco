@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { asset } from '../lib/asset.js'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useReducedMotion, useMotionValueEvent } from 'motion/react'
+import { motion, useScroll, useReducedMotion, useMotionValueEvent, useMotionValue } from 'motion/react'
 import { HOME } from '../content/home.js'
 import { REVIEWS, REVIEWS_META, SOURCE_LABEL } from '../content/reviews.js'
 import { CONTACT } from '../content/site.js'
@@ -15,6 +15,7 @@ import ReviewCarousel from '../components/ReviewCarousel.jsx'
 import QuoteForm from '../components/QuoteForm.jsx'
 import Icon from '../components/Icon.jsx'
 import { usePageMeta } from '../lib/meta.js'
+import { useSmooth, barHeight, prefersReducedMotion } from '../lib/smooth.jsx'
 
 /* ---------- Héros ---------- */
 function Hero() {
@@ -89,7 +90,7 @@ function Intro() {
 
         <div className="intro-grid">
           <div className="intro-collage">
-            <Reveal className="collage-main"><Plate {...d.images[0]} ratio="5 / 4" caption={fix(d.images[0].caption)} parallax={5} tag="ERP · Paris" /></Reveal>
+            <Reveal className="collage-main"><Plate {...d.images[0]} ratio="5 / 4" caption={fix(d.images[0].caption)} tag="ERP · Paris" /></Reveal>
             <Reveal delay={0.15} className="collage-small"><Plate {...d.images[1]} ratio="1 / 1" /></Reveal>
           </div>
           <Reveal className="intro-text">
@@ -145,34 +146,90 @@ function Marks() {
 }
 
 /* ---------- Montage au défilement ---------- */
+/* La yourte suit le bloc de texte en cours de lecture : chaque bloc pilote sa phase du montage
+   (bornes de YurtAssembly), terminée quand la moitié du bloc a passé la ligne de lecture. */
+const PHASES = ['Structure', 'Étanchéité', 'Confort', 'Sol & urbanisme']
+const BOUNDS = [0, 0.44, 0.68, 0.81, 1]
+const DONE_AT = 0.45
+const STACKED = '(max-width: 900px)' // mobile : la yourte est fixée en haut, le texte défile dessous
+
 function Specs() {
   const s = HOME.specs
-  const colRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: colRef, offset: ['start 70%', 'end 90%'] })
+  const sectionRef = useRef(null)
+  const figRef = useRef(null)
+  const groupsRef = useRef([])
+  const progress = useMotionValue(0)
   const [step, setStep] = useState(1)
-  useMotionValueEvent(scrollYProgress, 'change', (v) => setStep(Math.min(4, Math.floor(v * 4) + 1)))
+  const { lenis } = useSmooth()
+
+  // ligne de lecture : milieu de l'écran (ordinateur) ; sous la yourte fixée (mobile)
+  // stuck : position de la yourte une fois fixée sous la barre (pour viser un bloc avant qu'elle le soit)
+  const figBottom = (stuck) => (stuck ? barHeight() + figRef.current.offsetHeight : figRef.current.getBoundingClientRect().bottom)
+  const readLine = (stuck = false) => {
+    if (!matchMedia(STACKED).matches) return innerHeight * 0.5
+    const fb = figBottom(stuck)
+    return fb + (innerHeight - fb) * 0.6
+  }
+
+  useEffect(() => {
+    let raf = 0
+    let near = false
+    const update = () => {
+      raf = 0
+      const gs = groupsRef.current
+      const y = readLine()
+      let i = 0
+      for (let k = 0; k < gs.length; k++) if (gs[k].getBoundingClientRect().top <= y) i = k
+      const r = gs[i].getBoundingClientRect()
+      const f = Math.min(1, Math.max(0, (y - r.top) / r.height) / DONE_AT)
+      progress.set(BOUNDS[i] + (BOUNDS[i + 1] - BOUNDS[i]) * f)
+      setStep(i + 1)
+    }
+    const on = () => { if (near && !raf) raf = requestAnimationFrame(update) }
+    // calculs seulement quand la section est proche de l'écran
+    const io = new IntersectionObserver(([e]) => { near = e.isIntersecting; if (near) on() }, { rootMargin: '50% 0px' })
+    io.observe(sectionRef.current)
+    addEventListener('scroll', on, { passive: true })
+    addEventListener('resize', on)
+    return () => { io.disconnect(); removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
+  }, [progress])
+
+  // clic sur une phase : le bloc vient se placer pour que sa phase soit montée, titre visible
+  const goTo = (i) => {
+    const g = groupsRef.current[i]
+    const r = g.getBoundingClientRect()
+    const stacked = matchMedia(STACKED).matches
+    const minTop = stacked ? figBottom(true) + 8 : barHeight() + 16
+    const top = Math.max(minTop, readLine(true) - r.height * (DONE_AT + 0.04))
+    const y = r.top + scrollY - top
+    if (lenis) lenis.scrollTo(y, { duration: 1.1 })
+    else window.scrollTo({ top: y, behavior: prefersReducedMotion() ? 'instant' : 'smooth' })
+  }
+
   return (
-    <section className="specs section" aria-labelledby="specs-title">
+    <section className="specs section" aria-labelledby="specs-title" ref={sectionRef}>
       <div className="wrap">
         <header className="sec-head">
           <WordsReveal as="h2" id="specs-title" text={fix(s.title)} className="h2" />
           <Reveal as="p" className="lead">{fix(s.lead)}</Reveal>
         </header>
         <div className="specs-grid">
-          <div className="specs-figure">
+          <div className="specs-figure" ref={figRef}>
             <div className="specs-sticky">
               <p className="specs-caption">{fix(s.kicker)}</p>
-              <YurtAssembly progress={scrollYProgress} step={step} />
-              <ol className="specs-steps" aria-hidden="true">
-                {['Structure', 'Étanchéité', 'Confort', 'Sol & urbanisme'].map((l, i) => (
-                  <li key={l} className={step === i + 1 ? 'is-on' : step > i + 1 ? 'is-done' : ''}>{l}</li>
+              <YurtAssembly progress={progress} step={step} />
+              <ol className="specs-steps" aria-label="Phases du montage">
+                {PHASES.map((l, i) => (
+                  <li key={l} className={step === i + 1 ? 'is-on' : step > i + 1 ? 'is-done' : ''}>
+                    <button type="button" onClick={() => goTo(i)} aria-controls={'spec-' + i} aria-current={step === i + 1 ? 'step' : undefined}>{l}</button>
+                  </li>
                 ))}
               </ol>
             </div>
           </div>
-          <div className="specs-col" ref={colRef}>
+          <div className="specs-col">
             {s.groups.map((g, gi) => (
-              <article key={g.title} className={'spec-group' + (step === gi + 1 ? ' is-on' : '')}>
+              <article key={g.title} id={'spec-' + gi} ref={(el) => (groupsRef.current[gi] = el)} className={'spec-group' + (step === gi + 1 ? ' is-on' : '')}>
                 <h3 className="h3"><span className="ul">{fix(g.title)}</span></h3>
                 <dl>
                   {g.items.map(([t, x]) => (
@@ -188,7 +245,7 @@ function Specs() {
         </div>
         <div className="specs-plates">
           {s.images.map((im, i) => (
-            <Reveal key={im.src} delay={i * 0.12}><Plate {...im} ratio="4 / 3" caption={fix(im.caption)} parallax={4} /></Reveal>
+            <Reveal key={im.src} delay={i * 0.12}><Plate {...im} ratio="4 / 3" caption={fix(im.caption)} /></Reveal>
           ))}
         </div>
       </div>
@@ -242,9 +299,14 @@ function Reviews() {
               <span className="g-num">{m.googleRating}<span className="g-of">/5</span></span>
               <span className="g-txt">sur {m.googleCount} avis Google<br /><span className="muted">relevé du {m.googleCheckedAt}</span></span>
             </div>
-            <a className="btn btn-line" href={CONTACT.googleReviews} target="_blank" rel="noopener noreferrer">
-              <span>Lire tous nos avis sur Google</span><Icon name="out" size={16} />
-            </a>
+            <div className="g-links">
+              <Link className="btn btn-line" to="/avis-clients-sur-la-societe-yourteco/">
+                <span>Tous les témoignages de nos clients</span><Icon name="arrow" size={16} />
+              </Link>
+              <a className="btn btn-line" href={CONTACT.googleReviews} target="_blank" rel="noopener noreferrer">
+                <span>Lire tous nos avis sur Google</span><Icon name="out" size={16} />
+              </a>
+            </div>
           </div>
         </header>
         <Reveal>

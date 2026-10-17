@@ -5,6 +5,7 @@ import Icon from './Icon.jsx'
 import { CONTACT, SOCIAL, FOOTER_LINKS } from '../content/site.js'
 import { MENU, findInMenu } from '../content/menu.js'
 import { MegaNav, MobileMenu } from './Menu.jsx'
+import LangSwitch from './LangSwitch.jsx'
 import { SmartLink } from '../lib/text.jsx'
 import { asset } from '../lib/asset.js'
 
@@ -77,15 +78,12 @@ export function Header() {
 
   return (
     <>
-      <aside className="utility" aria-label="Boutique, téléphone et autres langues">
+      <aside className="utility" aria-label="Boutique, téléphone et langues">
         <div className="wrap utility-in">
-          <a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer">Voir la boutique Yourteco <Icon name="out" size={14} /></a>
+          <a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer"><span className="u-long">Voir la boutique Yourteco</span><span className="u-short">Boutique</span> <Icon name="out" size={14} /></a>
           <div className="utility-right">
             <a href={CONTACT.phoneHref} className="utility-phone"><Icon name="phone" size={14} /> {CONTACT.phone}</a>
-            <nav aria-label="Autres langues" className="langs">
-              <Link to="/jurte-kaufen/" lang="de">Jurte kaufen</Link>
-              <Link to="/buying-a-yurt/" lang="en">Buying a Yurt</Link>
-            </nav>
+            <LangSwitch />
           </div>
         </div>
       </aside>

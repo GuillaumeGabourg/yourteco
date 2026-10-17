@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import Icon from './Icon.jsx'
 import { asset } from '../lib/asset.js'
 import VARIANTS from '../content/imageVariants.json'
+import DIMS from '../content/imageDims.json'
 
 /* grandes photos : une version 800 px (.800.webp) est servie aux écrans qui n'ont pas besoin de la pleine taille */
 const srcSetOf = (src) => (VARIANTS[src] ? `${asset(src.replace(/\.webp$/, '.800.webp'))} 800w, ${asset(src)} ${VARIANTS[src]}w` : undefined)
@@ -16,10 +17,13 @@ export function Tag({ children, className = '' }) {
   )
 }
 
-/** Photo arrondie : ouverture douce à l'arrivée + léger parallaxe.
- *  Parallaxe en CSS (animation liée au défilement, calculée par le navigateur) : aucun calcul JavaScript par image. */
-export function Plate({ src, alt, caption, meta, ratio = '3 / 2', tag, parallax = 0, className = '', priority = false, sizes, reveal = true, style }) {
+/** Photo arrondie : ouverture douce à l'arrivée.
+ *  Toujours au format réel de l'image quand il est connu (jamais rognée) ; pas de parallaxe,
+ *  qui agrandit la photo et en coupe les bords. `ratio` ne sert que si le format est inconnu. */
+export function Plate({ src, alt, caption, meta, ratio: fallback = '3 / 2', tag, className = '', priority = false, sizes, reveal = true, style }) {
   const reduce = useReducedMotion()
+  const dims = DIMS[src]
+  const ratio = dims ? `${dims[0]} / ${dims[1]}` : fallback
   const open = reveal && !reduce && !priority
   return (
     <figure className={'plate ' + className} style={style}>
@@ -32,14 +36,12 @@ export function Plate({ src, alt, caption, meta, ratio = '3 / 2', tag, parallax 
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <img
-          className={parallax ? 'px' : undefined}
           src={asset(src)}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"
           srcSet={srcSetOf(src)}
           sizes={srcSetOf(src) ? sizes || '(max-width: 760px) 100vw, 55vw' : undefined}
-          style={parallax ? { '--px': parallax } : undefined}
         />
         {tag && <Tag>{tag}</Tag>}
       </motion.div>

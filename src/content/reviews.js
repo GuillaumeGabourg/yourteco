@@ -8,7 +8,24 @@ export const REVIEWS_META = {
   googleCheckedAt: '16 octobre 2026',
 }
 
+// Ordre : du plus récent au plus ancien (annoncé dans « Comment nous publions les avis »).
 export const REVIEWS = [
+  {
+    id: 'g-greenyouth',
+    author: 'The green youth',
+    project: 'Stage (CAP)',
+    date: 'juillet 2026',
+    source: 'google',
+    text: 'Très bonne expérience pour mon stage dans le cadre de mon CAP, je recommande Yourteco pour leurs conseils, et leur qualité des structures, très pro dans le domaine de la yourte […]',
+  },
+  {
+    id: 'g-vielmas',
+    author: 'Manu V.',
+    project: 'Autoconstruction, isolation et dôme',
+    date: 'mai 2026',
+    source: 'google',
+    text: "Nous avons autoconstruit notre yourte voilà maintenant un an et demi. Nous habitons dedans depuis un an. […] Laetitia et Nicolas ont tout mis en œuvre pour nous expédier le matériel et des plans qui nous ont permis de réparer rapidement. Service très pro, matériel de qualité et des gens disponibles pour répondre à vos questions. […]",
+  },
   {
     id: 'g-mag',
     author: 'Mag',
@@ -27,20 +44,20 @@ export const REVIEWS = [
     text: "Yourte d 'excellente qualité, je recommande fortement, Très satisfait de mon achat, très confortable, et bien isolée.",
   },
   {
+    id: 'g-kelly',
+    author: 'Kelly K.',
+    project: "Stage d'autoconstruction",
+    date: 'février 2025',
+    source: 'google',
+    text: "Avec mon partenaire nous sommes venus quelques semaines pour effectuer un stage pour apprendre à fabriquer ces yourtes. […] La qualité des yourtes est impressionnante. Tout le process est fait pour que la yourte soit un habitat sûr et solide, à acheter les yeux fermés… […]",
+  },
+  {
     id: 's-gregoire',
     author: 'Jean G.',
     project: 'Yourte de 20 m², bureau, autoconstruction',
     date: 'mai 2023',
     source: 'site',
     text: "Le rendu est impeccable depuis la conception à la construction bois. le skydome ouvrant est une superbe technique (lumière, aération). Les assemblages bois et les toiles sont solides, contemporaines et esthétiques. Je recommande vivement.",
-  },
-  {
-    id: 'g-greenyouth',
-    author: 'The green youth',
-    project: 'Stage (CAP)',
-    date: 'juillet 2026',
-    source: 'google',
-    text: 'Très bonne expérience pour mon stage dans le cadre de mon CAP, je recommande Yourteco pour leurs conseils, et leur qualité des structures, très pro dans le domaine de la yourte […]',
   },
   {
     id: 's-pouessel',

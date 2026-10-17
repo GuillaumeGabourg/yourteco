@@ -12,7 +12,7 @@ import DIMS from '../content/imageDims.json'
 import ReviewWall from '../components/ReviewWall.jsx'
 import RelatedCards from '../components/RelatedCards.jsx'
 import InRubrique from '../components/InRubrique.jsx'
-import { findInMenu } from '../content/menu.js'
+import { findInMenu, OTHER_PAGES } from '../content/menu.js'
 
 /* « Sujets connexes » : les accroches avec lien qui suivent ce titre deviennent des cartes */
 const RELATED = /^(Sujets connexes|Articles connexes|Related (topics|articles)|Verwandte Themen)/i
@@ -211,33 +211,59 @@ function Body({ b }) {
   }
 }
 
+/* format réel d'une image (largeur / hauteur) */
+const ratioOf = (src) => { const [w, h] = DIMS[src] || []; return w && h ? w / h : 4 / 3 }
+/* rangées de photos : chaque photo garde son format réel (jamais rognée) ; dans une rangée,
+   la largeur est proportionnelle au format, donc toutes ont la même hauteur (galerie justifiée) */
+function rowsOf(imgs, wide) {
+  const n = imgs.length
+  const sizes = n === 1 ? [1] : n === 2 ? [2] : n === 3 ? (wide ? [3] : [1, 2]) : n === 4 ? (wide ? [4] : [2, 2]) : []
+  if (!sizes.length) for (let i = 0; i < n; i += wide ? 3 : 2) sizes.push(Math.min(wide ? 3 : 2, n - i))
+  const rows = []
+  let i = 0
+  for (const k of sizes) { rows.push(imgs.slice(i, i + k)); i += k }
+  // formats trop différents (logo très large à côté d'une photo carrée) : une image par ligne, sinon la plus étroite devient minuscule
+  return rows.flatMap((row) => {
+    const rs = row.map((im) => ratioOf(im.src))
+    return Math.max(...rs) / Math.min(...rs) > 2.2 ? row.map((im) => [im]) : [row]
+  })
+}
+
 function Media({ items, lang, wide }) {
   const imgs = items.filter((m) => m.type === 'image')
   const vids = items.filter((m) => m.type === 'video')
   const n = imgs.length
+  let k = 0
   return (
     <div className={'cp-media n-' + Math.min(n, 4) + (wide ? ' is-wide' : '')}>
       {vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
-      {imgs.map((im, i) => {
-        const small = isSmall(im.src)
-        const [w, h] = DIMS[im.src] || []
-        // image seule : format réel (jamais rognée), borné entre portrait 4/5 et paysage 2/1
-        const natural = w && h ? Math.min(2, Math.max(0.8, w / h)) : 4 / 3
-        const ratio = small ? `${w} / ${h}` : n === 1 ? String(natural) : n === 3 && i === 0 ? '16 / 9' : '1 / 1'
-        const plate = (
-          <Plate
-            src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={ratio}
-            parallax={n === 1 && !small ? 3 : 0}
-            className={small ? 'is-small' : ''}
-            style={small ? { maxWidth: Math.round(w * 1.15) } : undefined}
-          />
-        )
-        return (
-          <Reveal key={im.src + i} delay={(i % 4) * 0.08} className="cp-media-item">
-            {im.href ? <SmartLink href={im.href} className="cp-img-link">{plate}</SmartLink> : plate}
-          </Reveal>
-        )
-      })}
+      {rowsOf(imgs, wide).map((row, ri) => (
+        <div key={ri} className="cp-row">
+          {row.map((im) => {
+            const i = k++
+            const small = isSmall(im.src)
+            const [w, h] = DIMS[im.src] || []
+            const r = ratioOf(im.src)
+            const plate = (
+              <Plate
+                src={im.src} alt={fix(im.alt || '')} caption={im.caption ? fix(im.caption) : undefined} ratio={String(r)}
+                className={small ? 'is-small' : ''}
+              />
+            )
+            return (
+              <Reveal
+                key={im.src + i}
+                delay={(i % 4) * 0.08}
+                className={'cp-media-item' + (small ? ' is-small' : '')}
+                // petite image : sa taille réelle au plus (jamais agrandie et floue)
+                style={{ '--r': r, maxWidth: w ? (small ? Math.round(w * 1.15) : w) : undefined }}
+              >
+                {im.href ? <SmartLink href={im.href} className="cp-img-link">{plate}</SmartLink> : plate}
+              </Reveal>
+            )
+          })}
+        </div>
+      ))}
     </div>
   )
 }
@@ -388,13 +414,16 @@ export default function ContentPage({ slug }) {
                   </Fragment>
                 )
               })}
+              {/* page en cours : libellé court du menu, sinon le titre de la page */}
+              <span aria-hidden="true">/</span>
+              <span className="crumb-here" aria-current="page">{found?.link.label || OTHER_PAGES.flatMap((g) => g.links).find((l) => l.href === location.pathname)?.label || title}</span>
             </nav>
             <WordsReveal as="h1" text={title} className="cp-title" immediate stagger={0.035} />
             {page.description && <p className="lead cp-lead">{fix(page.description)}</p>}
           </div>
           {firstImg && (
             <div className="cp-head-media">
-              <Plate src={firstImg.src} alt={fix(firstImg.alt || '')} caption={firstImg.caption ? fix(firstImg.caption) : undefined} ratio="21 / 9" priority parallax={6} sizes="100vw" className="cp-head-plate" />
+              <Plate src={firstImg.src} alt={fix(firstImg.alt || '')} caption={firstImg.caption ? fix(firstImg.caption) : undefined} ratio={String(ratioOf(firstImg.src))} priority sizes="100vw" className="cp-head-plate" style={{ '--r': ratioOf(firstImg.src), '--w': (DIMS[firstImg.src]?.[0] || 2000) + 'px' }} />
               <FallingLeaves count={5} seed={title.length + 1} className="cp-leaves" />
             </div>
           )}

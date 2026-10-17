@@ -50,7 +50,7 @@ export default function YurtAssembly({ progress, step }) {
   const lat = seg(P, 0.1, 0.26)
   const door = seg(P, 0.22, 0.3)
   const pol = seg(P, 0.26, 0.42)
-  const crown = seg(P, 0.38, 0.46)
+  const crown = seg(P, 0.36, 0.44)
   const dome = seg(P, 0.44, 0.52)
   const wallCanvas = seg(P, 0.5, 0.6)
   const roofCanvas = seg(P, 0.56, 0.68)
