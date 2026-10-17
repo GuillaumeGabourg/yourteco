@@ -6,6 +6,7 @@ import Icon from './Icon.jsx'
 import { QuoteButton, PhoneLink, ThemeToggle } from './Chrome.jsx'
 import { MENU } from '../content/menu.js'
 import { UI, pagesOf } from '../content/ui.js'
+import { CONTACT } from '../content/site.js'
 import { SmartLink } from '../lib/text.jsx'
 import { asset } from '../lib/asset.js'
 import VARIANTS from '../content/imageVariants.json'
@@ -128,6 +129,7 @@ export function LangNav({ lang }) {
   return (
     <nav aria-label={UI[lang].nav} className="nav-desktop nav-lang">
       {pages.map((l) => <NavLink key={l.href} to={l.href} className="nav-link">{l.label}</NavLink>)}
+      <a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer" className="nav-link nav-shop">{UI[lang].shopShort}<Icon name="out" size={14} /></a>
     </nav>
   )
 }
@@ -166,6 +168,7 @@ export function MobileMenu({ activeKey, lang = 'fr' }) {
     return shell(
       <ul className="mm-list">
         {pagesOf(lang).map((l) => <li key={l.href}><NavLink to={l.href} className="mm-link">{l.label}</NavLink></li>)}
+        <li><a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer" className="mm-link">{UI[lang].shop}</a></li>
       </ul>
     )
   }

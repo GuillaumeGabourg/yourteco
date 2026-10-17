@@ -81,7 +81,7 @@ export function Header() {
     const onKey = (e) => e.key === 'Escape' && setOpen(false)
     window.addEventListener('keydown', onKey)
     document.documentElement.classList.toggle('menu-open', open)
-    // le menu mobile occupe exactement l'écran sous la barre (bandeau du haut visible ou non)
+    // le menu mobile occupe exactement l'écran sous la barre
     if (open) document.documentElement.style.setProperty('--menu-top', document.getElementById('site-bar').getBoundingClientRect().bottom + 'px')
     if (open) window.__lenis?.stop(); else window.__lenis?.start()
     return () => window.removeEventListener('keydown', onKey)
@@ -89,14 +89,6 @@ export function Header() {
 
   return (
     <>
-      <aside className="utility" aria-label={t.utility}>
-        <div className="wrap utility-in">
-          <a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer"><span className="u-long">{t.shop}</span><span className="u-short">{t.shopShort}</span> <Icon name="out" size={14} /></a>
-          <div className="utility-right">
-            <a href={CONTACT.phoneHref} className="utility-phone"><Icon name="phone" size={14} /> {lang === 'fr' ? CONTACT.phone : CONTACT.phoneIntl}</a>
-          </div>
-        </div>
-      </aside>
       <header className={'site-header' + (scrolled ? ' is-scrolled' : '')}>
         <div id="site-bar" className="bar">
           <div className="wrap bar-in">
