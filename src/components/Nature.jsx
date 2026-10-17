@@ -1,5 +1,5 @@
 import { useMemo, useRef, useEffect } from 'react'
-import { motion, useScroll, useTransform, useReducedMotion, useInView, useMotionValue, useSpring } from 'motion/react'
+import { motion, useReducedMotion, useInView, useMotionValue, useSpring } from 'motion/react'
 
 /* Générateur pseudo-aléatoire stable (mêmes feuilles à chaque rendu) */
 function rng(seed) {
@@ -17,9 +17,9 @@ export function LeafShape({ color = 'currentColor', vein = 'rgba(255,255,255,.45
   )
 }
 
-/** Rayons du logo : éventail de lumière qui respire lentement. */
+/** Rayons du logo : éventail de lumière qui respire lentement.
+ *  Animation CSS sur le <svg> entier (rotation + opacité, gérées par la carte graphique), à l'arrêt hors écran. */
 export function SunRays({ className = '', rays = 13 }) {
-  const reduce = useReducedMotion()
   const paths = useMemo(() => {
     const out = []
     const cx = 500, cy = 500, r = 520
@@ -40,22 +40,7 @@ export function SunRays({ className = '', rays = 13 }) {
           <stop offset="1" stopColor="#DBD73A" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <motion.g
-        style={{ transformOrigin: '500px 500px' }}
-        animate={reduce ? undefined : { rotate: [-3, 3, -3] }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        {paths.map((d, i) => (
-          <motion.path
-            key={i}
-            d={d}
-            fill="url(#ray-fade)"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={reduce ? { opacity: 0.7 } : { opacity: [0.35, 0.85, 0.35] }}
-            transition={{ duration: 6 + (i % 4), repeat: Infinity, delay: 0.4 + i * 0.18, ease: 'easeInOut' }}
-          />
-        ))}
-      </motion.g>
+      {paths.map((d, i) => <path key={i} d={d} fill="url(#ray-fade)" opacity={[0.55, 0.8, 0.45, 0.7][i % 4]} />)}
     </svg>
   )
 }
@@ -93,15 +78,10 @@ export function FallingLeaves({ count = 9, seed = 7, className = '' }) {
 /** Collines superposées (les trois verts du logo) + herbes qui ondulent.
  *  `to` = couleur de la section suivante (dernière couche). */
 export function Hills({ to = 'var(--bg)', back = 'var(--leaf)', mid = 'var(--green-600)', grass = true, className = '', seed = 3 }) {
-  const ref = useRef(null)
-  const reduce = useReducedMotion()
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const yBack = useTransform(scrollYProgress, [0, 1], [18, -10])
-  const yMid = useTransform(scrollYProgress, [0, 1], [10, -4])
   const blades = useMemo(() => {
     const r = rng(seed)
-    return Array.from({ length: 46 }, (_, i) => {
-      const x = (i / 45) * 1440 + (r() - 0.5) * 20
+    return Array.from({ length: 30 }, (_, i) => {
+      const x = (i / 29) * 1440 + (r() - 0.5) * 30
       // hauteur de la colline avant à cet x (même courbe que le path)
       const y = 86 - 14 * Math.sin((x / 1440) * Math.PI * 2 + 0.6)
       const h = 10 + r() * 16
@@ -115,10 +95,10 @@ export function Hills({ to = 'var(--bg)', back = 'var(--leaf)', mid = 'var(--gre
     return d + ` L1440 ${bottom} Z`
   }
   return (
-    <div ref={ref} className={'hills ' + className} aria-hidden="true">
+    <div className={'hills ' + className} aria-hidden="true">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <motion.path d={wave(54, 22, 2.2)} fill={back} style={reduce ? undefined : { y: yBack }} opacity=".55" />
-        <motion.path d={wave(70, 18, 4.1)} fill={mid} style={reduce ? undefined : { y: yMid }} opacity=".8" />
+        <path className="hill-back" d={wave(54, 22, 2.2)} fill={back} opacity=".55" />
+        <path className="hill-mid" d={wave(70, 18, 4.1)} fill={mid} opacity=".8" />
         <path d={wave(86, 14, 0.6, 175)} fill={to} />
         {grass && blades.map((b, i) => (
           <path
@@ -163,26 +143,29 @@ export function TreeRings({ rings = 6, className = '' }) {
   )
 }
 
-/** Tache de lumière (soleil à travers les feuilles) qui suit le pointeur. */
+/** Tache de lumière (soleil à travers les feuilles) qui suit le pointeur.
+ *  Tache de taille fixe déplacée par transform : la section n'est jamais redessinée. */
 export function Dapple({ className = '' }) {
   const ref = useRef(null)
   const reduce = useReducedMotion()
-  const x = useMotionValue(70), y = useMotionValue(20)
+  const x = useMotionValue(0), y = useMotionValue(0)
   const sx = useSpring(x, { stiffness: 40, damping: 18 })
   const sy = useSpring(y, { stiffness: 40, damping: 18 })
   useEffect(() => {
     const el = ref.current?.parentElement
     if (!el || reduce) return
-    const move = (e) => {
-      const r = el.getBoundingClientRect()
-      x.set(((e.clientX - r.left) / r.width) * 100)
-      y.set(((e.clientY - r.top) / r.height) * 100)
-    }
+    const place = (px, py) => { x.set(px - 520); y.set(py - 520) }
+    const r0 = el.getBoundingClientRect()
+    x.jump(r0.width * 0.7 - 520); y.jump(r0.height * 0.2 - 520)
+    const move = (e) => { const r = el.getBoundingClientRect(); place(e.clientX - r.left, e.clientY - r.top) }
     el.addEventListener('pointermove', move)
     return () => el.removeEventListener('pointermove', move)
   }, [reduce, x, y])
-  const bg = useTransform([sx, sy], ([a, b]) => `radial-gradient(520px circle at ${a}% ${b}%, rgba(219,215,58,.16), rgba(106,163,58,.07) 40%, transparent 70%)`)
-  return <motion.div ref={ref} className={'dapple ' + className} style={{ background: bg }} aria-hidden="true" />
+  return (
+    <div ref={ref} className={'dapple ' + className} aria-hidden="true">
+      <motion.div className="dapple-spot" style={{ x: sx, y: sy }} />
+    </div>
+  )
 }
 
 /** Tige qui pousse avec le défilement (frise des étapes). */

@@ -1,14 +1,16 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { SmoothProvider } from './lib/smooth.jsx'
 import { Header, Footer } from './components/Chrome.jsx'
 import Home from './pages/Home.jsx'
-import ContentPage from './pages/ContentPage.jsx'
+// pages intérieures chargées à la demande : l'accueil n'embarque pas leur code
+const ContentPage = lazy(() => import('./pages/ContentPage.jsx'))
 import SeedField from './components/SeedField.jsx'
 
 function Page() {
   const { pathname } = useLocation()
   const slug = pathname.replace(/^\/+|\/+$/g, '')
-  return <ContentPage key={slug} slug={slug} />
+  return <Suspense fallback={<div className="cp-loading" aria-busy="true" />}><ContentPage key={slug} slug={slug} /></Suspense>
 }
 
 export default function App() {

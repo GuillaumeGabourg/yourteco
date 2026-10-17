@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { isLowPerf, onPerfChange } from '../lib/perf.js'
 
 /** Fond vivant : graines de pissenlit qui flottent et s'écartent au passage de la souris (souffle).
- *  Canvas fixe, très léger, en pause si l'onglet est caché ; image fixe si mouvement réduit. */
+ *  Canvas fixe, 30 images/s au plus, en pause quand la souris ne bouge plus (4 s) ou si l'onglet est caché ;
+ *  image fixe si mouvement réduit ; absent en mode léger (appareil peu puissant). */
 export default function SeedField() {
   const ref = useRef(null)
   useEffect(() => {
@@ -12,7 +14,8 @@ export default function SeedField() {
     const colors = ['56, 98, 52', '106, 163, 58', '150, 146, 30']
     const colorsDark = ['190, 222, 160', '219, 215, 58', '150, 200, 110']
     const isDark = () => document.documentElement.dataset.theme === 'dark'
-    let w = 0, h = 0, dpr = 1, seeds = [], raf = 0, last = 0
+    let w = 0, h = 0, dpr = 1, seeds = [], raf = 0, last = 0, awakeUntil = performance.now() + 4000
+    const IDLE = 4000, FRAME = 32 // ms : pause après 4 s sans mouvement, ~30 images/s
     const mouse = { x: -999, y: -999, vx: 0, vy: 0, t: 0 }
 
     const make = (anywhere) => {
@@ -28,14 +31,15 @@ export default function SeedField() {
       }
     }
     const resize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2)
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5)
       w = window.innerWidth; h = window.innerHeight
       cv.width = w * dpr; cv.height = h * dpr
       cv.style.width = w + 'px'; cv.style.height = h + 'px'
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      const n = Math.round(Math.min(22, Math.max(9, (w * h) / 60000)))
+      const n = Math.round(Math.min(14, Math.max(8, (w * h) / 80000)))
       while (seeds.length < n) seeds.push(make(true))
       seeds.length = n
+      if (!raf) { pal = isDark() ? colorsDark : colors; seeds.forEach(draw) } // redimensionné à l'arrêt : on redessine
     }
     let pal = colors
     const draw = (p) => {
@@ -59,6 +63,7 @@ export default function SeedField() {
       ctx.restore()
     }
     const step = (t) => {
+      if (last && t - last < FRAME) { raf = requestAnimationFrame(step); return }
       const dt = Math.min(50, t - (last || t)) / 16.7
       last = t
       ctx.clearRect(0, 0, w, h)
@@ -86,27 +91,34 @@ export default function SeedField() {
         draw(p)
       }
       mouse.vx *= 0.9; mouse.vy *= 0.9
-      raf = requestAnimationFrame(step)
+      raf = t < awakeUntil ? requestAnimationFrame(step) : 0
+    }
+    const wake = () => {
+      awakeUntil = performance.now() + IDLE
+      if (!raf && !document.hidden && !isLowPerf()) { last = 0; raf = requestAnimationFrame(step) }
     }
     const onMove = (e) => {
       if (mouse.x > -900) { mouse.vx = e.clientX - mouse.x; mouse.vy = e.clientY - mouse.y }
       mouse.x = e.clientX; mouse.y = e.clientY
+      wake()
     }
     const onLeave = () => { mouse.x = mouse.y = -999 }
     const onVis = () => {
-      cancelAnimationFrame(raf)
-      if (!document.hidden && !reduce) { last = 0; raf = requestAnimationFrame(step) }
+      cancelAnimationFrame(raf); raf = 0
+      if (!document.hidden && !reduce) wake()
     }
+    const offPerf = onPerfChange(() => { if (isLowPerf()) { cancelAnimationFrame(raf); raf = 0; ctx.clearRect(0, 0, w, h) } })
     resize()
     window.addEventListener('resize', resize)
     if (reduce) { seeds.forEach(draw) } else {
       window.addEventListener('pointermove', onMove, { passive: true })
       document.addEventListener('pointerleave', onLeave)
       document.addEventListener('visibilitychange', onVis)
-      raf = requestAnimationFrame(step)
+      if (!isLowPerf()) raf = requestAnimationFrame(step)
     }
     return () => {
       cancelAnimationFrame(raf)
+      offPerf()
       window.removeEventListener('resize', resize)
       window.removeEventListener('pointermove', onMove)
       document.removeEventListener('pointerleave', onLeave)

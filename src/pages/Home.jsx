@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { asset } from '../lib/asset.js'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'motion/react'
+import { motion, useScroll, useReducedMotion, useMotionValueEvent } from 'motion/react'
 import { HOME } from '../content/home.js'
 import { REVIEWS, REVIEWS_META, SOURCE_LABEL } from '../content/reviews.js'
 import { CONTACT } from '../content/site.js'
@@ -19,14 +19,10 @@ import { usePageMeta } from '../lib/meta.js'
 /* ---------- Héros ---------- */
 function Hero() {
   const h = HOME.hero
-  const ref = useRef(null)
   const reduce = useReducedMotion()
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '16%'])
-  const scale = useTransform(scrollYProgress, [0, 1], [1.06, 1.16])
-  const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  // parallaxe et fondu du héros : animations CSS liées au défilement (site.css), aucun calcul JavaScript
   return (
-    <section ref={ref} className="hero" aria-labelledby="hero-title">
+    <section className="hero" aria-labelledby="hero-title">
       <div className="hero-media">
         <motion.img
           src={asset(h.image)}
@@ -34,15 +30,14 @@ function Hero() {
           width="2000"
           height="1289"
           fetchPriority="high"
-          style={reduce ? undefined : { y, scale }}
-          initial={reduce ? false : { opacity: 0, filter: 'blur(14px)' }}
-          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.6, ease: EASE }}
         />
       </div>
       <SunRays className="hero-rays" />
       <FallingLeaves count={10} />
-      <motion.div className="wrap hero-content" style={reduce ? undefined : { opacity: fade }}>
+      <div className="wrap hero-content">
         <h1 id="hero-title" className="hero-title" aria-label={h.title}>
           <motion.img
             className="hero-logo"
@@ -50,8 +45,8 @@ function Hero() {
             alt=""
             width="904"
             height="327"
-            initial={reduce ? false : { opacity: 0, y: 24, scale: 0.92, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+            initial={reduce ? false : { opacity: 0, y: 24, scale: 0.92 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.25, duration: 1.1, ease: EASE }}
           />{' '}
           <WordsReveal as="span" text={h.title.replace(/^Yourteco\s*/, '')} className="hero-words" immediate delay={0.55} stagger={0.06} />
@@ -73,7 +68,7 @@ function Hero() {
         >
           <Icon name="pin" size={16} /> {h.tag}
         </motion.p>
-      </motion.div>
+      </div>
       <p className="hero-cap">{fix(h.caption)}</p>
       <Hills className="hills-bottom" to="var(--bg)" back="var(--leaf)" mid="var(--sun)" />
     </section>

@@ -382,7 +382,7 @@ export default function ContentPage({ slug }) {
           </div>
           {firstImg && (
             <div className="cp-head-media">
-              <Plate src={firstImg.src} alt={fix(firstImg.alt || '')} caption={firstImg.caption ? fix(firstImg.caption) : undefined} ratio="21 / 9" priority parallax={6} className="cp-head-plate" />
+              <Plate src={firstImg.src} alt={fix(firstImg.alt || '')} caption={firstImg.caption ? fix(firstImg.caption) : undefined} ratio="21 / 9" priority parallax={6} sizes="100vw" className="cp-head-plate" />
               <FallingLeaves count={5} seed={title.length + 1} className="cp-leaves" />
             </div>
           )}

@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Lenis from 'lenis'
+import { isLowPerf, usePerfLevel } from './perf.js'
 
 const SmoothCtx = createContext({ lenis: null, scrollToId: () => {} })
 export const useSmooth = () => useContext(SmoothCtx)
@@ -19,18 +20,19 @@ export function SmoothProvider({ children }) {
   const location = useLocation()
   const navigate = useNavigate()
   const first = useRef(true)
+  const perf = usePerfLevel()
 
-  // Lenis (désactivé si mouvement réduit)
+  // Lenis : défilement adouci sur appareil performant ; natif si mouvement réduit ou mode léger
   useEffect(() => {
-    if (prefersReducedMotion()) return
+    if (prefersReducedMotion() || perf === 'low') return
     const l = new Lenis({ duration: 1.05, easing: (t) => 1 - Math.pow(1 - t, 4), smoothWheel: true })
     let raf
     const loop = (time) => { l.raf(time); raf = requestAnimationFrame(loop) }
     raf = requestAnimationFrame(loop)
     setLenis(l)
     window.__lenis = l
-    return () => { cancelAnimationFrame(raf); l.destroy(); window.__lenis = null }
-  }, [])
+    return () => { cancelAnimationFrame(raf); l.destroy(); window.__lenis = null; setLenis(null) }
+  }, [perf])
 
   // --bar-h = hauteur mesurée de la barre
   useEffect(() => {
@@ -51,7 +53,7 @@ export function SmoothProvider({ children }) {
     if (lenis && !immediate) {
       lenis.scrollTo(top, { duration: 1.1 })
     } else {
-      window.scrollTo({ top, behavior: 'instant' })
+      window.scrollTo({ top, behavior: immediate || prefersReducedMotion() || !isLowPerf() ? 'instant' : 'smooth' })
       lenis?.scrollTo(top, { immediate: true })
     }
     return true
