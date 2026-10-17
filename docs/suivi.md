@@ -5,7 +5,7 @@ Plan détaillé d'origine (v6) : `C:\Users\desig\.claude\plans\https-www-yourtec
 
 ## Où en est le site (au 17 octobre 2026)
 
-- **En ligne** : https://guillaumegabourg.github.io/yourteco/ (dernière publication : commit 2643239).
+- **En ligne** : https://guillaumegabourg.github.io/yourteco/ (dernière publication le 17 octobre : titres des offres alignés, commit 321eba3).
 - **Derniers audits** :
   - 66 pages sans image cassée ni floue, sans débordement ni erreur ;
   - axe WCAG 2.2 AA sans violation, en thème clair et sombre ;
