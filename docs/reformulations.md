@@ -36,3 +36,29 @@ Les accroches se terminaient par « Ce qu'il faut savoir... », « Réponse... �
 
 - Mur d'avis : « Lire la suite » / « Réduire ».
 - Thème : « Passer au thème sombre » / « Passer au thème clair ».
+
+## Menu par rubriques (textes nouveaux, à valider)
+
+Le menu, le pied de page, le plan du site et le bloc « Dans cette rubrique » utilisent des libellés courts ; les titres des pages ne changent pas. Liste complète dans `src/content/menu.js`.
+
+Phrases d'introduction ajoutées sous chaque rubrique du grand menu et du plan du site :
+
+| Rubrique | Introduction |
+|---|---|
+| Nos yourtes | Habitation, loisir, accueil du public : des yourtes en bois fabriquées dans notre atelier du Maine-et-Loire. |
+| En détail | Chaque élément de la yourte, de la charpente aux fondations, et les équipements pour y vivre toute l'année. |
+| Toiles & entretien | Des toiles acryliques étanches et perspirantes, faites sur mesure, et les gestes pour les faire durer. |
+| Autoconstruction | Construire sa yourte soi-même avec un kit, des plans et l'accompagnement de nos chantiers. |
+| Réglementation | Permis, lois, normes thermiques et sécurité : ce qu'il faut savoir avant d'installer une yourte. |
+| Yourteco | Une entreprise artisanale française : nos services, notre histoire et l'avis de nos clients. |
+
+Libellés qui diffèrent nettement du titre de la page :
+
+| Page | Titre d'origine | Libellé du menu |
+|---|---|---|
+| choisir-sa-yourte | Sécurité et yourte contemporaine : ce qu'il faut savoir | Sécurité de la yourte |
+| nos-skydome | Toono : définition et caractéristiques | Toono (couronne) |
+| montage-yourte | Montage d'un plancher d'une yourte contemporaine | Montage du plancher |
+| plan-de-yourte | Treillis d'une yourte contemporaine | Treillis |
+| la-poetique-de-lespace | Photos de yourtes contemporaines | Galerie photos |
+| chiffres | Services et tarifs du fabricant | Services et tarifs |

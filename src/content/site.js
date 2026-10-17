@@ -10,15 +10,6 @@ export const CONTACT = {
   googleReviews: 'https://www.google.com/maps/place/Yourteco/@47.6595613,-0.3499515,17z/data=!4m8!3m7!1s0x48086cea7febbf4d:0x6256209b2f42f288!9m1!1b1',
 }
 
-export const NAV = [
-  { label: 'Yourtes habitation', href: '/fabrication-de-yourte-contemporaine/nos-yourtes-dhabitation/' },
-  { label: 'Yourtes loisir', href: '/fabrication-de-yourte-contemporaine/nos-yourtes-loisirs/' },
-  { label: 'Intérieurs', href: '/nos-yourtes-contemporaines/' },
-  { label: 'Kit & stages', href: '/construire-sa-yourte/' },
-  { label: 'Services / Tarifs', href: '/chiffres/' },
-  { label: 'Avis', href: '/avis-clients-sur-la-societe-yourteco/' },
-]
-
 export const SOCIAL = [
   { label: 'Facebook', href: 'https://www.facebook.com/yourte.eco/', icon: 'facebook' },
   { label: 'YouTube', href: 'https://www.youtube.com/user/YOURTECO', icon: 'youtube' },
@@ -27,8 +18,7 @@ export const SOCIAL = [
 ]
 
 export const FOOTER_LINKS = [
-  { label: 'À propos de Yourteco', href: '/fabricant-de-yourtes-francaises/' },
-  { label: 'Avis sur Yourteco', href: '/avis-clients-sur-la-societe-yourteco/' },
+  { label: 'Plan du site', href: '/plan-du-site/' },
   { label: 'Permis de construire', href: '/fabrication-de-yourte-contemporaine/yourtes-et-permis-de-construire/' },
   { label: 'Livraison des yourtes', href: '/livraison-des-yourtes/' },
   { label: 'Mentions légales et CGV', href: '/legal-notice/' },

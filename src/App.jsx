@@ -5,6 +5,7 @@ import { Header, Footer } from './components/Chrome.jsx'
 import Home from './pages/Home.jsx'
 // pages intérieures chargées à la demande : l'accueil n'embarque pas leur code
 const ContentPage = lazy(() => import('./pages/ContentPage.jsx'))
+const SitePlan = lazy(() => import('./pages/SitePlan.jsx'))
 import SeedField from './components/SeedField.jsx'
 
 function Page() {
@@ -22,6 +23,7 @@ export default function App() {
       <main id="contenu" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/plan-du-site" element={<Suspense fallback={<div className="cp-loading" aria-busy="true" />}><SitePlan /></Suspense>} />
           <Route path="/contact" element={<Navigate to="/#devis" replace />} />
           <Route path="/contact/" element={<Navigate to="/#devis" replace />} />
           <Route path="*" element={<Page />} />

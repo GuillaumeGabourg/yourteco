@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react'
 import Icon from './Icon.jsx'
-import { CONTACT, NAV, SOCIAL, FOOTER_LINKS } from '../content/site.js'
+import { CONTACT, SOCIAL, FOOTER_LINKS } from '../content/site.js'
+import { MENU, findInMenu } from '../content/menu.js'
+import { MegaNav, MobileMenu } from './Menu.jsx'
 import { SmartLink } from '../lib/text.jsx'
 import { asset } from '../lib/asset.js'
 
@@ -56,6 +58,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
   const location = useLocation()
+  const activeKey = findInMenu(location.pathname)?.rubrique.key ?? null
   useMotionValueEvent(scrollY, 'change', (v) => setScrolled(v > 24))
 
   useEffect(() => setOpen(false), [location.pathname, location.hash])
@@ -74,13 +77,16 @@ export function Header() {
 
   return (
     <>
-      <aside className="utility" aria-label="Boutique et autres langues">
+      <aside className="utility" aria-label="Boutique, téléphone et autres langues">
         <div className="wrap utility-in">
           <a href={CONTACT.boutique} target="_blank" rel="noopener noreferrer">Voir la boutique Yourteco <Icon name="out" size={14} /></a>
-          <nav aria-label="Autres langues" className="langs">
-            <Link to="/jurte-kaufen/" lang="de">Jurte kaufen</Link>
-            <Link to="/buying-a-yurt/" lang="en">Buying a Yurt</Link>
-          </nav>
+          <div className="utility-right">
+            <a href={CONTACT.phoneHref} className="utility-phone"><Icon name="phone" size={14} /> {CONTACT.phone}</a>
+            <nav aria-label="Autres langues" className="langs">
+              <Link to="/jurte-kaufen/" lang="de">Jurte kaufen</Link>
+              <Link to="/buying-a-yurt/" lang="en">Buying a Yurt</Link>
+            </nav>
+          </div>
         </div>
       </aside>
       <header className={'site-header' + (scrolled ? ' is-scrolled' : '')}>
@@ -90,11 +96,7 @@ export function Header() {
               <img className="logo-std" src={asset('/img/brand/logo-yourteco-hd.png')} alt="Yourteco" width="904" height="327" />
               <img className="logo-light" src={asset('/img/brand/logo-yourteco-light.png')} alt="Yourteco" width="904" height="327" />
             </Link>
-            <nav aria-label="Navigation principale" className="nav-desktop">
-              {NAV.map((n) => (
-                <NavLink key={n.href} to={n.href} className="nav-link">{n.label}</NavLink>
-              ))}
-            </nav>
+            <MegaNav activeKey={activeKey} />
             <div className="bar-actions">
               <ThemeToggle />
               <PhoneLink className="bar-phone" />
@@ -111,33 +113,7 @@ export function Header() {
             </div>
           </div>
         </div>
-        <AnimatePresence>
-          {open && (
-            <motion.nav
-              id="menu-mobile"
-              aria-label="Menu"
-              className="menu-mobile"
-              initial={{ clipPath: 'inset(0 0 100% 0)' }}
-              animate={{ clipPath: 'inset(0 0 0% 0)' }}
-              exit={{ clipPath: 'inset(0 0 100% 0)' }}
-              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <ul>
-                <li><NavLink to="/" end>Accueil</NavLink></li>
-                {NAV.map((n, i) => (
-                  <motion.li key={n.href} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 + i * 0.04 }}>
-                    <NavLink to={n.href}>{n.label}</NavLink>
-                  </motion.li>
-                ))}
-                <li><Link to="/#devis">Contact &amp; devis</Link></li>
-              </ul>
-              <div className="menu-mobile-foot">
-                <PhoneLink />
-                <a href={'mailto:' + CONTACT.email} className="phone"><Icon name="mail" size={18} /><span>{CONTACT.email}</span></a>
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{open && <MobileMenu activeKey={activeKey} />}</AnimatePresence>
       </header>
     </>
   )
@@ -171,6 +147,16 @@ export function Footer() {
           {FOOTER_LINKS.map((l) => <SmartLink key={l.href} href={l.href}>{l.label}</SmartLink>)}
         </nav>
       </div>
+      {/* les 6 rubriques : 5 pages phares chacune, et un lien vers la rubrique complète au plan du site */}
+      <nav className="wrap footer-rubs" aria-label="Rubriques du site">
+        {MENU.map((r) => (
+          <div key={r.key} className="footer-col">
+            <span className="footer-h">{r.label}</span>
+            {r.groups.flatMap((g) => g.links).filter((l) => !l.external).slice(0, 5).map((l) => <Link key={l.href} to={l.href}>{l.label}</Link>)}
+            <Link to={'/plan-du-site/#' + r.key} className="footer-all">Toute la rubrique <Icon name="arrow" size={14} /></Link>
+          </div>
+        ))}
+      </nav>
       <div className="wrap footer-bottom">
         <ul className="socials" aria-label="Réseaux sociaux">
           {SOCIAL.map((s) => (

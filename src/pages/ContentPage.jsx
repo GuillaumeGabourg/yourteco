@@ -11,6 +11,8 @@ import NotFound from './NotFound.jsx'
 import DIMS from '../content/imageDims.json'
 import ReviewWall from '../components/ReviewWall.jsx'
 import RelatedCards from '../components/RelatedCards.jsx'
+import InRubrique from '../components/InRubrique.jsx'
+import { findInMenu } from '../content/menu.js'
 
 /* « Sujets connexes » : les accroches avec lien qui suivent ce titre deviennent des cartes */
 const RELATED = /^(Sujets connexes|Articles connexes|Related (topics|articles)|Verwandte Themen)/i
@@ -359,6 +361,7 @@ export default function ContentPage({ slug }) {
   }))).filter((s) => s.length)
 
   const crumbs = location.pathname.split('/').filter(Boolean)
+  const found = findInMenu(location.pathname)
   const t = L[lang]
 
   return (
@@ -368,14 +371,23 @@ export default function ContentPage({ slug }) {
           <div className="cp-head-text">
             <nav aria-label="Fil d'Ariane" className="crumbs">
               <Link to="/">{t.home}</Link>
-              {crumbs.slice(0, -1).map((c, i) => (
-                <Fragment key={c}>
+              {/* rubrique du menu, puis la page parente éventuelle (libellé du menu quand il existe) */}
+              {found && (
+                <>
                   <span aria-hidden="true">/</span>
-                  {hasPage(crumbs.slice(0, i + 1).join('/'))
-                    ? <Link to={'/' + crumbs.slice(0, i + 1).join('/') + '/'}>{c.replace(/-/g, ' ')}</Link>
-                    : <span>{c.replace(/-/g, ' ')}</span>}
-                </Fragment>
-              ))}
+                  <Link to={'/plan-du-site/#' + found.rubrique.key}>{found.rubrique.label}</Link>
+                </>
+              )}
+              {crumbs.slice(0, -1).map((c, i) => {
+                const path = crumbs.slice(0, i + 1).join('/')
+                const label = findInMenu(path)?.link.label || c.replace(/-/g, ' ')
+                return (
+                  <Fragment key={c}>
+                    <span aria-hidden="true">/</span>
+                    {hasPage(path) ? <Link to={'/' + path + '/'}>{label}</Link> : <span>{label}</span>}
+                  </Fragment>
+                )
+              })}
             </nav>
             <WordsReveal as="h1" text={title} className="cp-title" immediate stagger={0.035} />
             {page.description && <p className="lead cp-lead">{fix(page.description)}</p>}
@@ -405,6 +417,8 @@ export default function ContentPage({ slug }) {
           )
         })}
       </div>
+
+      {found && <InRubrique found={found} pathname={location.pathname} />}
 
       <section className="cp-cta" aria-label={t.cta}>
         <Hills className="hills-top" to="var(--green-800)" back="var(--sun)" mid="var(--leaf)" seed={5} />
