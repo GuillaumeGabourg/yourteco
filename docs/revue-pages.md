@@ -2,7 +2,7 @@
 
 Liens vers la version publiée. Règle : quand un retour arrive pour la page N, les pages précédentes non signalées sont validées.
 
-Avancement : pages 1 à 56 validées (sauf la correction de la page 42, à revoir). La page doublon `/accueil/` est supprimée : l'ancienne page 58 (Plan du site) devient la 57, les pages EN et DE suivent (58 à 67). Pages 57 à 66 revues : retours appliqués en local (menus EN et DE centrés, liens compacts, bloc seul en pleine largeur). Corrigé aussi : le bouton « Devis » menait à une page 404 une fois le site publié (préfixe /yourteco ajouté deux fois par l'interception des liens d'ancre, `smooth.jsx`). Tout est déployé. Reste à relire : page 67 (Impressum).
+Avancement : pages 1 à 56 validées (sauf la correction de la page 42, à revoir). La page doublon `/accueil/` est supprimée : l'ancienne page 58 (Plan du site) devient la 57, les pages EN et DE suivent (58 à 67). Pages 57 à 66 revues : retours appliqués en local (menus EN et DE centrés, liens compacts, bloc seul en pleine largeur). Corrigé aussi : le bouton « Devis » menait à une page 404 une fois le site publié (préfixe /yourteco ajouté deux fois par l'interception des liens d'ancre, `smooth.jsx`). Tout est déployé. Reste à relire : page 67 (Impressum), puis les 12 pages reprises du site d'origine (68 à 81, à relire par lots de 10 : 68 à 77, puis 78 à 81). Ces 12 pages ne sont pas encore publiées : les liens ci-dessous fonctionneront après le prochain déploiement.
 
 | N° | Rubrique | Page | Statut |
 |---|---|---|---|
@@ -73,3 +73,17 @@ Avancement : pages 1 à 56 validées (sauf la correction de la page 42, à revoi
 | 65 | Deutsch | [Moderne holz-jurte : einzigartiges glamping-erlebnis in Deutschland](https://guillaumegabourg.github.io/yourteco/moderne-holz-jurte/) | à revoir |
 | 66 | Deutsch | [Kundenstimmen über Yourteco](https://guillaumegabourg.github.io/yourteco/kundenstimmen/) | à revoir |
 | 67 | Deutsch | [Impressum der website des französischen herstellers Yourteco](https://guillaumegabourg.github.io/yourteco/impressum/) | à revoir |
+| 68 | Nos yourtes | [Galeries photos de yourtes contemporaines](https://guillaumegabourg.github.io/yourteco/nos-photos/) | à revoir |
+| 69 | Réglementation | [Réglementation Thermique 2012 sur yourte d'habitation](https://guillaumegabourg.github.io/yourteco/yourte-rt-2012/) | à revoir |
+| 70 | Réglementation | [Modélisation 3D pour visualiser l'aménagement d'une yourte](https://guillaumegabourg.github.io/yourteco/3d/) | à revoir |
+| 71 | Yourteco | [Le Blog de Yourteco](https://guillaumegabourg.github.io/yourteco/blog/) | à revoir |
+| 72 | Toiles & entretien | [Dix critères de sélection pour une toile de yourte](https://guillaumegabourg.github.io/yourteco/choisir-sa-toile-de-yourte/) | à revoir |
+| 73 | Nos yourtes | [Yourtes mongoles dans le parc animalier Planète Sauvage](https://guillaumegabourg.github.io/yourteco/chapiteau-yourte-erp-diam-11-60-m/) | à revoir |
+| 74 | Nos yourtes | [Dôme yourte contemporaine](https://guillaumegabourg.github.io/yourteco/dome-yourte/) | à revoir |
+| 75 | Yourteco | [Partenaires de la société Yourteco](https://guillaumegabourg.github.io/yourteco/nos-partenaires/) | à revoir |
+| 76 | Autoconstruction | [Photos de chantiers participatifs Yourteco](https://guillaumegabourg.github.io/yourteco/photo-des-chantiers-participatifs/) | à revoir |
+| 77 | Yourteco | [La presse évoque le fabricant de yourtes Yourteco](https://guillaumegabourg.github.io/yourteco/presse-medias-radio-journal-article-de-presse/) | à revoir |
+| 78 | Nos yourtes | [Une yourte école à Rheu en Bretagne](https://guillaumegabourg.github.io/yourteco/une-yourte-ecole/) | à revoir |
+| 79 | Nos yourtes | [Yourtes en bois : exemples de la Ferme de la Gandonnière](https://guillaumegabourg.github.io/yourteco/yourte-en-bois/) | à revoir |
+| 80 | Toiles & entretien | [Promotions sur les toiles de yourtes contemporaines](https://guillaumegabourg.github.io/yourteco/promotion-toiles-de-yourtes/) | à revoir |
+| 81 | Autoconstruction | [Témoignages de participants sur chantier yourte](https://guillaumegabourg.github.io/yourteco/auto-construction-yourte/) | à revoir |

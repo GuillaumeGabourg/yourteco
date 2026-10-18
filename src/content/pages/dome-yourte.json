@@ -1,0 +1,61 @@
+{
+ "slug": "dome-yourte",
+ "url": "https://www.yourteco.com/dome-yourte/",
+ "lang": "fr",
+ "title": "Dôme yourte contemporaine",
+ "description": "Idée et création de dôme pour du camping ou de l'évènementiel",
+ "h1": "Dôme de yourte contemporaine",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Dôme de yourte contemporaine"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Dôme en bois de frêne pour la "
+      },
+      {
+       "t": "fabrication d’une yourte contemporaine",
+       "b": true,
+       "href": "/fabrication-de-yourte-contemporaine/"
+      },
+      {
+       "t": " !"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Réalisation structure : Germain Coguic\nRéalisation toile : Yourteco\nTemps de montage : 15 minutes\nAvantage : Très faible encombrement\nUtilisation : Camping / évènementiel"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Pour plus de renseignements, contactez-nous !"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/beta-1.webp",
+     "alt": "Dôme yourte contemporaine",
+     "caption": "Structure du dôme en frêne"
+    }
+   ]
+  }
+ ]
+}

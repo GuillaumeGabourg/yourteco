@@ -15,5 +15,7 @@ export const CORRECTIONS = [
   ['Un Fabricant de', 'Un fabricant de'],
   ['12 passionnées', '12 passionnés'],
   ['entreprenariat', 'entrepreneuriat'],
+  ['Google StreeView', 'Google StreetView'],
+  ['» Se taire en classe', '« Se taire en classe'],
   ['  ', ' '],
 ]

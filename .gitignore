@@ -3,3 +3,4 @@ dist/
 .impeccable/questions/
 *.log
 outils/audit/rapports/
+.cache-extraction/

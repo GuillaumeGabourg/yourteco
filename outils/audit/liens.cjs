@@ -14,7 +14,7 @@ function check(href, where) {
   const m = href.match(/^(?:https?:\/\/(?:www\.)?yourteco\.com)?(\/[^?#]*)?(#.*)?$/)
   if (!m) return // lien externe, mailto, tel
   const p = (m[1] || '/').replace(/^\/+|\/+$/g, '')
-  if (/^(img|assets|wp-content)(\/|$)/.test(p)) return
+  if (/^(img|assets|wp-content|images)(\/|$)/.test(p)) return
   total.n++
   if (!known.has(p)) bad.set(href, [...(bad.get(href) || []), where])
 }
