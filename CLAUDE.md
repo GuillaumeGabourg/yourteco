@@ -31,6 +31,8 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
 
 ## Règles propres à ce site
 
+- **À chaque modification visible, donner le lien local** des pages concernées (http://127.0.0.1:4173/...) pour que Guillaume puisse vérifier lui-même. Pas seulement « c'est corrigé ». Si le serveur ne tourne pas, le lancer d'abord.
+
 - Textes d'origine repris mot pour mot. Seule l'orthographe est corrigée, via `corrections.js`. Toute reformulation ou tout texte nouveau va dans `docs/reformulations.md`, et toute affirmation à justifier dans `docs/alertes-contenu.md`.
 - Avis clients : jamais modifiés, coupés seulement avec […]. Aucune note calculée, jamais la mention « avis vérifiés ».
 - Images toujours au format naturel : ni rognées, ni agrandies, sans effet de parallaxe qui zoome. Vérifier avec `npm run audit:images`.
@@ -38,6 +40,13 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
 - Liens dans le texte : soulignement qui s'épaissit au survol, jamais de fond plein (illisible en thème sombre).
 - Le fil d'Ariane se termine par la page courante.
 - Performance : rester fluide sur un portable peu puissant (mesurer avec `audit:perf`, processeur ralenti ×6). Pas de flou animé.
+- Pages intérieures (`ContentPage.jsx`), règles de la revue du 18 octobre :
+  - un texte long reste en **une seule colonne pleine largeur**, jamais coupé en deux colonnes côte à côte ;
+  - **deux photos** hors galerie s'affichent **l'une sous l'autre**, grandes (colonne de photos plus large que la colonne de texte) ;
+  - pas de trait vert au-dessus des blocs de texte en colonnes ;
+  - un titre de section seul reste proche de ce qui le suit ;
+  - une section faite **uniquement de liens** est fondue sous la section précédente, en rangée compacte (`.cp-links`), jamais en bandeau pleine hauteur ;
+  - un titre sans texte ni image : vérifier d'abord sur le site d'origine. Les textes sont parfois placés plus loin par la copie : on les remet sous leur titre dans le JSON plutôt que de supprimer le titre.
 - Barre de menu : menu burger sous 1340 px. Vérifier qu'il n'y a pas de débordement à 320 px, en français et en allemand (les libellés allemands sont les plus longs).
 
 ## Pièges déjà rencontrés

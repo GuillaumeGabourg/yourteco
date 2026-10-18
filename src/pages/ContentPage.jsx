@@ -81,9 +81,9 @@ const keyOf = (slug) => `../content/pages/${slug.replace(/\//g, '__')}.json`
 export const hasPage = (slug) => !!files[keyOf(slug)]
 
 const L = {
-  fr: { home: 'Accueil', cta: 'Un projet de yourte ?', ctaText: 'Parlons-en : conseil, démarches, fabrication et pose.', video: 'Lire la vidéo (YouTube)' },
-  en: { home: 'Home', cta: 'A yurt project?', ctaText: 'Let’s talk: advice, permits, manufacturing and installation.', video: 'Play video (YouTube)' },
-  de: { home: 'Startseite', cta: 'Ein Jurtenprojekt?', ctaText: 'Sprechen wir darüber: Beratung, Genehmigung, Fertigung und Aufbau.', video: 'Video abspielen (YouTube)' },
+  fr: { home: 'Accueil', cta: 'Un projet de yourte ?', ctaText: 'Parlons-en : conseil, démarches, fabrication et pose.', video: 'Lire la vidéo (YouTube)', links: 'Pages liées' },
+  en: { home: 'Home', cta: 'A yurt project?', ctaText: 'Let’s talk: advice, permits, manufacturing and installation.', video: 'Play video (YouTube)', links: 'Related pages' },
+  de: { home: 'Startseite', cta: 'Ein Jurtenprojekt?', ctaText: 'Sprechen wir darüber: Beratung, Genehmigung, Fertigung und Aufbau.', video: 'Video abspielen (YouTube)', links: 'Verwandte Seiten' },
 }
 
 function Video({ id, label }) {
@@ -148,7 +148,7 @@ function toChapters(blocks) {
   // chapitres de texte seul qui se suivent : posés côte à côte (colonnes)
   const res = []
   for (const c of flat) {
-    const textOnly = !c.points && c.body.length > 0 && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
+    const textOnly = !c.points && c.body.some((b) => b.type !== 'button') && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
     const last = res[res.length - 1]
     if (textOnly && last?.group) last.group.push(c)
     else if (textOnly) res.push({ group: [c] })
@@ -219,7 +219,8 @@ const ratioOf = (src) => { const [w, h] = DIMS[src] || []; return w && h ? w / h
    la largeur est proportionnelle au format, donc toutes ont la même hauteur (galerie justifiée) */
 function rowsOf(imgs, wide) {
   const n = imgs.length
-  const sizes = n === 1 ? [1] : n === 2 ? [2] : n === 3 ? (wide ? [3] : [1, 2]) : n === 4 ? (wide ? [4] : [2, 2]) : []
+  // deux photos hors galerie : l'une sous l'autre, plus grandes
+  const sizes = n === 1 ? [1] : n === 2 ? (wide ? [2] : [1, 1]) : n === 3 ? (wide ? [3] : [1, 2]) : n === 4 ? (wide ? [4] : [2, 2]) : []
   if (!sizes.length) for (let i = 0; i < n; i += wide ? 3 : 2) sizes.push(Math.min(wide ? 3 : 2, n - i))
   const rows = []
   let i = 0
@@ -377,7 +378,13 @@ export default function ContentPage({ slug }) {
   const firstImg = blocks.find((b) => b.type === 'image' && (DIMS[b.src]?.[0] || 0) >= 900)
   let skippedH1 = false
   let prevLvl = 1
-  const sections = page.sections.map((s) => toChapters(extractRelated(extractReviews(s.blocks)).filter((b) => {
+  // section faite uniquement de liens : fondue sous la section précédente, en rangée compacte
+  const merged = []
+  for (const s of page.sections) {
+    if (merged.length && s.blocks.length && s.blocks.every((b) => b.type === 'button')) merged[merged.length - 1].links.push(...s.blocks)
+    else merged.push({ blocks: s.blocks, links: [] })
+  }
+  const sections = merged.map((s) => ({ links: s.links, chs: toChapters(extractRelated(extractReviews(s.blocks)).filter((b) => {
     if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
     if (b === firstImg) return false
     return true
@@ -386,7 +393,7 @@ export default function ContentPage({ slug }) {
     const level = Math.min(Math.max(b.level, 2), prevLvl + 1)
     prevLvl = level
     return level === b.level ? b : { ...b, level }
-  }))).filter((s) => s.length)
+  })) })).filter((s) => s.chs.length)
 
   const crumbs = location.pathname.split('/').filter(Boolean)
   const found = findInMenu(location.pathname)
@@ -433,7 +440,7 @@ export default function ContentPage({ slug }) {
       </header>
 
       <div className="cp-body">
-        {sections.map((chs, si) => {
+        {sections.map(({ chs, links }, si) => {
           let flip = si % 2
           return (
             <section key={si} className={'cp-section' + (si % 2 ? ' alt' : '')}>
@@ -443,6 +450,13 @@ export default function ContentPage({ slug }) {
                   if (isSplit) flip = 1 - flip
                   return <Chapter key={ci} c={c} lang={lang} side={isSplit ? flip : 0} />
                 })}
+                {links.length > 0 && (
+                  <nav className="cp-links" aria-label={t.links}>
+                    {links.map((b, i) => (
+                      <SmartLink key={i} href={b.href} className="more"><span>{fix(b.label)}</span><Icon name="arrow" size={18} /></SmartLink>
+                    ))}
+                  </nav>
+                )}
               </div>
             </section>
           )

@@ -599,7 +599,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-leaves { border-radius: var(--r-lg); }
 .cp-section { padding-block: clamp(40px, 5vw, 72px); }
 .cp-section.alt { background: color-mix(in srgb, var(--bg-2) 78%, transparent); }
-.cp-flow { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 5vw, 72px); }
+.cp-flow { --flow-gap: clamp(40px, 5vw, 72px); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--flow-gap); }
 
 .cp-h { color: var(--tx-heading); }
 .cp-h2 { font-size: clamp(1.7rem, 2.8vw, 2.5rem); margin: 0 0 20px; }
@@ -620,8 +620,8 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-quote p { margin: 0; }
 .cp-btn { margin: .6em 0 1.4em; }
 
-.cp-split { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
-.cp-split.is-flip { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+.cp-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.cp-split.is-flip { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
 .cp-split.is-long { align-items: start; }
 .cp-split.is-long .cp-media { position: sticky; top: calc(var(--bar-h) + 24px); }
 .cp-split.is-flip .cp-media { order: -1; }
@@ -629,8 +629,6 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-aside { display: flex; flex-direction: column; gap: 14px; }
 .cp-aside-h .cp-h { margin: 0; }
 .cp-aside .cp-text { max-width: 100%; }
-.cp-aside .cp-text:not(.is-cols) { column-count: 2; column-gap: clamp(28px, 4vw, 56px); }
-.cp-aside .cp-text.is-short { column-count: 1; max-width: 110ch; }
 .cp-aside .cp-text > :not(.cp-p) { break-inside: avoid; }
 .cp-text.is-cols { column-count: 2; column-gap: clamp(28px, 4vw, 56px); }
 .cp-text.is-cols > :not(.cp-p) { break-inside: avoid; }
@@ -638,15 +636,19 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-text.is-cols > .cp-p:first-child { margin-top: 0; }
 
 /* chapitres de texte seul qui se suivent : colonnes */
-.cp-columns { --gap: clamp(28px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: clamp(28px, 3.5vw, 48px) var(--gap); }
+.cp-columns { --gap: clamp(28px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: clamp(20px, 2.5vw, 32px) var(--gap); }
 .cp-columns > * { flex: 0 1 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols)); min-width: 0; }
 .cp-columns.cols-2 { --cols: 2; }
 .cp-columns.cols-3 { --cols: 3; }
-.cp-col-item { padding-top: 16px; border-top: 2px solid var(--leaf-soft); }
+.cp-col-item { padding-top: 0; }
 .cp-col-item > .cp-h:first-child { margin-top: 0; }
 .cp-col-item .cp-h2 { font-size: clamp(1.45rem, 2vw, 1.85rem); }
 .cp-col-item > :last-child { margin-bottom: 0; }
 .cp-chapter { display: grid; }
+/* titre de section seul : il reste proche de ce qui le suit */
+.cp-flow > .cp-chapter:has(> .cp-lone:only-child) { margin-bottom: calc(-1 * var(--flow-gap) + 20px); }
+/* liens seuls en fin de section : une rangée compacte sous le dernier contenu */
+.cp-links { display: flex; flex-wrap: wrap; gap: 8px 36px; margin-top: calc(-1 * var(--flow-gap) + 28px); }
 
 .cp-media.is-wide.n-1 .plate { max-width: min(100%, 760px); margin-inline: auto; }
 /* galeries en flex : la dernière ligne incomplète se centre (5 photos = 2 + 2 + 1 centrée, 7 = 4 + 3 centrées) */
@@ -685,7 +687,6 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 @media (max-width: 900px) {
   .cp-split, .cp-split.is-flip { grid-template-columns: minmax(0, 1fr); }
   .cp-split.is-long .cp-media { position: static; }
-  .cp-aside .cp-text:not(.is-cols) { column-count: 1; }
   .cp-split.is-flip .cp-media { order: 0; }
   /* rangées de 3 ou 4 : elles passent sur deux lignes */
   .cp-row:has(> :nth-child(3)) { flex-wrap: wrap; }
@@ -700,7 +701,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
   .cp-media { --g: 10px; }
   .cp-media .plate-cap { font-size: .75rem; padding-top: 6px; }
   
-  .cp-flow { gap: 36px; }
+  .cp-flow { --flow-gap: 36px; }
 }
 
 /* ---------- 404 ---------- */
