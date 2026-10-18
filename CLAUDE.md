@@ -49,6 +49,7 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
   - **bandeaux de remplissage** (un titre court + une phrase d'accroche seuls dans une section, ex. « YOURTECO / Habitons léger… ») : supprimés, ils prennent de la place pour très peu d'information ;
   - **logo ou image en double** l'un sous l'autre : on garde un seul exemplaire ;
   - **plus de photos que de texte** : si le texte est court, il **suit les photos au défilement** (collant, `.is-follow`) ; s'il est trop haut pour rester collant, les photos en trop passent sous le texte dans sa colonne pour équilibrer les deux colonnes (`.is-balanced`). Jamais de grande bande vide à côté des photos ;
+  - **blocs de texte en colonnes** : à quatre blocs ou plus, ils se rangent en **deux piles** de haut en bas (`.is-stacked`), pas en lignes qui laissent le dernier bloc seul au milieu ; un bloc **bien plus long que les autres** (plus de 1 500 caractères et plus de 2,5 fois la moyenne des autres) prend **toute la largeur** (`.is-full`), tout comme son court texte d'introduction s'il resterait seul sur sa ligne ;
   - un titre sans texte ni image : vérifier d'abord sur le site d'origine. Les textes sont parfois placés plus loin par la copie : on les remet sous leur titre dans le JSON plutôt que de supprimer le titre.
 - Barre de menu : menu burger sous 1340 px. Vérifier qu'il n'y a pas de débordement à 320 px, en français et en allemand (les libellés allemands sont les plus longs).
 

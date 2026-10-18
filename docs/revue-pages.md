@@ -2,7 +2,7 @@
 
 Liens vers la version publiée. Règle : quand un retour arrive pour la page N, les pages précédentes non signalées sont validées.
 
-Avancement : pages 2 et 3 revues et corrigées (règles générales appliquées à tout le site). Pages 4 à 10 revues : retours appliqués (bandeaux YOURTECO supprimés, doublon Landré, texte qui suit les photos). Page 12 : photo « yourte dans le jardin » pivotée dans le bon sens (déployée). Pages 11 à 30 validées. Reprise à la page 31.
+Avancement : pages 2 et 3 revues et corrigées (règles générales appliquées à tout le site). Pages 4 à 10 revues : retours appliqués (bandeaux YOURTECO supprimés, doublon Landré, texte qui suit les photos). Page 12 : photo « yourte dans le jardin » pivotée dans le bon sens (déployée). Pages 11 à 30 validées. Pages 31 à 40 revues et corrigées (déployées) : étapes numérotées et sélecteur de coloris, piles de colonnes, bloc long en pleine largeur. Reprise à la page 41.
 
 | N° | Rubrique | Page | Statut |
 |---|---|---|---|

@@ -78,71 +78,63 @@
      "text": "Confiez-nous la réalisation de votre toile de yourte"
     },
     {
-     "type": "list",
-     "ordered": false,
+     "type": "steps",
      "items": [
-      [
-       {
-        "t": "1Reportez les valeurs A B C D E F G H et I de votre yourte actuelle dans le formulaire :"
+      {
+       "blocks": [
+        {
+         "type": "text",
+         "segs": [
+          {
+           "t": "Reportez les valeurs A B C D E F G H et I de votre yourte actuelle dans le formulaire :"
+          }
+         ]
+        },
+        {
+         "type": "button",
+         "label": "Télécharger le schéma au format PDF",
+         "href": "https://www.yourteco.com/wp-content/uploads/2019/07/Prise-de-cotes-toiles-sur-mesures.pdf"
+        }
+       ],
+       "image": {
+        "type": "image",
+        "src": "/img/site/prise-de-cotes-toiles-sur-mesures-v2.webp",
+        "alt": "Prise de cotes toiles sur mesures",
+        "caption": "",
+        "href": "https://www.yourteco.com/wp-content/uploads/2022/08/Prise-de-cotes-toiles-sur-mesures-V2.jpg"
        }
-      ]
-     ]
-    },
-    {
-     "type": "image",
-     "src": "/img/site/prise-de-cotes-toiles-sur-mesures-v2.webp",
-     "alt": "Prise de cotes toiles sur mesures",
-     "caption": "",
-     "href": "https://www.yourteco.com/wp-content/uploads/2022/08/Prise-de-cotes-toiles-sur-mesures-V2.jpg"
-    },
-    {
-     "type": "button",
-     "label": "Télécharger le schéma au format PDF",
-     "href": "https://www.yourteco.com/wp-content/uploads/2019/07/Prise-de-cotes-toiles-sur-mesures.pdf"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      [
-       {
-        "t": "2Cliquez sur les nuanciers pour choisir vos couleurs de toit et des murs ⭣"
-       }
-      ]
-     ]
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Toits"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Murs"
-    },
-    {
-     "type": "button",
-     "label": "Télécharger le nuancier avec les textures au format PDF",
-     "href": "https://www.yourteco.com/wp-content/uploads/2020/06/YOURTECO-COLORIS-MURS-ET-TOITS-_1.pdf"
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      [
-       {
-        "t": "3Vérifiez vos choix de couleurs et les cotes de votre yourte et remplissez le formulaire de demande de devis 😉"
-       }
-      ]
+      },
+      {
+       "blocks": [
+        {
+         "type": "text",
+         "segs": [
+          {
+           "t": "Cliquez sur les nuanciers pour choisir vos couleurs de toit et des murs"
+          }
+         ]
+        },
+        {
+         "type": "button",
+         "label": "Télécharger le nuancier avec les textures au format PDF",
+         "href": "https://www.yourteco.com/wp-content/uploads/2020/06/YOURTECO-COLORIS-MURS-ET-TOITS-_1.pdf"
+        }
+       ],
+       "widget": "colors"
+      },
+      {
+       "blocks": [
+        {
+         "type": "text",
+         "segs": [
+          {
+           "t": "Vérifiez vos choix de couleurs et les cotes de votre yourte et remplissez le formulaire de demande de devis 😉"
+          }
+         ]
+        }
+       ],
+       "quote": true
+      }
      ]
     }
    ]

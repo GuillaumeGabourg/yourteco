@@ -10,6 +10,7 @@ import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
 import DIMS from '../content/imageDims.json'
 import ReviewWall from '../components/ReviewWall.jsx'
+import ColorPicker from '../components/ColorPicker.jsx'
 import RelatedCards from '../components/RelatedCards.jsx'
 import InRubrique from '../components/InRubrique.jsx'
 import { findInMenu, OTHER_PAGES } from '../content/menu.js'
@@ -148,7 +149,7 @@ function toChapters(blocks) {
   // chapitres de texte seul qui se suivent : posés côte à côte (colonnes)
   const res = []
   for (const c of flat) {
-    const textOnly = !c.points && c.body.some((b) => b.type !== 'button') && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
+    const textOnly = !c.points && c.body.some((b) => b.type !== 'button') && !c.body.some((b) => b.type === 'steps') && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
     const last = res[res.length - 1]
     if (textOnly && last?.group) last.group.push(c)
     else if (textOnly) res.push({ group: [c] })
@@ -202,6 +203,22 @@ function Body({ b }) {
         </div>
       )
     }
+    case 'steps':
+      return (
+        <ol className="cp-steps">
+          {b.items.map((it, i) => (
+            <Reveal as="li" key={i} className={'cp-step' + (it.image || it.widget ? ' has-media' : '')} delay={i * 0.08}>
+              <span className="cp-step-n" aria-hidden="true">{i + 1}</span>
+              <div className="cp-step-body">
+                {it.blocks.map((x, j) => <Body key={j} b={x} />)}
+                {it.quote && <QuoteButton />}
+              </div>
+              {it.image && <Media items={[it.image]} lang="fr" />}
+              {it.widget === 'colors' && <ColorPicker />}
+            </Reveal>
+          ))}
+        </ol>
+      )
     case 'button':
       return (
         <p className="cp-btn">
@@ -368,10 +385,17 @@ function Chapter({ c, lang, side }) {
   }
   if (c.group) {
     const cols = c.group.length >= 3 && c.group.every((g) => chapterLen(g) < 420) ? 3 : 2
+    const lens = c.group.map(chapterLen)
+    // un bloc bien plus long que les autres prend toute la largeur ; le court qui le précède et se
+    // retrouverait seul sur sa ligne (son introduction) aussi
+    const wide = lens.map((n, i) => n > 1500 && n > 2.5 * (lens.reduce((a, b) => a + b, 0) - n) / Math.max(lens.length - 1, 1))
+    const full = wide.map((w, i) => w || (wide[i + 1] && i % cols === 0))
+    // quatre blocs ou plus, sans bloc très long : deux piles côte à côte (la dernière ligne ne reste pas seule au milieu)
+    const stacked = !wide.some(Boolean) && cols === 2 && c.group.length >= 4
     return (
-      <div className={'cp-columns cols-' + cols}>
+      <div className={'cp-columns cols-' + cols + (stacked ? ' is-stacked' : '')}>
         {c.group.map((g, i) => (
-          <Reveal key={i} className="cp-col-item" delay={(i % cols) * 0.08}>
+          <Reveal key={i} className={'cp-col-item' + (full[i] ? ' is-full' : '')} delay={(i % cols) * 0.08}>
             {g.heading && <Heading b={g.heading} />}
             {g.body.map((b, j) => <Body key={j} b={b} />)}
           </Reveal>
