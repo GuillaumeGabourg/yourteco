@@ -1,5 +1,5 @@
 /* Rubriques du site : source unique du grand menu, du menu mobile, du pied de page,
- * du plan du site et du bloc « Dans cette rubrique ». Les 55 pages françaises y figurent toutes.
+ * du plan du site et du bloc « Dans cette rubrique ». Les 69 pages françaises y figurent toutes.
  * Les libellés sont courts (menu) ; les titres des pages ne changent pas. */
 const I = '/img/site/'
 
@@ -26,6 +26,13 @@ export const MENU = [
       { title: 'Location', icon: 'calendar', links: [
         { label: 'Location pour événements', href: '/location-de-yourtes/' },
         { label: 'Flex Yourte', href: '/flex-yourte-evenementiel/' },
+      ] },
+      { title: 'Réalisations', icon: 'tent', links: [
+        { label: 'Galeries photos', href: '/nos-photos/' },
+        { label: 'Yourtes en bois (Gandonnière)', href: '/yourte-en-bois/' },
+        { label: 'Planète Sauvage', href: '/chapiteau-yourte-erp-diam-11-60-m/' },
+        { label: 'Yourte école', href: '/une-yourte-ecole/' },
+        { label: 'Dôme de yourte', href: '/dome-yourte/' },
       ] },
     ],
     feature: { image: I + 'yourte-contemporaine-habitation-alpine-par-yourteco.webp', title: "Le prix d'une yourte Yourteco", href: '/modele/' },
@@ -66,6 +73,8 @@ export const MENU = [
       { title: 'Toiles', icon: 'tent', links: [
         { label: 'Nos toiles de yourtes', href: '/les-toiles-de-yourtes/' },
         { label: 'Choisir sa toile', href: '/les-toiles-de-yourtes/comment-choisir-sa-toile-de-yourte/' },
+        { label: 'Dix critères de choix', href: '/choisir-sa-toile-de-yourte/' },
+        { label: 'Promotion sur les toiles', href: '/promotion-toiles-de-yourtes/' },
         { label: 'Pourquoi une toile acrylique', href: '/les-toiles-de-yourtes/quelle-toile-pour-votre-yourte/' },
         { label: 'Toiles sur mesure : tarifs', href: '/les-toiles-de-yourtes/nos-toiles-de-yourtes-sur-mesure/' },
       ] },
@@ -93,6 +102,8 @@ export const MENU = [
       { title: 'Apprendre', icon: 'hand', links: [
         { label: 'Chantiers solidaires', href: '/construire-sa-yourte/comment-construire-soi-meme-sa-yourte/' },
         { label: 'Chantiers participatifs', href: '/chantiers-participatifs/' },
+        { label: 'Photos de chantiers', href: '/photo-des-chantiers-participatifs/' },
+        { label: 'Témoignages de chantiers', href: '/auto-construction-yourte/' },
         { label: "Avantages de l'autoconstruction", href: '/construire-sa-yourte/les-avantages-de-construire-soi-meme-sa-yourte/' },
         { label: 'Pourquoi vivre en yourte', href: '/construire-sa-yourte/pourquoi-vivre-en-yourte/' },
       ] },
@@ -110,6 +121,8 @@ export const MENU = [
       ] },
       { title: 'Normes et sécurité', icon: 'shield', links: [
         { label: 'Yourte RT 2012', href: '/nos-yourtes-rt-2012/' },
+        { label: 'RT 2012 et permis', href: '/yourte-rt-2012/' },
+        { label: 'Modélisation 3D', href: '/3d/' },
         { label: 'Réglementation thermique 2012', href: '/fabrication-de-yourte-contemporaine/les-yourtes-et-la-reglementation-thermique-rt-2012/' },
         { label: 'RE 2020', href: '/les-yourtes-rt2020/' },
         { label: 'Sécurité de la yourte', href: '/fabrication-de-yourte-contemporaine/choisir-sa-yourte/' },
@@ -132,6 +145,9 @@ export const MENU = [
         { label: 'Entretien avec le gérant', href: '/entretien/' },
         { label: 'Histoire de la yourte', href: '/fabrication-de-yourte-contemporaine/origine-de-yourte/' },
         { label: 'Avis clients', href: '/avis-clients-sur-la-societe-yourteco/' },
+        { label: 'Presse', href: '/presse-medias-radio-journal-article-de-presse/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Partenaires', href: '/nos-partenaires/' },
       ] },
     ],
     feature: { image: I + 'video-ateliers-yourteco.webp', title: 'Qui sommes-nous ?', href: '/fabricant-de-yourtes-francaises/' },

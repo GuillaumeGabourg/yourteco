@@ -1,0 +1,37 @@
+{
+ "slug": "promotion-toiles-de-yourtes",
+ "url": "https://www.yourteco.com/promotion-toiles-de-yourtes/",
+ "lang": "fr",
+ "title": "Promotions sur les toiles de yourtes contemporaines",
+ "description": "Promotions de Yourteco sur les toiles de yourtes pour murs et toits. Profitez d'une réduction de 20% !",
+ "h1": "Promotion sur les toiles de yourte",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Promotion sur les toiles de yourte"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "image",
+     "src": "/img/site/toile_yourte1.webp",
+     "alt": "toile_yourte1",
+     "caption": "Promotion de 20% sur les toiles Yourteco"
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "L’été arrive et votre toile de yourte commence à être usée ? La couleur ne vous plaît plus ? Bref, il est temps de changer votre toile. Afin de vous proposer les meilleurs tarifs, Yourteco stocke désormais de plus importantes quantités de toiles ce qui nous permet de vous faire profiter d’une remise de 20 % sur vos toiles de yourte, que ce soit pour les murs ou le toit."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

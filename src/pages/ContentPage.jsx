@@ -9,6 +9,7 @@ import Icon from '../components/Icon.jsx'
 import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
 import DIMS from '../content/imageDims.json'
+import { asset } from '../lib/asset.js'
 import ReviewWall from '../components/ReviewWall.jsx'
 import ColorPicker from '../components/ColorPicker.jsx'
 import RelatedCards from '../components/RelatedCards.jsx'
@@ -98,6 +99,28 @@ function Video({ id, label }) {
           <button className="video-btn" onClick={() => setPlay(true)} aria-label={label}>
             <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
             <span className="video-play"><Icon name="play" size={30} /></span>
+          </button>
+        )}
+      </div>
+    </figure>
+  )
+}
+
+/* Contenu externe intégré (modèle 3D, Street View) : rien n'est chargé tant qu'on n'a pas cliqué, donc aucun cookie tiers avant accord */
+function Embed({ b }) {
+  const [on, setOn] = useState(false)
+  let host = ''
+  try { host = new URL(b.src).hostname.replace(/^www\./, '') } catch { /* adresse inattendue */ }
+  return (
+    <figure className="plate cp-embed">
+      <div className="plate-frame" style={{ height: Math.min(b.height || 450, 600) }}>
+        {on ? (
+          <iframe src={b.src} title={b.title} allowFullScreen loading="lazy" />
+        ) : (
+          <button type="button" className="embed-btn" onClick={() => setOn(true)}>
+            <span className="embed-title">{b.title}</span>
+            <span className="more"><span>Afficher le contenu</span><Icon name="arrow" size={18} /></span>
+            {host && <span className="embed-note">Hébergé par {host} : l'affichage charge leur site.</span>}
           </button>
         )}
       </div>
@@ -228,6 +251,24 @@ function Body({ b }) {
             </Reveal>
           ))}
         </ol>
+      )
+    case 'embed':
+      return <Embed b={b} />
+    case 'partners':
+      return (
+        <ul className="rel-cards partner-cards" style={{ '--max': b.items.length <= 3 ? b.items.length : b.items.length === 4 ? 2 : b.items.length % 4 === 0 ? 4 : 3 }}>
+          {b.items.map((it, i) => (
+            <Reveal as="li" key={it.name} delay={(i % 4) * 0.06} y={18}>
+              <SmartLink href={it.href} className="rel-card partner-card">
+                <img src={asset(it.src)} alt="" width={DIMS[it.src]?.[0]} height={DIMS[it.src]?.[1]} loading="lazy" decoding="async" />
+                <span className="rel-body">
+                  <strong>{fix(it.name)}</strong>
+                  <span>{fix(it.text)}</span>
+                </span>
+              </SmartLink>
+            </Reveal>
+          ))}
+        </ul>
       )
     case 'button':
       return (

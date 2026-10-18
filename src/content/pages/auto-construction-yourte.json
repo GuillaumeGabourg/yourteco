@@ -1,0 +1,83 @@
+{
+ "slug": "auto-construction-yourte",
+ "url": "https://www.yourteco.com/auto-construction-yourte/",
+ "lang": "fr",
+ "title": "Témoignages de participants sur chantier yourte",
+ "description": "Venez construire votre yourte chez nous ! Voici quelques témoignages de participants aux chantiers Yourteco !",
+ "h1": "Les chantiers participatifs Yourteco en témoignages",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Les chantiers participatifs Yourteco en témoignages"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Partager une connaissance ou un savoir-faire, c’est formidable ! Arriver à construire sa yourte de ses propres mains tout en faisant quelques économies au passage, c’est génial ! Encore faut-il un lieu, quelques bases et de précieux conseils. Les chantiers participatifs yourte, c’est le plaisir de partager un savoir-faire, d’apprendre à faire soi-même mais aussi de s’entraider, se conseiller. Parce que c’est vous qui fabriquez votre yourte vous y gagner en autonomie. Voici quelques témoignages de participants sur les chantiers participatifs Yourteco !"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "En savoir plus sur nos "
+      },
+      {
+       "t": "chantiers participatifs Yourteco",
+       "b": true,
+       "href": "/chantiers-participatifs/"
+      },
+      {
+       "t": " !"
+      }
+     ]
+    },
+    {
+     "type": "image",
+     "src": "/img/site/construire_sa_yourte-2.webp",
+     "alt": ""
+    },
+    {
+     "type": "image",
+     "src": "/img/site/construire_sa_yourte2-2.webp",
+     "alt": ""
+    },
+    {
+     "type": "image",
+     "src": "/img/site/construire_une_yourte-2.webp",
+     "alt": ""
+    },
+    {
+     "type": "image",
+     "src": "/img/site/construire_une_yourte_3-2.webp",
+     "alt": ""
+    },
+    {
+     "type": "image",
+     "src": "/img/site/faire_sa_yourte-2.webp",
+     "alt": "",
+     "caption": "Fabrication d’un toono de yourte."
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte_-00192-2.webp",
+     "alt": ""
+    },
+    {
+     "type": "image",
+     "src": "/img/site/yourte-00191-2.webp",
+     "alt": ""
+    }
+   ]
+  }
+ ]
+}

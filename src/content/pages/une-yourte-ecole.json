@@ -1,0 +1,39 @@
+{
+ "slug": "une-yourte-ecole",
+ "url": "https://www.yourteco.com/une-yourte-ecole/",
+ "lang": "fr",
+ "title": "Une yourte école à Rheu en Bretagne",
+ "description": "Venez découvrir le collège Montessori à Rheu en Bretage où les élèves apprennent sous la yourte !",
+ "h1": "Une yourte école à Rheu en Bretagne",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Une yourte école à Rheu en Bretagne"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "Au Rheu en Bretagne, les élèves apprennent l’autonomie sous la yourte ! Une création d’un collège Montessori dans une yourte avec la volonté de créer une oasis en tout lieu. Un projet écologique, conscient et solidaire, pour prendre des responsabilités pour le futur de la terre. Les élèves auront ainsi accès à un potager et un verger. Ils seront accompagnés par des professionnels dans la découverte du travail de la terre, ainsi que dans la mise en place d’outils de développement durables concrets. Il leur sera aussi proposé de s’investir dans un atelier collectif avec des sculpteurs, peintres et autres artistes / artisans, toujours en lien avec l’équipe pédagogique."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "segs": [
+      {
+       "t": "» Se taire en classe, c’est respecter le sommeil des autres. »"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
