@@ -1,4 +1,4 @@
-import { useEffect, useState, Fragment } from 'react'
+import { useEffect, useRef, useState, Fragment } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { fix, Segs, SmartLink, segsText } from '../lib/text.jsx'
 import { usePageMeta } from '../lib/meta.js'
@@ -10,6 +10,7 @@ import { FallingLeaves, Hills } from '../components/Nature.jsx'
 import NotFound from './NotFound.jsx'
 import DIMS from '../content/imageDims.json'
 import ReviewWall from '../components/ReviewWall.jsx'
+import ColorPicker from '../components/ColorPicker.jsx'
 import RelatedCards from '../components/RelatedCards.jsx'
 import InRubrique from '../components/InRubrique.jsx'
 import { findInMenu, OTHER_PAGES } from '../content/menu.js'
@@ -81,9 +82,9 @@ const keyOf = (slug) => `../content/pages/${slug.replace(/\//g, '__')}.json`
 export const hasPage = (slug) => !!files[keyOf(slug)]
 
 const L = {
-  fr: { home: 'Accueil', cta: 'Un projet de yourte ?', ctaText: 'Parlons-en : conseil, démarches, fabrication et pose.', video: 'Lire la vidéo (YouTube)' },
-  en: { home: 'Home', cta: 'A yurt project?', ctaText: 'Let’s talk: advice, permits, manufacturing and installation.', video: 'Play video (YouTube)' },
-  de: { home: 'Startseite', cta: 'Ein Jurtenprojekt?', ctaText: 'Sprechen wir darüber: Beratung, Genehmigung, Fertigung und Aufbau.', video: 'Video abspielen (YouTube)' },
+  fr: { home: 'Accueil', cta: 'Un projet de yourte ?', ctaText: 'Parlons-en : conseil, démarches, fabrication et pose.', video: 'Lire la vidéo (YouTube)', links: 'Pages liées' },
+  en: { home: 'Home', cta: 'A yurt project?', ctaText: 'Let’s talk: advice, permits, manufacturing and installation.', video: 'Play video (YouTube)', links: 'Related pages' },
+  de: { home: 'Startseite', cta: 'Ein Jurtenprojekt?', ctaText: 'Sprechen wir darüber: Beratung, Genehmigung, Fertigung und Aufbau.', video: 'Video abspielen (YouTube)', links: 'Verwandte Seiten' },
 }
 
 function Video({ id, label }) {
@@ -148,13 +149,23 @@ function toChapters(blocks) {
   // chapitres de texte seul qui se suivent : posés côte à côte (colonnes)
   const res = []
   for (const c of flat) {
-    const textOnly = !c.points && c.body.length > 0 && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
+    const textOnly = !c.points && c.body.some((b) => b.type !== 'button') && !c.body.some((b) => b.type === 'steps') && !c.media.length && !c.body.some((b) => b.type === 'reviews' || b.type === 'related')
     const last = res[res.length - 1]
     if (textOnly && last?.group) last.group.push(c)
     else if (textOnly) res.push({ group: [c] })
     else res.push(c)
   }
-  return res.map((c) => (c.group?.length === 1 ? c.group[0] : c))
+  const single = res.map((c) => (c.group?.length === 1 ? c.group[0] : c))
+  // titres qui n'ont qu'un lien chacun, à la suite : une seule rangée compacte
+  const out2 = []
+  for (const c of single) {
+    const lk = !c.points && !c.group && c.heading && !c.media.length && c.body.length && c.body.every((b) => b.type === 'button')
+    const last = out2[out2.length - 1]
+    if (lk && last?.links) last.links.push(c)
+    else if (lk) out2.push({ links: [c] })
+    else out2.push(c)
+  }
+  return out2.map((c) => (c.links?.length === 1 ? c.links[0] : c))
 }
 
 const blockLen = (b) =>
@@ -202,6 +213,22 @@ function Body({ b }) {
         </div>
       )
     }
+    case 'steps':
+      return (
+        <ol className="cp-steps">
+          {b.items.map((it, i) => (
+            <Reveal as="li" key={i} className={'cp-step' + (it.image || it.widget ? ' has-media' : '')} delay={i * 0.08}>
+              <span className="cp-step-n" aria-hidden="true">{i + 1}</span>
+              <div className="cp-step-body">
+                {it.blocks.map((x, j) => <Body key={j} b={x} />)}
+                {it.quote && <QuoteButton />}
+              </div>
+              {it.image && <Media items={[it.image]} lang="fr" />}
+              {it.widget === 'colors' && <ColorPicker />}
+            </Reveal>
+          ))}
+        </ol>
+      )
     case 'button':
       return (
         <p className="cp-btn">
@@ -219,7 +246,8 @@ const ratioOf = (src) => { const [w, h] = DIMS[src] || []; return w && h ? w / h
    la largeur est proportionnelle au format, donc toutes ont la même hauteur (galerie justifiée) */
 function rowsOf(imgs, wide) {
   const n = imgs.length
-  const sizes = n === 1 ? [1] : n === 2 ? [2] : n === 3 ? (wide ? [3] : [1, 2]) : n === 4 ? (wide ? [4] : [2, 2]) : []
+  // deux photos hors galerie : l'une sous l'autre, plus grandes
+  const sizes = n === 1 ? [1] : n === 2 ? (wide ? [2] : [1, 1]) : n === 3 ? (wide ? [3] : [1, 2]) : n === 4 ? (wide ? [4] : [2, 2]) : []
   if (!sizes.length) for (let i = 0; i < n; i += wide ? 3 : 2) sizes.push(Math.min(wide ? 3 : 2, n - i))
   const rows = []
   let i = 0
@@ -231,16 +259,16 @@ function rowsOf(imgs, wide) {
   })
 }
 
-function Media({ items, lang, wide }) {
+function Media({ items, lang, wide, range }) {
   const imgs = items.filter((m) => m.type === 'image')
   const vids = items.filter((m) => m.type === 'video')
   const n = imgs.length
   let k = 0
   return (
     <div className={'cp-media n-' + Math.min(n, 4) + (wide ? ' is-wide' : '')}>
-      {vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
+      {(!range || range[0] === 0) && vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
       {rowsOf(imgs, wide).map((row, ri) => (
-        <div key={ri} className="cp-row">
+        (range && (ri < range[0] || ri >= range[1])) ? (k += row.length, null) : <div key={ri} className="cp-row">
           {row.map((im) => {
             const i = k++
             const small = isSmall(im.src)
@@ -270,7 +298,77 @@ function Media({ items, lang, wide }) {
   )
 }
 
+/** Texte + photos côte à côte. Quand les photos sont bien plus hautes que le texte, le texte
+ *  les suit au défilement (collant) au lieu de laisser un grand vide à côté des photos. */
+function Split({ c, lang, side }) {
+  const root = useRef(null)
+  const [follow, setFollow] = useState(false)
+  const [cut, setCut] = useState(null) // nombre de rangées de photos gardées à côté du texte
+  const [wide, setWide] = useState(typeof innerWidth === 'number' ? innerWidth : 1440)
+  const long = chapterLen(c) > 1400
+  const nRows = rowsOf(c.media.filter((m) => m.type === 'image'), false).length
+  useEffect(() => {
+    const el = root.current
+    const text = el?.querySelector(':scope > .cp-text'), media = el?.querySelector(':scope > .cp-media')
+    if (!text || !media) return
+    const measure = () => {
+      const T = text.offsetHeight, M = media.offsetHeight
+      const big = innerWidth > 900
+      setFollow(big && M > T + 160 && T < innerHeight - 140)
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(media); ro.observe(text)
+    const onResize = () => { setWide(innerWidth); setCut(null) }
+    addEventListener('resize', onResize)
+    return () => { ro.disconnect(); removeEventListener('resize', onResize) }
+  }, [])
+  // texte trop haut pour rester collant et photos bien plus hautes que lui : les photos en trop
+  // passent sous le texte, dans sa colonne, pour équilibrer les deux colonnes
+  useEffect(() => {
+    if (cut !== null || wide <= 900 || nRows < 2) return
+    const el = root.current
+    const text = el?.querySelector(':scope > .cp-text'), media = el?.querySelector(':scope > .cp-media')
+    if (!text || !media) return
+    const rows = [...media.querySelectorAll(':scope > .cp-row')].map((r) => r.offsetHeight)
+    if (rows.length < 2) return
+    const T = text.offsetHeight, g = 16, total = rows.reduce((a, b) => a + b, 0) + g * (rows.length - 1)
+    if (T >= innerHeight - 140 && total > T + 300) {
+      let best = null, bestDiff = total - T
+      for (let k = 1; k < rows.length; k++) {
+        const left = rows.slice(0, k).reduce((a, b) => a + b, 0) + g * (k - 1)
+        const right = T + 28 + (rows.slice(k).reduce((a, b) => a + b, 0) + g * (rows.length - k - 1)) * (5 / 6)
+        if (Math.abs(left - right) < bestDiff) { best = k; bestDiff = Math.abs(left - right) }
+      }
+      if (best) setCut(best)
+    }
+  }, [cut, wide, nRows])
+  const balanced = cut !== null
+  return (
+    <div ref={root} className={'cp-split' + (side ? ' is-flip' : '') + (long ? ' is-long' : '') + (follow && !balanced ? ' is-follow' : '') + (balanced ? ' is-balanced' : '')}>
+      <div className="cp-text">
+        {c.heading && <Heading b={c.heading} />}
+        {c.body.map((b, i) => <Body key={i} b={b} />)}
+        {balanced && <Media items={c.media} lang={lang} range={[cut, nRows]} />}
+      </div>
+      <Media items={c.media} lang={lang} range={balanced ? [0, cut] : undefined} />
+    </div>
+  )
+}
+
 function Chapter({ c, lang, side }) {
+  if (c.links) {
+    return (
+      <div className="cp-linkset">
+        {c.links.map((l, i) => (
+          <Reveal key={i} className="cp-linkitem" delay={(i % 3) * 0.08}>
+            <Heading b={l.heading} />
+            {l.body.map((b, j) => <Body key={j} b={b} />)}
+          </Reveal>
+        ))}
+      </div>
+    )
+  }
   const relAt = c.body ? c.body.findIndex((b) => b.type === 'related') : -1
   if (relAt >= 0) {
     const before = c.body.slice(0, relAt), after = c.body.slice(relAt + 1)
@@ -309,29 +407,39 @@ function Chapter({ c, lang, side }) {
   }
   if (c.group) {
     const cols = c.group.length >= 3 && c.group.every((g) => chapterLen(g) < 420) ? 3 : 2
+    const lens = c.group.map(chapterLen)
+    // un bloc bien plus long que les autres prend toute la largeur ; le court qui le précède et se
+    // retrouverait seul sur sa ligne (son introduction) aussi
+    const wide = lens.map((n, i) => n > 1500 && n > 2.5 * (lens.reduce((a, b) => a + b, 0) - n) / Math.max(lens.length - 1, 1))
+    // coordonnées (quatre lignes courtes ou plus) : bloc compact qui reste dans la colonne de gauche
+    const lines = c.group.map((g) => g.body.length >= 4 && g.body.every((b) => b.type === 'text' && blockLen(b) < 80))
+    const full = wide.map((w, i) => w || (wide[i + 1] && i % cols === 0))
+    // bloc seul sur sa ligne (dernier, ou coincé entre deux blocs pleine largeur) : toute la largeur,
+    // jamais au milieu avec du vide de chaque côté
+    let row = []
+    const rows = []
+    c.group.forEach((_, i) => {
+      if (full[i]) { if (row.length) rows.push(row); row = []; rows.push([i]) }
+      else { row.push(i); if (row.length === cols) { rows.push(row); row = [] } }
+    })
+    if (row.length) rows.push(row)
+    if (c.group.length > 1) rows.forEach((r) => { if (r.length === 1 && !lines[r[0]]) full[r[0]] = true })
+    // quatre blocs ou plus, sans bloc très long : deux piles côte à côte (la dernière ligne ne reste pas seule au milieu)
+    const stacked = !wide.some(Boolean) && cols === 2 && c.group.length >= 4
     return (
-      <div className={'cp-columns cols-' + cols}>
+      <div className={'cp-columns cols-' + cols + (stacked ? ' is-stacked' : '')}>
         {c.group.map((g, i) => (
-          <Reveal key={i} className="cp-col-item" delay={(i % cols) * 0.08}>
+          <Reveal key={i} className={'cp-col-item' + (full[i] ? ' is-full' : '') + (lines[i] ? ' is-lines' : '')} delay={(i % cols) * 0.08}>
             {g.heading && <Heading b={g.heading} />}
-            {g.body.map((b, j) => <Body key={j} b={b} />)}
+                        {lines[i]
+              ? <div className="cp-lines">{g.body.map((b, j) => <Body key={j} b={b} />)}</div>
+              : g.body.map((b, j) => <Body key={j} b={b} />)}
           </Reveal>
         ))}
       </div>
     )
   }
-  if (c.media.length && c.body.length) {
-    const long = chapterLen(c) > 1400
-    return (
-      <div className={'cp-split' + (side ? ' is-flip' : '') + (long ? ' is-long' : '')}>
-        <div className="cp-text">
-          {c.heading && <Heading b={c.heading} />}
-          {c.body.map((b, i) => <Body key={i} b={b} />)}
-        </div>
-        <Media items={c.media} lang={lang} />
-      </div>
-    )
-  }
+  if (c.media.length && c.body.length) return <Split c={c} lang={lang} side={side} />
   if (c.body.length) {
     // texte seul : titre à gauche, texte à droite (2 colonnes si très long)
     const len = chapterLen(c)
@@ -377,7 +485,13 @@ export default function ContentPage({ slug }) {
   const firstImg = blocks.find((b) => b.type === 'image' && (DIMS[b.src]?.[0] || 0) >= 900)
   let skippedH1 = false
   let prevLvl = 1
-  const sections = page.sections.map((s) => toChapters(extractRelated(extractReviews(s.blocks)).filter((b) => {
+  // section faite uniquement de liens : fondue sous la section précédente, en rangée compacte
+  const merged = []
+  for (const s of page.sections) {
+    if (merged.length && s.blocks.length && s.blocks.every((b) => b.type === 'button')) merged[merged.length - 1].links.push(...s.blocks)
+    else merged.push({ blocks: s.blocks, links: [] })
+  }
+  const sections = merged.map((s) => ({ links: s.links, chs: toChapters(extractRelated(extractReviews(s.blocks)).filter((b) => {
     if (b.type === 'heading' && b.level === 1 && !skippedH1) { skippedH1 = true; return false }
     if (b === firstImg) return false
     return true
@@ -386,7 +500,7 @@ export default function ContentPage({ slug }) {
     const level = Math.min(Math.max(b.level, 2), prevLvl + 1)
     prevLvl = level
     return level === b.level ? b : { ...b, level }
-  }))).filter((s) => s.length)
+  })) })).filter((s) => s.chs.length)
 
   const crumbs = location.pathname.split('/').filter(Boolean)
   const found = findInMenu(location.pathname)
@@ -433,16 +547,23 @@ export default function ContentPage({ slug }) {
       </header>
 
       <div className="cp-body">
-        {sections.map((chs, si) => {
+        {sections.map(({ chs, links }, si) => {
           let flip = si % 2
           return (
             <section key={si} className={'cp-section' + (si % 2 ? ' alt' : '')}>
               <div className="wrap cp-flow">
                 {chs.map((c, ci) => {
-                  const isSplit = !c.points && !c.group && c.media.length > 0 && c.body.length > 0
+                  const isSplit = !c.points && !c.group && !c.links && c.media.length > 0 && c.body.length > 0
                   if (isSplit) flip = 1 - flip
                   return <Chapter key={ci} c={c} lang={lang} side={isSplit ? flip : 0} />
                 })}
+                {links.length > 0 && (
+                  <nav className="cp-links" aria-label={t.links}>
+                    {links.map((b, i) => (
+                      <SmartLink key={i} href={b.href} className="more"><span>{fix(b.label)}</span><Icon name="arrow" size={18} /></SmartLink>
+                    ))}
+                  </nav>
+                )}
               </div>
             </section>
           )

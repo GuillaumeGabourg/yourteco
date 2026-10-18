@@ -18,10 +18,13 @@ function trimTail(segs) {
   return out
 }
 
+/* colonnes selon le nombre de cartes : jamais une carte seule sur la dernière ligne (4 → 2 + 2, 7 ou 8 → 4 + 3 ou 4 + 4) */
+const colsFor = (n) => (n <= 3 ? n : n === 4 ? 2 : n === 7 || n === 8 ? 4 : 3)
+
 /** « Sujets connexes » : chaque accroche devient une carte avec son lien. */
 export default function RelatedCards({ items, lang = 'fr' }) {
   return (
-    <ul className="rel-cards">
+    <ul className="rel-cards" style={{ '--max': colsFor(items.length) }}>
       {items.map((it, i) => {
         const href = it.segs.find((s) => s.href)?.href
         return (

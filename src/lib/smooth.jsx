@@ -71,13 +71,17 @@ export function SmoothProvider({ children }) {
       e.preventDefault()
       const menuWasOpen = document.documentElement.classList.contains('menu-open')
       window.dispatchEvent(new Event('ytc:navclick')) // referme le menu mobile
-      if (url.pathname === window.location.pathname) {
+      // le <Link> ajoute déjà le préfixe du site (/yourteco/ une fois publié) : on le retire avant de naviguer
+      const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+      const bare = (p) => p.replace(/\/+$/, '') || '/'
+      const route = url.pathname.startsWith(base) ? url.pathname.slice(base.length) || '/' : url.pathname
+      if (bare(url.pathname) === bare(window.location.pathname)) {
         history.replaceState(null, '', url.pathname + url.hash)
         // menu ouvert : attendre sa fermeture (Lenis relancé, défilement débloqué)
         if (menuWasOpen) setTimeout(() => scrollToId(id), 80)
         else scrollToId(id)
       } else {
-        navigate(url.pathname + url.hash)
+        navigate(route + url.hash)
       }
     }
     // phase de capture : passe avant le <Link> de React Router

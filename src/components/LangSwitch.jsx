@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import Icon from './Icon.jsx'
-import { UI, LANGS } from '../content/ui.js'
+import { UI, LANGS, QUOTE_PATH, isQuotePage } from '../content/ui.js'
 import { useLang } from '../lib/lang.js'
 
 /* Drapeaux dessinés en SVG : les émojis drapeaux ne s'affichent pas sous Windows */
@@ -86,7 +86,7 @@ export default function LangMenu({ className = '' }) {
             {LANGS.map((code) => (
               <li key={code}>
                 <Link
-                  to={UI[code].home}
+                  to={isQuotePage(pathname) ? QUOTE_PATH[code] : UI[code].home}
                   lang={code}
                   hrefLang={code}
                   className={'lang-opt' + (code === lang ? ' is-current' : '')}

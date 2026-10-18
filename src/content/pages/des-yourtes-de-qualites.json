@@ -873,12 +873,6 @@
   {
    "blocks": [
     {
-     "type": "image",
-     "src": "/img/site/unknown-1.webp",
-     "alt": "Unknown-1",
-     "caption": ""
-    },
-    {
      "type": "heading",
      "level": 2,
      "text": "Achetez votre bois avec Yourteco !"
@@ -893,23 +887,6 @@
      "type": "button",
      "label": "Consultez l'offre \"bois\" de la Boutique Yourteco !",
      "href": "https://www.yourteco-boutique.com/product-category/yourtes-en-bois/"
-    }
-   ]
-  },
-  {
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "YOURTECO"
-    },
-    {
-     "type": "text",
-     "segs": [
-      {
-       "t": "Habitons léger pour que nos rêves prennent racine !"
-      }
-     ]
     }
    ]
   }

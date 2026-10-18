@@ -1,9 +1,15 @@
-// Schéma unique du formulaire de devis : il génère les attributs HTML ici,
+// Schéma unique du formulaire de devis (français, anglais, allemand) : il génère les attributs HTML ici,
 // et servira aux contraintes PocketBase + hook serveur (jalon back office).
+// Les valeurs envoyées sont les mêmes dans les trois langues ; seuls les libellés et messages changent (devisText.js).
+// Code postal et téléphone : règles françaises en français, règles internationales en anglais et allemand.
+import { DEVIS_TEXT } from './devisText.js'
+
 export const PATTERNS = {
   NOM: "^[\\p{L}][\\p{L}\\p{M} '’\\-]{0,49}$",
   TEL_FR: '^(?:0[1-9][0-9]{8}|\\+33[1-9][0-9]{8})$',
   CP_FR: '^(?:0[1-9]|[1-8][0-9]|9[0-8])[0-9]{3}$',
+  CP_INTL: '^[\\p{L}\\p{N}][\\p{L}\\p{N} \\-]{2,9}$',
+  TEL_INTL: '^\\+?[0-9]{6,15}$',
 }
 
 export const PROJETS = [
@@ -36,22 +42,29 @@ export const BUDGETS = [
 ]
 
 export const FIELDS = {
-  projet: { required: true, oneOf: PROJETS.map((p) => p.value), msg: 'Choisissez le type de projet.' },
+  projet: { required: true, oneOf: PROJETS.map((p) => p.value) },
   terrain: { required: false, oneOf: TERRAIN.map((p) => p.value) },
-  cp: { required: true, pattern: PATTERNS.CP_FR, maxLength: 5, normalize: 'digits', msg: 'Code postal du projet : 5 chiffres, par exemple 49640.' },
+  cp: { required: true, pattern: PATTERNS.CP_FR, maxLength: 5, normalize: 'digits' },
   delai: { required: false, oneOf: DELAIS.map((p) => p.value) },
   budget: { required: false, oneOf: BUDGETS.map((p) => p.value) },
-  prenom: { required: true, pattern: PATTERNS.NOM, maxLength: 50, msg: 'Indiquez votre prénom (lettres, espaces, tirets).' },
-  nom: { required: true, pattern: PATTERNS.NOM, maxLength: 50, msg: 'Indiquez votre nom (lettres, espaces, tirets).' },
-  email: { required: true, type: 'email', maxLength: 254, msg: 'Adresse e-mail incomplète, par exemple prenom@exemple.fr.' },
-  tel: { required: false, pattern: PATTERNS.TEL_FR, maxLength: 20, normalize: 'phone', msg: 'Numéro à 10 chiffres, par exemple 06 12 34 56 78.' },
+  prenom: { required: true, pattern: PATTERNS.NOM, maxLength: 50 },
+  nom: { required: true, pattern: PATTERNS.NOM, maxLength: 50 },
+  email: { required: true, type: 'email', maxLength: 254 },
+  tel: { required: false, pattern: PATTERNS.TEL_FR, maxLength: 20, normalize: 'phone' },
   message: { required: false, maxLength: 1000 },
   rappel: { required: false },
-  rgpd: { required: true, msg: 'Merci d’accepter l’utilisation de vos données pour traiter la demande.' },
+  rgpd: { required: true },
 }
 
-export function normalize(name, raw) {
-  const f = FIELDS[name]
+/** Règles d'un champ selon la langue de la page (anglais et allemand : code postal et téléphone internationaux). */
+const INTL = {
+  cp: { pattern: PATTERNS.CP_INTL, maxLength: 10, normalize: 'trim' },
+  tel: { pattern: PATTERNS.TEL_INTL, maxLength: 20, normalize: 'phone' },
+}
+export const fieldFor = (name, lang = 'fr') => (lang === 'fr' ? FIELDS[name] : { ...FIELDS[name], ...INTL[name] })
+
+export function normalize(name, raw, lang = 'fr') {
+  const f = fieldFor(name, lang)
   if (typeof raw !== 'string') return raw
   let v = raw.normalize('NFC').replace(/[\u0000-\u0009\u000B-\u001F\u007F]/g, '')
   if (name !== 'message') v = v.replace(/\s+/g, ' ')
@@ -62,14 +75,16 @@ export function normalize(name, raw) {
   return v
 }
 
-export function validate(name, value) {
-  const f = FIELDS[name]
+/** Message d'erreur dans la langue de la page, ou null si la valeur est valide. */
+export function validate(name, value, lang = 'fr') {
+  const f = fieldFor(name, lang)
   if (!f) return null
+  const e = DEVIS_TEXT[lang].errors
   const empty = value === '' || value === false || value == null
-  if (empty) return f.required ? f.msg || 'Champ requis.' : null
-  if (typeof value === 'string' && f.maxLength && value.length > f.maxLength) return `${f.maxLength} caractères maximum.`
-  if (f.oneOf && !f.oneOf.includes(value)) return f.msg || 'Valeur non autorisée.'
-  if (f.pattern && !new RegExp(f.pattern, 'u').test(value)) return f.msg
-  if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) return f.msg
+  if (empty) return f.required ? e[name] || e.required : null
+  if (typeof value === 'string' && f.maxLength && value.length > f.maxLength) return e.max(f.maxLength)
+  if (f.oneOf && !f.oneOf.includes(value)) return e[name] || e.notAllowed
+  if (f.pattern && !new RegExp(f.pattern, 'u').test(value)) return e[name]
+  if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) return e[name]
   return null
 }

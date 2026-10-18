@@ -324,16 +324,6 @@
      "text": "Isolation"
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "Protégez votre yourte avec Yourteco !"
-    },
-    {
-     "type": "button",
-     "label": "Voir les produits \"Imperméabilisants et nettoyants\" de la Boutique Yourteco",
-     "href": "https://www.yourteco-boutique.com/product-category/nettoyants-impermeabilisants-yourte/"
-    },
-    {
      "type": "text",
      "segs": [
       {
@@ -347,6 +337,16 @@
        "t": " assurée par un isolant d’une épaisseur comprise entre 240 et 340 mm selon l’orientation et l’altitude du projet."
       }
      ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Protégez votre yourte avec Yourteco !"
+    },
+    {
+     "type": "button",
+     "label": "Voir les produits \"Imperméabilisants et nettoyants\" de la Boutique Yourteco",
+     "href": "https://www.yourteco-boutique.com/product-category/nettoyants-impermeabilisants-yourte/"
     },
     {
      "type": "heading",

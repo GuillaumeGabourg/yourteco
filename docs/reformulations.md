@@ -79,3 +79,11 @@ Sur les pages anglaises et allemandes, le menu liste les 5 pages de la langue ; 
 
 Numéro de téléphone au format international (+33 2 41 24 49 87) sur les pages anglaises et allemandes.
 À trancher : le bouton « Quote / Angebot » mène au formulaire de devis de l'accueil, qui est en français.
+
+Texte retiré de la page `/modele/` (à votre demande) : « Visualisez quelques réalisations de Yourteco (extérieurs et intérieurs) en consultant le menu général de ce site Internet ! » (dernière section, seule sur sa ligne).
+
+Page « Toile de yourte sur mesure » (`/les-toiles-de-yourtes/nos-toiles-de-yourtes-sur-mesure/`), section « Confiez-nous la réalisation de votre toile » : les trois étapes sont présentées en étapes numérotées. Les chiffres « 1 », « 2 », « 3 » collés au début des phrases deviennent des pastilles numérotées, la flèche « ⭣ » de l'étape 2 est retirée (le sélecteur de couleurs est maintenant à côté du texte), et un bouton « Devis » (vers le formulaire de l'accueil) accompagne l'étape 3. Les titres « Toits » et « Murs » deviennent les libellés du sélecteur de coloris d'origine (12 couleurs, noms d'origine), qui n'avait pas été repris à la copie.
+
+Nouvelle page `/devis/` (demande de devis) : titre « Demander un devis », titre de l'onglet « Demander un devis de yourte contemporaine | Yourteco » et description « Demandez un devis pour votre yourte contemporaine en bois : habitation, loisir, ERP ou kit d'autoconstruction. Yourteco, fabricant dans le Maine-et-Loire. ». Le reste (texte sur le prix, coordonnées, formulaire) est celui du bas de l'accueil.
+
+Pages de devis traduites `/quote/` (anglais) et `/angebot/` (allemand) : tout le formulaire (libellés, choix, messages d'erreur, texte de consentement, message de confirmation), le titre, la description, le texte sur le prix et le lien « en savoir plus » sont de nouvelles traductions, dans `src/content/devisText.js`, à faire valider. Le texte sur le prix renvoie vers la page « Buying a yurt » / « Jurte kaufen ». En anglais et en allemand, le code postal (3 à 10 lettres ou chiffres) et le téléphone (indicatif de pays) suivent des règles internationales, pas les règles françaises.
