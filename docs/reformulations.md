@@ -79,3 +79,5 @@ Sur les pages anglaises et allemandes, le menu liste les 5 pages de la langue ; 
 
 Numéro de téléphone au format international (+33 2 41 24 49 87) sur les pages anglaises et allemandes.
 À trancher : le bouton « Quote / Angebot » mène au formulaire de devis de l'accueil, qui est en français.
+
+Texte retiré de la page `/modele/` (à votre demande) : « Visualisez quelques réalisations de Yourteco (extérieurs et intérieurs) en consultant le menu général de ce site Internet ! » (dernière section, seule sur sa ligne).
