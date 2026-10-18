@@ -20,6 +20,7 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
 - `src/pages/` : `Home.jsx` (accueil, yourte animée de la section « specs »), `ContentPage.jsx` (toutes les pages intérieures), `SitePlan.jsx`.
 - `src/components/` :
   - `Chrome.jsx` : en-tête, pied de page, boutons devis, téléphone et thème ;
+  - `QuoteSection.jsx` : prix + coordonnées + formulaire de devis, utilisé en bas de l'accueil et sur les pages `/devis/`, `/quote/` et `/angebot/` (`pages/QuotePage.jsx`). Un seul formulaire (`QuoteForm.jsx`), textes dans `content/devisText.js`, règles dans `content/devisSchema.js` ;
   - `Menu.jsx` : grand menu FR, menu EN/DE, menu mobile ;
   - `LangSwitch.jsx` : menu déroulant à drapeaux ;
   - `Plate.jsx` : image au format réel.

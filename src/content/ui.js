@@ -43,8 +43,15 @@ export const UI = {
 
 export const LANGS = ['fr', 'en', 'de']
 
+/** Page de demande de devis de chaque langue. */
+export const QUOTE_PATH = { fr: '/devis/', en: '/quote/', de: '/angebot/' }
+const quoteLang = (pathname) => LANGS.find((l) => QUOTE_PATH[l].replace(/\/$/, '') === pathname.replace(/\/$/, ''))
+
 /** Langue d'une adresse : anglais ou allemand pour les pages traduites, français sinon. */
-export const langOf = (pathname) => OTHER_PAGES.find((g) => g.links.some((l) => l.href === pathname))?.lang || 'fr'
+export const langOf = (pathname) => quoteLang(pathname) || OTHER_PAGES.find((g) => g.links.some((l) => l.href === pathname))?.lang || 'fr'
+
+/** Vrai sur /devis/, /quote/ et /angebot/. */
+export const isQuotePage = (pathname) => !!quoteLang(pathname)
 
 /** Pages d'une langue étrangère (menu et pied de page anglais / allemand). */
 export const pagesOf = (lang) => OTHER_PAGES.find((g) => g.lang === lang)?.links || []

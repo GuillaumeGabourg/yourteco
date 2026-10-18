@@ -12,7 +12,7 @@ import { QuoteButton, PhoneLink } from '../components/Chrome.jsx'
 import { SunRays, FallingLeaves, Hills, TreeRings, Dapple, GrowingStem, LeafShape } from '../components/Nature.jsx'
 import YurtAssembly from '../components/YurtAssembly.jsx'
 import ReviewCarousel from '../components/ReviewCarousel.jsx'
-import QuoteForm from '../components/QuoteForm.jsx'
+import QuoteSection from '../components/QuoteSection.jsx'
 import Icon from '../components/Icon.jsx'
 import { usePageMeta } from '../lib/meta.js'
 import { useSmooth, barHeight, prefersReducedMotion } from '../lib/smooth.jsx'
@@ -499,34 +499,6 @@ function News() {
   )
 }
 
-/* ---------- Prix + devis ---------- */
-function Quote() {
-  const p = HOME.price
-  return (
-    <section id="devis" className="quote section" aria-labelledby="quote-title">
-      <Hills className="hills-top" to="var(--green-800)" back="var(--sun)" mid="var(--leaf)" seed={23} />
-      <Dapple />
-      <div className="wrap quote-grid">
-        <div className="quote-side">
-          <h2 id="quote-title" className="h2"><span className="ul">{fix(p.title)}</span></h2>
-          <p>{fix(p.text)}</p>
-          <Link to={p.href} className="more more-light"><span>{fix(p.cta)}</span><Icon name="arrow" size={18} /></Link>
-          <div className="quote-contact">
-            <p className="quote-contact-h">Préférez le téléphone ?</p>
-            <PhoneLink className="phone-xl" />
-            <a href={'mailto:' + CONTACT.email} className="phone"><Icon name="mail" size={18} /><span>{CONTACT.email}</span></a>
-            <p className="muted"><Icon name="pin" size={16} className="inline-ico" /> « Le petit paradis », 49640 Daumeray</p>
-          </div>
-        </div>
-        <div className="quote-main">
-          <h3 className="quote-form-title">Demander un devis</h3>
-          <QuoteForm />
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export default function Home() {
   usePageMeta({ title: 'Yourteco : fabricant de yourtes contemporaines en bois', description: 'Yourteco conçoit, fabrique et installe votre yourte contemporaine en bois. Habitation, loisir, ERP, kit d\'autoconstruction.' })
   useEffect(() => { document.documentElement.classList.add('is-home'); return () => document.documentElement.classList.remove('is-home') }, [])
@@ -542,7 +514,7 @@ export default function Home() {
       <Steps />
       <Commitments />
       <News />
-      <Quote />
+      <QuoteSection />
     </>
   )
 }

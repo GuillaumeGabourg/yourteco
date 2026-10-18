@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 // pages intérieures chargées à la demande : l'accueil n'embarque pas leur code
 const ContentPage = lazy(() => import('./pages/ContentPage.jsx'))
 const SitePlan = lazy(() => import('./pages/SitePlan.jsx'))
+const QuotePage = lazy(() => import('./pages/QuotePage.jsx'))
 import SeedField from './components/SeedField.jsx'
 
 function Page() {
@@ -26,8 +27,11 @@ export default function App() {
           <Route path="/plan-du-site" element={<Suspense fallback={<div className="cp-loading" aria-busy="true" />}><SitePlan /></Suspense>} />
           <Route path="/accueil" element={<Navigate to="/" replace />} />
           <Route path="/accueil/" element={<Navigate to="/" replace />} />
-          <Route path="/contact" element={<Navigate to="/#devis" replace />} />
-          <Route path="/contact/" element={<Navigate to="/#devis" replace />} />
+          <Route path="/devis" element={<Suspense fallback={<div className="cp-loading" aria-busy="true" />}><QuotePage /></Suspense>} />
+          <Route path="/quote" element={<Suspense fallback={<div className="cp-loading" aria-busy="true" />}><QuotePage /></Suspense>} />
+          <Route path="/angebot" element={<Suspense fallback={<div className="cp-loading" aria-busy="true" />}><QuotePage /></Suspense>} />
+          <Route path="/contact" element={<Navigate to="/devis/" replace />} />
+          <Route path="/contact/" element={<Navigate to="/devis/" replace />} />
           <Route path="*" element={<Page />} />
         </Routes>
       </main>

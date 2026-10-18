@@ -7,14 +7,16 @@ import { MENU, findInMenu } from '../content/menu.js'
 import { MegaNav, LangNav, MobileMenu } from './Menu.jsx'
 import LangMenu from './LangSwitch.jsx'
 import { useLang } from '../lib/lang.js'
-import { pagesOf } from '../content/ui.js'
+import { pagesOf, QUOTE_PATH } from '../content/ui.js'
 import { SmartLink } from '../lib/text.jsx'
 import { asset } from '../lib/asset.js'
 
+/** Mène à la page de devis de la langue (/devis/, /quote/, /angebot/) ; sur l'accueil français, au formulaire en bas de page. */
 export function QuoteButton({ children, className = '' }) {
-  const { t } = useLang()
+  const { lang, t } = useLang()
+  const { pathname } = useLocation()
   return (
-    <Link to="/#devis" className={'btn btn-mark ' + className}>
+    <Link to={pathname === '/' ? '/#devis' : QUOTE_PATH[lang]} className={'btn btn-mark ' + className}>
       <span>{children || t.quote}</span>
       <Icon name="arrow" size={18} />
     </Link>
