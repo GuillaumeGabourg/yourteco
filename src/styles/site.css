@@ -637,7 +637,7 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-swatches { border: 0; margin: 0; padding: 0; min-width: 0; }
 .cp-swatches legend { padding: 0; margin-bottom: 8px; font-weight: 700; color: var(--tx-heading); }
 .cp-swatches-v { margin-left: 8px; font-weight: 500; color: var(--tx-accent); }
-.cp-swatch-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.cp-swatch-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .cp-swatch { width: 32px; height: 32px; padding: 0; border-radius: 50%; border: 2px solid rgba(128, 128, 128, .5); background-size: cover; background-position: center; cursor: pointer; transition: transform .2s var(--ease-out); }
 .cp-swatch:hover { transform: scale(1.12); }
 .cp-swatch[aria-pressed="true"] { outline: 3px solid var(--tx-accent); outline-offset: 2px; }
