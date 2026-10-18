@@ -10,7 +10,7 @@ const RAPPORTS = path.join(__dirname, 'rapports')
 fs.mkdirSync(RAPPORTS, { recursive: true })
 
 /** Toutes les pages : '' pour l'accueil, puis les slugs des pages de contenu. */
-const slugs = ['', ...fs.readdirSync(PAGES_DIR).map((f) => f.replace('.json', '').replace(/__/g, '/')).filter((s) => s !== 'accueil')]
+const slugs = ['', ...fs.readdirSync(PAGES_DIR).map((f) => f.replace('.json', '').replace(/__/g, '/'))]
 const out = (f) => path.join(RAPPORTS, f)
 
 module.exports = { CHROME, BASE, PAGES_DIR, slugs, out }

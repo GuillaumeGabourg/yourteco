@@ -2,7 +2,7 @@
 
 Liens vers la version publiée. Règle : quand un retour arrive pour la page N, les pages précédentes non signalées sont validées.
 
-Avancement : pages 2 et 3 revues et corrigées (règles générales appliquées à tout le site). Pages 4 à 10 revues : retours appliqués (bandeaux YOURTECO supprimés, doublon Landré, texte qui suit les photos). Page 12 : photo « yourte dans le jardin » pivotée dans le bon sens (déployée). Pages 11 à 30 validées. Pages 31 à 40 revues et corrigées (déployées) : étapes numérotées et sélecteur de coloris, piles de colonnes, bloc long en pleine largeur. Reprise à la page 41.
+Avancement : pages 1 à 56 validées (sauf la correction de la page 42, à revoir). La page doublon `/accueil/` est supprimée : l'ancienne page 58 (Plan du site) devient la 57, les pages EN et DE suivent (58 à 67). Pages 57 à 66 revues : retours appliqués en local (menus EN et DE centrés, liens compacts, bloc seul en pleine largeur). Corrigé aussi : le bouton « Devis » menait à une page 404 une fois le site publié (préfixe /yourteco ajouté deux fois par l'interception des liens d'ancre, `smooth.jsx`). Tout est déployé. Reste à relire : page 67 (Impressum).
 
 | N° | Rubrique | Page | Statut |
 |---|---|---|---|
@@ -62,15 +62,14 @@ Avancement : pages 2 et 3 revues et corrigées (règles générales appliquées 
 | 54 | Yourteco | [Entretien avec Nicolas Chailloux : gérant de Yourteco](https://guillaumegabourg.github.io/yourteco/entretien/) | à revoir |
 | 55 | Yourteco | [Origines de la yourte contemporaine](https://guillaumegabourg.github.io/yourteco/fabrication-de-yourte-contemporaine/origine-de-yourte/) | à revoir |
 | 56 | Yourteco | [Avis sur le fabricant de yourtes contemporaines Yourteco](https://guillaumegabourg.github.io/yourteco/avis-clients-sur-la-societe-yourteco/) | à revoir |
-| 57 | Hors menu | [Yourteco : Fabricant de yourtes contemporaines en bois - Made in France](https://guillaumegabourg.github.io/yourteco/accueil/) | à revoir |
-| 58 | Hors menu | [Plan du site](https://guillaumegabourg.github.io/yourteco/plan-du-site/) | à revoir |
-| 59 | English | [Buy an yurt: durable wooden yurts for winter comfort](https://guillaumegabourg.github.io/yourteco/buying-a-yurt/) | à revoir |
-| 60 | English | [Yurt manufacturer Yourteco: sustainable wooden yurts](https://guillaumegabourg.github.io/yourteco/yurt-manufacturer-yourteco/) | à revoir |
-| 61 | English | [Modern wooden yurt: a unique glamping experience in UK](https://guillaumegabourg.github.io/yourteco/modern-yurt-for-glamping/) | à revoir |
-| 62 | English | [Customer testimonials about Yourteco](https://guillaumegabourg.github.io/yourteco/testimonials/) | à revoir |
-| 63 | English | [Legal notice of the website of the french manufacturer Yourteco](https://guillaumegabourg.github.io/yourteco/legal-notice/) | à revoir |
-| 64 | Deutsch | [Jurte kaufen winterfest : robuste holzjurten](https://guillaumegabourg.github.io/yourteco/jurte-kaufen/) | à revoir |
-| 65 | Deutsch | [Jurtenhersteller Yourteco : nachhaltige holzjurten](https://guillaumegabourg.github.io/yourteco/jurtenhersteller-yourteco/) | à revoir |
-| 66 | Deutsch | [Moderne holz-jurte : einzigartiges glamping-erlebnis in Deutschland](https://guillaumegabourg.github.io/yourteco/moderne-holz-jurte/) | à revoir |
-| 67 | Deutsch | [Kundenstimmen über Yourteco](https://guillaumegabourg.github.io/yourteco/kundenstimmen/) | à revoir |
-| 68 | Deutsch | [Impressum der website des französischen herstellers Yourteco](https://guillaumegabourg.github.io/yourteco/impressum/) | à revoir |
+| 57 | Hors menu | [Plan du site](https://guillaumegabourg.github.io/yourteco/plan-du-site/) | à revoir |
+| 58 | English | [Buy an yurt: durable wooden yurts for winter comfort](https://guillaumegabourg.github.io/yourteco/buying-a-yurt/) | à revoir |
+| 59 | English | [Yurt manufacturer Yourteco: sustainable wooden yurts](https://guillaumegabourg.github.io/yourteco/yurt-manufacturer-yourteco/) | à revoir |
+| 60 | English | [Modern wooden yurt: a unique glamping experience in UK](https://guillaumegabourg.github.io/yourteco/modern-yurt-for-glamping/) | à revoir |
+| 61 | English | [Customer testimonials about Yourteco](https://guillaumegabourg.github.io/yourteco/testimonials/) | à revoir |
+| 62 | English | [Legal notice of the website of the french manufacturer Yourteco](https://guillaumegabourg.github.io/yourteco/legal-notice/) | à revoir |
+| 63 | Deutsch | [Jurte kaufen winterfest : robuste holzjurten](https://guillaumegabourg.github.io/yourteco/jurte-kaufen/) | à revoir |
+| 64 | Deutsch | [Jurtenhersteller Yourteco : nachhaltige holzjurten](https://guillaumegabourg.github.io/yourteco/jurtenhersteller-yourteco/) | à revoir |
+| 65 | Deutsch | [Moderne holz-jurte : einzigartiges glamping-erlebnis in Deutschland](https://guillaumegabourg.github.io/yourteco/moderne-holz-jurte/) | à revoir |
+| 66 | Deutsch | [Kundenstimmen über Yourteco](https://guillaumegabourg.github.io/yourteco/kundenstimmen/) | à revoir |
+| 67 | Deutsch | [Impressum der website des französischen herstellers Yourteco](https://guillaumegabourg.github.io/yourteco/impressum/) | à revoir |

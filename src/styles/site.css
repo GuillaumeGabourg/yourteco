@@ -113,8 +113,8 @@
 .logo { flex: none; display: block; }
 .logo img { height: 44px; width: auto; transition: transform .35s var(--ease-out); transform-origin: left center; }
 .site-header.is-scrolled .logo img { transform: scale(.9); }
-.nav-desktop { display: flex; gap: 4px; margin-inline: auto; }
-.nav-link { text-decoration: none; font-weight: 580; font-size: .94rem; padding: 8px 12px; border-radius: 999px; white-space: nowrap; color: var(--ink-2); transition: background-color .25s, color .25s; }
+.nav-desktop { display: flex; align-items: center; gap: 4px; margin-inline: auto; }
+.nav-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; font-weight: 580; font-size: .94rem; padding: 8px 12px; border-radius: 999px; white-space: nowrap; color: var(--ink-2); transition: background-color .25s, color .25s; }
 .nav-link:hover { background: var(--bg-2); color: var(--tx-strong); }
 .nav-link.active { background: var(--green-700); color: var(--on-dark); }
 .bar-actions { display: flex; align-items: center; gap: 16px; }
@@ -670,6 +670,14 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-columns.cols-3 { --cols: 3; }
 .cp-col-item { padding-top: 0; }
 .cp-columns > .cp-col-item.is-full { flex-basis: 100%; }
+/* titres à un seul lien : rangée compacte */
+.cp-linkset { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px clamp(28px, 4vw, 56px); }
+.cp-linkitem .cp-h { margin: 0 0 8px; font-size: clamp(1.2rem, 1.7vw, 1.45rem); }
+.cp-linkitem .cp-btn { margin: 0; }
+.cp-flow > .cp-chapter:has(> .cp-lone:only-child) + .cp-linkset { margin-top: 0; }
+/* coordonnées : lignes serrées, bloc calé à gauche */
+.cp-columns > .cp-col-item.is-lines { margin-right: auto; }
+.cp-lines > .cp-p { margin-bottom: .35em; }
 /* piles : les blocs se suivent de haut en bas dans deux colonnes équilibrées */
 .cp-columns.is-stacked { display: block; column-count: 2; column-gap: var(--gap); }
 .cp-columns.is-stacked > .cp-col-item { break-inside: avoid; margin-bottom: clamp(20px, 2.5vw, 32px); }

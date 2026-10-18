@@ -155,7 +155,17 @@ function toChapters(blocks) {
     else if (textOnly) res.push({ group: [c] })
     else res.push(c)
   }
-  return res.map((c) => (c.group?.length === 1 ? c.group[0] : c))
+  const single = res.map((c) => (c.group?.length === 1 ? c.group[0] : c))
+  // titres qui n'ont qu'un lien chacun, à la suite : une seule rangée compacte
+  const out2 = []
+  for (const c of single) {
+    const lk = !c.points && !c.group && c.heading && !c.media.length && c.body.length && c.body.every((b) => b.type === 'button')
+    const last = out2[out2.length - 1]
+    if (lk && last?.links) last.links.push(c)
+    else if (lk) out2.push({ links: [c] })
+    else out2.push(c)
+  }
+  return out2.map((c) => (c.links?.length === 1 ? c.links[0] : c))
 }
 
 const blockLen = (b) =>
@@ -347,6 +357,18 @@ function Split({ c, lang, side }) {
 }
 
 function Chapter({ c, lang, side }) {
+  if (c.links) {
+    return (
+      <div className="cp-linkset">
+        {c.links.map((l, i) => (
+          <Reveal key={i} className="cp-linkitem" delay={(i % 3) * 0.08}>
+            <Heading b={l.heading} />
+            {l.body.map((b, j) => <Body key={j} b={b} />)}
+          </Reveal>
+        ))}
+      </div>
+    )
+  }
   const relAt = c.body ? c.body.findIndex((b) => b.type === 'related') : -1
   if (relAt >= 0) {
     const before = c.body.slice(0, relAt), after = c.body.slice(relAt + 1)
@@ -389,15 +411,29 @@ function Chapter({ c, lang, side }) {
     // un bloc bien plus long que les autres prend toute la largeur ; le court qui le précède et se
     // retrouverait seul sur sa ligne (son introduction) aussi
     const wide = lens.map((n, i) => n > 1500 && n > 2.5 * (lens.reduce((a, b) => a + b, 0) - n) / Math.max(lens.length - 1, 1))
+    // coordonnées (quatre lignes courtes ou plus) : bloc compact qui reste dans la colonne de gauche
+    const lines = c.group.map((g) => g.body.length >= 4 && g.body.every((b) => b.type === 'text' && blockLen(b) < 80))
     const full = wide.map((w, i) => w || (wide[i + 1] && i % cols === 0))
+    // bloc seul sur sa ligne (dernier, ou coincé entre deux blocs pleine largeur) : toute la largeur,
+    // jamais au milieu avec du vide de chaque côté
+    let row = []
+    const rows = []
+    c.group.forEach((_, i) => {
+      if (full[i]) { if (row.length) rows.push(row); row = []; rows.push([i]) }
+      else { row.push(i); if (row.length === cols) { rows.push(row); row = [] } }
+    })
+    if (row.length) rows.push(row)
+    if (c.group.length > 1) rows.forEach((r) => { if (r.length === 1 && !lines[r[0]]) full[r[0]] = true })
     // quatre blocs ou plus, sans bloc très long : deux piles côte à côte (la dernière ligne ne reste pas seule au milieu)
     const stacked = !wide.some(Boolean) && cols === 2 && c.group.length >= 4
     return (
       <div className={'cp-columns cols-' + cols + (stacked ? ' is-stacked' : '')}>
         {c.group.map((g, i) => (
-          <Reveal key={i} className={'cp-col-item' + (full[i] ? ' is-full' : '')} delay={(i % cols) * 0.08}>
+          <Reveal key={i} className={'cp-col-item' + (full[i] ? ' is-full' : '') + (lines[i] ? ' is-lines' : '')} delay={(i % cols) * 0.08}>
             {g.heading && <Heading b={g.heading} />}
-            {g.body.map((b, j) => <Body key={j} b={b} />)}
+                        {lines[i]
+              ? <div className="cp-lines">{g.body.map((b, j) => <Body key={j} b={b} />)}</div>
+              : g.body.map((b, j) => <Body key={j} b={b} />)}
           </Reveal>
         ))}
       </div>
@@ -517,7 +553,7 @@ export default function ContentPage({ slug }) {
             <section key={si} className={'cp-section' + (si % 2 ? ' alt' : '')}>
               <div className="wrap cp-flow">
                 {chs.map((c, ci) => {
-                  const isSplit = !c.points && !c.group && c.media.length > 0 && c.body.length > 0
+                  const isSplit = !c.points && !c.group && !c.links && c.media.length > 0 && c.body.length > 0
                   if (isSplit) flip = 1 - flip
                   return <Chapter key={ci} c={c} lang={lang} side={isSplit ? flip : 0} />
                 })}

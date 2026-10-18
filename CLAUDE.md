@@ -13,7 +13,7 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
 ## Organisation du code
 
 - `src/content/` : les données.
-  - `pages/*.json` contient les 66 pages de contenu, avec `__` à la place de `/` dans le nom du fichier.
+  - `pages/*.json` contient les 65 pages de contenu, avec `__` à la place de `/` dans le nom du fichier.
   - `menu.js` est la source unique des rubriques (menu, pied de page, plan du site, « Dans cette rubrique »). On y trouve aussi `OTHER_PAGES`, les 5 pages EN et les 5 pages DE.
   - `ui.js` contient les textes d'interface FR, EN et DE, ainsi que `langOf(pathname)`.
   - `reviews.js` contient les avis, `site.js` les coordonnées, `imageDims.json` les dimensions réelles des images.
@@ -50,7 +50,10 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
   - **logo ou image en double** l'un sous l'autre : on garde un seul exemplaire ;
   - **plus de photos que de texte** : si le texte est court, il **suit les photos au défilement** (collant, `.is-follow`) ; s'il est trop haut pour rester collant, les photos en trop passent sous le texte dans sa colonne pour équilibrer les deux colonnes (`.is-balanced`). Jamais de grande bande vide à côté des photos ;
   - **blocs de texte en colonnes** : à quatre blocs ou plus, ils se rangent en **deux piles** de haut en bas (`.is-stacked`), pas en lignes qui laissent le dernier bloc seul au milieu ; un bloc **bien plus long que les autres** (plus de 1 500 caractères et plus de 2,5 fois la moyenne des autres) prend **toute la largeur** (`.is-full`), tout comme son court texte d'introduction s'il resterait seul sur sa ligne ;
+  - **dernier bloc seul sur sa ligne** dans des blocs en colonnes : il prend toute la largeur (jamais centré avec du vide de chaque côté) ; s'il est fait de lignes courtes (coordonnées), elles se rangent en deux colonnes ;
+  - **plusieurs titres qui n'ont chacun qu'un lien**, à la suite : une seule rangée compacte de colonnes (`.cp-linkset`), pas une pile de blocs espacés ;
   - un titre sans texte ni image : vérifier d'abord sur le site d'origine. Les textes sont parfois placés plus loin par la copie : on les remet sous leur titre dans le JSON plutôt que de supprimer le titre.
+- Barre de menu : les liens sont en `inline-flex` centré (texte centré dans la pastille, flèche des liens externes sur la même ligne que le mot, y compris sur les pages EN et DE).
 - Barre de menu : menu burger sous 1340 px. Vérifier qu'il n'y a pas de débordement à 320 px, en français et en allemand (les libellés allemands sont les plus longs).
 
 ## Pièges déjà rencontrés

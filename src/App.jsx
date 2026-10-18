@@ -24,6 +24,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plan-du-site" element={<Suspense fallback={<div className="cp-loading" aria-busy="true" />}><SitePlan /></Suspense>} />
+          <Route path="/accueil" element={<Navigate to="/" replace />} />
+          <Route path="/accueil/" element={<Navigate to="/" replace />} />
           <Route path="/contact" element={<Navigate to="/#devis" replace />} />
           <Route path="/contact/" element={<Navigate to="/#devis" replace />} />
           <Route path="*" element={<Page />} />
