@@ -625,6 +625,12 @@ button.nav-link { display: inline-flex; align-items: center; gap: 3px; border: 0
 .cp-split.is-long { align-items: start; }
 .cp-split.is-long .cp-media { position: sticky; top: calc(var(--bar-h) + 24px); }
 .cp-split.is-flip .cp-media { order: -1; }
+/* photos bien plus hautes que le texte : le texte les suit au défilement */
+.cp-split.is-follow { align-items: start; }
+.cp-split.is-balanced { align-items: start; }
+.cp-split.is-balanced.is-long .cp-media { position: static; }
+.cp-split.is-balanced > .cp-text > .cp-media { margin-top: 28px; }
+.cp-split.is-follow > .cp-text { position: sticky; top: calc(var(--bar-h) + 24px); }
 /* texte seul : titre à gauche, texte à droite (mesure 72ch) */
 .cp-aside { display: flex; flex-direction: column; gap: 14px; }
 .cp-aside-h .cp-h { margin: 0; }

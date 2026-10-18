@@ -25,6 +25,7 @@ Plan détaillé d'origine (v6) : `C:\Users\desig\.claude\plans\https-www-yourtec
 | Logos décoratifs | Les 42 petits logos Yourteco posés sous les titres sur l'ancien site (`logo-yourteco-small-75`) sont supprimés des 32 pages. Ce n'était qu'un ornement, pas un contenu. À ne pas réintroduire. |
 | Finitions pages | Bloc « Appelez-nous ! » retiré des 30 pages (le bandeau du bas suffit), bandeau devis et téléphone agrandi, pied de page compacté, « My photos / All » retiré de Chantiers participatifs (photo recentrée via `alone` dans le JSON), 7 liens seuls fondus sous le dernier paragraphe. Alignement : 7 points (6 connus + 2 traits de titre sur `comment-construire-soi-meme-sa-yourte` et `location-de-yourtes`, à contrôler). |
 | Revue des pages (lot 1, retours pages 2 et 3) | Règles générales appliquées à tout le site : texte long en une colonne pleine largeur, deux photos l'une sous l'autre et plus grandes, traits verts retirés au-dessus des colonnes de texte, section de liens seuls fondue en rangée compacte sous la section précédente. Page « habitation » : le texte d'Isolation, déplacé plus loin par la copie, est remis sous son titre. Suivi de la revue : `docs/revue-pages.md` (reprise à la page 4). |
+| Revue des pages (lot 1, pages 4 à 10) | Bandeau « YOURTECO / Habitons léger… » supprimé (2 pages), doublon du logo Landré retiré, texte qui suit les photos quand il y en a beaucoup plus (`is-follow`) ou photos en trop sous le texte (`is-balanced`). Reprise de la revue à la page 11. |
 
 ## À faire
 

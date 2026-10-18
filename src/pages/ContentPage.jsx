@@ -1,4 +1,4 @@
-import { useEffect, useState, Fragment } from 'react'
+import { useEffect, useRef, useState, Fragment } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { fix, Segs, SmartLink, segsText } from '../lib/text.jsx'
 import { usePageMeta } from '../lib/meta.js'
@@ -232,16 +232,16 @@ function rowsOf(imgs, wide) {
   })
 }
 
-function Media({ items, lang, wide }) {
+function Media({ items, lang, wide, range }) {
   const imgs = items.filter((m) => m.type === 'image')
   const vids = items.filter((m) => m.type === 'video')
   const n = imgs.length
   let k = 0
   return (
     <div className={'cp-media n-' + Math.min(n, 4) + (wide ? ' is-wide' : '')}>
-      {vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
+      {(!range || range[0] === 0) && vids.map((v) => <Video key={v.youtube} id={v.youtube} label={L[lang].video} />)}
       {rowsOf(imgs, wide).map((row, ri) => (
-        <div key={ri} className="cp-row">
+        (range && (ri < range[0] || ri >= range[1])) ? (k += row.length, null) : <div key={ri} className="cp-row">
           {row.map((im) => {
             const i = k++
             const small = isSmall(im.src)
@@ -267,6 +267,64 @@ function Media({ items, lang, wide }) {
           })}
         </div>
       ))}
+    </div>
+  )
+}
+
+/** Texte + photos côte à côte. Quand les photos sont bien plus hautes que le texte, le texte
+ *  les suit au défilement (collant) au lieu de laisser un grand vide à côté des photos. */
+function Split({ c, lang, side }) {
+  const root = useRef(null)
+  const [follow, setFollow] = useState(false)
+  const [cut, setCut] = useState(null) // nombre de rangées de photos gardées à côté du texte
+  const [wide, setWide] = useState(typeof innerWidth === 'number' ? innerWidth : 1440)
+  const long = chapterLen(c) > 1400
+  const nRows = rowsOf(c.media.filter((m) => m.type === 'image'), false).length
+  useEffect(() => {
+    const el = root.current
+    const text = el?.querySelector(':scope > .cp-text'), media = el?.querySelector(':scope > .cp-media')
+    if (!text || !media) return
+    const measure = () => {
+      const T = text.offsetHeight, M = media.offsetHeight
+      const big = innerWidth > 900
+      setFollow(big && M > T + 160 && T < innerHeight - 140)
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(media); ro.observe(text)
+    const onResize = () => { setWide(innerWidth); setCut(null) }
+    addEventListener('resize', onResize)
+    return () => { ro.disconnect(); removeEventListener('resize', onResize) }
+  }, [])
+  // texte trop haut pour rester collant et photos bien plus hautes que lui : les photos en trop
+  // passent sous le texte, dans sa colonne, pour équilibrer les deux colonnes
+  useEffect(() => {
+    if (cut !== null || wide <= 900 || nRows < 2) return
+    const el = root.current
+    const text = el?.querySelector(':scope > .cp-text'), media = el?.querySelector(':scope > .cp-media')
+    if (!text || !media) return
+    const rows = [...media.querySelectorAll(':scope > .cp-row')].map((r) => r.offsetHeight)
+    if (rows.length < 2) return
+    const T = text.offsetHeight, g = 16, total = rows.reduce((a, b) => a + b, 0) + g * (rows.length - 1)
+    if (T >= innerHeight - 140 && total > T + 300) {
+      let best = null, bestDiff = total - T
+      for (let k = 1; k < rows.length; k++) {
+        const left = rows.slice(0, k).reduce((a, b) => a + b, 0) + g * (k - 1)
+        const right = T + 28 + (rows.slice(k).reduce((a, b) => a + b, 0) + g * (rows.length - k - 1)) * (5 / 6)
+        if (Math.abs(left - right) < bestDiff) { best = k; bestDiff = Math.abs(left - right) }
+      }
+      if (best) setCut(best)
+    }
+  }, [cut, wide, nRows])
+  const balanced = cut !== null
+  return (
+    <div ref={root} className={'cp-split' + (side ? ' is-flip' : '') + (long ? ' is-long' : '') + (follow && !balanced ? ' is-follow' : '') + (balanced ? ' is-balanced' : '')}>
+      <div className="cp-text">
+        {c.heading && <Heading b={c.heading} />}
+        {c.body.map((b, i) => <Body key={i} b={b} />)}
+        {balanced && <Media items={c.media} lang={lang} range={[cut, nRows]} />}
+      </div>
+      <Media items={c.media} lang={lang} range={balanced ? [0, cut] : undefined} />
     </div>
   )
 }
@@ -321,18 +379,7 @@ function Chapter({ c, lang, side }) {
       </div>
     )
   }
-  if (c.media.length && c.body.length) {
-    const long = chapterLen(c) > 1400
-    return (
-      <div className={'cp-split' + (side ? ' is-flip' : '') + (long ? ' is-long' : '')}>
-        <div className="cp-text">
-          {c.heading && <Heading b={c.heading} />}
-          {c.body.map((b, i) => <Body key={i} b={b} />)}
-        </div>
-        <Media items={c.media} lang={lang} />
-      </div>
-    )
-  }
+  if (c.media.length && c.body.length) return <Split c={c} lang={lang} side={side} />
   if (c.body.length) {
     // texte seul : titre à gauche, texte à droite (2 colonnes si très long)
     const len = chapterLen(c)

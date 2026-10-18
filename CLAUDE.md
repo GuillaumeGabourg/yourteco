@@ -46,6 +46,9 @@ Refonte React de yourteco.com (fabricant français de yourtes en bois), prépar�
   - pas de trait vert au-dessus des blocs de texte en colonnes ;
   - un titre de section seul reste proche de ce qui le suit ;
   - une section faite **uniquement de liens** est fondue sous la section précédente, en rangée compacte (`.cp-links`), jamais en bandeau pleine hauteur ;
+  - **bandeaux de remplissage** (un titre court + une phrase d'accroche seuls dans une section, ex. « YOURTECO / Habitons léger… ») : supprimés, ils prennent de la place pour très peu d'information ;
+  - **logo ou image en double** l'un sous l'autre : on garde un seul exemplaire ;
+  - **plus de photos que de texte** : si le texte est court, il **suit les photos au défilement** (collant, `.is-follow`) ; s'il est trop haut pour rester collant, les photos en trop passent sous le texte dans sa colonne pour équilibrer les deux colonnes (`.is-balanced`). Jamais de grande bande vide à côté des photos ;
   - un titre sans texte ni image : vérifier d'abord sur le site d'origine. Les textes sont parfois placés plus loin par la copie : on les remet sous leur titre dans le JSON plutôt que de supprimer le titre.
 - Barre de menu : menu burger sous 1340 px. Vérifier qu'il n'y a pas de débordement à 320 px, en français et en allemand (les libellés allemands sont les plus longs).
 
