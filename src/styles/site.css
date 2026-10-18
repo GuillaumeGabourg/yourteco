@@ -860,14 +860,14 @@ main, .site-footer { position: relative; z-index: 1; }
 /* ---------- sujets connexes : cartes de liens (icône à gauche, dernière ligne centrée) ---------- */
 .cp-related { display: grid; gap: 14px; }
 .cp-related > .cp-h { margin-bottom: 4px; }
-.rel-cards { --cols: 3; --gap: 20px; list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
+.rel-cards { --max: 3; --cols: var(--max); --gap: 20px; list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
 .rel-cards > li { flex: 0 1 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols)); min-width: 0; }
 .rel-card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; align-content: start; padding: 20px 22px; border-radius: var(--r-lg); background: var(--bg-3); border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform .45s var(--ease-out), border-color .3s; }
 .rel-card:hover { transform: translateY(-4px); border-color: var(--leaf-soft); }
 .rel-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--sun-soft); color: var(--tx-strong); }
 .rel-body p { margin: 0 0 12px; }
 .rel-body p a { color: var(--tx-accent); font-weight: 650; }
-@media (max-width: 1000px) { .rel-cards { --cols: 2; } }
+@media (max-width: 1000px) { .rel-cards { --cols: min(var(--max), 2); } }
 @media (max-width: 640px) { .rel-cards { --cols: 1; } }
 
 

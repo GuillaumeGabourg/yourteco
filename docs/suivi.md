@@ -3,11 +3,12 @@
 À relire en début de session et à mettre à jour à la fin de chaque chantier : ce qui est fait, ce qui reste, ce qui attend une réponse.
 Plan détaillé d'origine (v6) : `C:\Users\desig\.claude\plans\https-www-yourteco-com-l-on-n-est-snuggly-thimble.md`.
 
-## Où en est le site (au 17 octobre 2026)
+## Où en est le site (au 18 octobre 2026)
 
-- **En ligne** : https://guillaumegabourg.github.io/yourteco/ (dernière publication le 17 octobre : titres des offres alignés, commit 321eba3).
+- **En ligne** : https://guillaumegabourg.github.io/yourteco/ (dernière publication le 18 octobre : revue des 67 pages terminée, pages de devis FR, EN et DE, commit 742dd4f ; `master` contient tout).
 - **Derniers audits** :
-  - 66 pages sans image cassée ni floue, sans débordement ni erreur ;
+  - 69 pages (dont les 3 pages de devis) sans image cassée ni floue, sans débordement ;
+  - 12 liens internes encore cassés (`npm run audit:liens`), à régler en reprenant les 12 pages manquantes ;
   - axe WCAG 2.2 AA sans violation, en thème clair et sombre ;
   - ancres exactes (73 px à 1440, 65 px à 375) ;
   - aucune photo rognée.
